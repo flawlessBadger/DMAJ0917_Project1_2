@@ -26,7 +26,7 @@ public abstract class Menu {
         System.out.print("> ");
         int input = -1;
         try {
-            input = sc.nextInt() + 1;
+            input = sc.nextInt();
         } catch (Exception e) {
         }
         if (input <= 0 || input > commandWords.size() + 3)
@@ -46,7 +46,7 @@ public abstract class Menu {
                 menuPrompt();
             }
         } else {
-            resolver(input);
+            resolver(input-1);
             menuPrompt();
         }
 
