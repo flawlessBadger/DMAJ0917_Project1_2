@@ -19,19 +19,20 @@ public abstract class Menu {
         this.name = name;
         this.parent = parent;
         sc = new Scanner(System.in);
-        commandWords = new ArrayList<String>();
+        commandWords = new ArrayList();
     }
 
     public void menuPrompt() {
         System.out.print("> ");
         int input = -1;
         try {
-            input = sc.nextInt();
+            input = Integer.valueOf(sc.nextLine());
         } catch (Exception e) {
         }
-        if (input <= 0 || input > commandWords.size() + 3)
-            System.err.println("Invalid input");
-        else if (commandWords.size() + 1 == input) {
+        if (input <= 0 || input > commandWords.size() + 3) {
+            System.err.println("Invalid input"+String.valueOf(input));
+            menuPrompt();
+        } else if (commandWords.size() + 1 == input) {
             System.out.println("\fGoodbye");
             System.exit(1);
         } else if (commandWords.size() + 2 == input) {
@@ -46,7 +47,7 @@ public abstract class Menu {
                 menuPrompt();
             }
         } else {
-            resolver(input-1);
+            resolver(input - 1);
             menuPrompt();
         }
 
@@ -54,7 +55,7 @@ public abstract class Menu {
 
     public abstract void resolver(int i);
 
-    public void printMenu() {
+    void printMenu() {
         System.out.println("\n\n\n\n\n\n\n\n\n###################");
         System.out.println(name);
         System.out.println("###################");
@@ -66,6 +67,10 @@ public abstract class Menu {
         if (parent != null)
             System.out.println("(" + String.valueOf(commandWords.size() + 1) + ") back");
         System.out.println("###################");
+    }
+
+    protected void addMenuItem(String s) {
+
     }
 
 }
