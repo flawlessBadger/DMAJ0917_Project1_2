@@ -19,14 +19,16 @@ public class MainMenu extends Menu {
 
     public MainMenu() {
         super("Main Menu", null);
-        commandWords.add("test");
-        commandWords.add("friends");
-        commandWords.add("managedvd");
-        commandWords.add("loanCopy");
+        commandWords.add("Manage employees");
+        commandWords.add("Manage items");
+        commandWords.add("Manage bundle");
+        commandWords.add("Manage Sale");
 
+        /*
         HashMap<String,String> hm = new HashMap<>();
         hm.put("bleh","blah");
         hm.put("bleh","blah");
+        */
 
         printMenu();
         menuPrompt();
@@ -34,9 +36,20 @@ public class MainMenu extends Menu {
 
     @Override
     public void resolver(int i) {
-        System.out.println("Hello World " + i);
-
-
+        switch(i){
+            case 0:
+                new ManageEmployee(this);
+                break;
+            case 1:
+                new ManageItem(this);
+                break;
+            case 2:
+                new ManageBundle(this);
+                break;
+            case 3:
+                new ManageSale(this);
+                break;
+        }
     }
 
 }

@@ -65,7 +65,7 @@ public abstract class Menu {
         System.out.println("(" + String.valueOf(commandWords.size() + 1) + ") exit");
         System.out.println("(" + String.valueOf(commandWords.size() + 2) + ") clear");
         if (parent != null)
-            System.out.println("(" + String.valueOf(commandWords.size() + 1) + ") back");
+            System.out.println("(" + String.valueOf(commandWords.size() + 3) + ") back");
         System.out.println("###################");
     }
 
