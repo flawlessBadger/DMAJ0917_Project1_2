@@ -14,15 +14,46 @@ public class Item implements SaleLineItem {
     private HashMap<Location, Integer> min_stock;
     private String barcode;
 
-    public Item(String barcode, String name) {
+    public Item(String barcode) {
         this.barcode = barcode;
-        this.name = name;
+        discounts = new TreeMap<>();
     }
 
+    public Item(String barcode, String name, double costPrice, double salePrice) {
+        this.barcode = barcode;
+        this.name = name;
+        discounts = new TreeMap<>();
+        this.costPrice = costPrice;
+        this.salePrice = salePrice;
+    }
+
+    public void addDiscount(int quantity, double percantage) {
+        discounts.put(quantity, percantage);
+    }
+
+    public void removeDiscount(int quantity) {
+        stock.remove(quantity);
+    }
+
+    public void addStock(int quantity, Location location) {
+        stock.put(location, stock.get(location) + quantity);
+    }
 
     @Override
-    public double getPrice() {
-        return salePrice;
+    public double getPrice(int quantity) {
+        if (discounts.lowerKey(quantity) == null)
+            return salePrice;
+        return salePrice - salePrice * discounts.lowerKey(quantity);
+    }
+
+    public double getDiscount(int quantity) {
+        if (discounts.lowerKey(quantity) == null)
+            return 0;
+        return discounts.lowerKey(quantity);
+    }
+
+    public TreeMap<Integer, Double> getDiscounts() {
+        return discounts;
     }
 
     @Override
@@ -32,9 +63,9 @@ public class Item implements SaleLineItem {
 
     @Override
     public boolean removeStock(int amount, Location location) {
-        int currentAmount = stock.getOrDefault(location,0);
-        if(amount<=currentAmount){
-            stock.put(location,currentAmount-amount);
+        int currentAmount = stock.getOrDefault(location, 0);
+        if (amount <= currentAmount) {
+            stock.put(location, currentAmount - amount);
             return true;
         }
         return false;

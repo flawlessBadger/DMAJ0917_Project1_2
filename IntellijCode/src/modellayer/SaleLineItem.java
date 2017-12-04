@@ -2,7 +2,7 @@ package modellayer;
 
 public interface SaleLineItem {
 
-    double getPrice();
+    double getPrice(int quantity);
 
     int checkStock(Location location);
 

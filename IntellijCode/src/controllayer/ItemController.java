@@ -1,6 +1,9 @@
 package controllayer;
 
+import modellayer.Bundle;
 import modellayer.Item;
+import modellayer.SaleLineItem;
+import modellayer.containers.BundleCont;
 import modellayer.containers.ItemCont;
 
 public class ItemController {
@@ -12,5 +15,11 @@ public class ItemController {
             return true;
         }
         return false;
+    }
+
+    public SaleLineItem getLineItem(String barcode) {
+        if (ItemCont.getInstance().containsKey(barcode))
+            return ItemCont.getInstance().get(barcode);
+        return BundleCont.getInstance().get(barcode);
     }
 }

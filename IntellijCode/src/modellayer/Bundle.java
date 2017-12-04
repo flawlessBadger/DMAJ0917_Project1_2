@@ -12,21 +12,39 @@ public class Bundle implements SaleLineItem {
 
     private HashMap<Item, Integer> items;
 
-    public Bundle(String name, String barcode) {
+    public Bundle(String name, String barcode, double salePrice) {
+        this.name = name;
+        this.barcode = barcode;
+        this.salePrice = salePrice;
+    }
+
+    public Bundle(String barcode) {
         this.name = name;
         this.barcode = barcode;
     }
 
     @Override
-    public double getPrice() {
-        return salePrice;
+    public double getPrice(int quantity) {
+        return salePrice * quantity;
     }
 
     @Override
     public int checkStock(Location location) {
-
-
-        return 0;
+        Iterator it = items.entrySet().iterator();
+        int stock = 0;
+        Map.Entry pair;
+        if (it.hasNext()) {
+            pair = (Map.Entry) it.next();
+            stock = ((Item) pair.getKey()).checkStock(location) / ((int) pair.getValue());
+        }
+        while (it.hasNext()) {
+            pair = (Map.Entry) it.next();
+            if (((Item) pair.getKey()).checkStock(location) / ((int) pair.getValue()) < stock)
+                stock = ((Item) pair.getKey()).checkStock(location) / ((int) pair.getValue());
+//
+//                it.remove();
+        }
+        return stock;
     }
 
     @Override
