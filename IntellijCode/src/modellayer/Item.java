@@ -6,6 +6,7 @@ import java.util.TreeMap;
 
 public class Item implements SaleLineItem {
     private String name;
+    private String description;
     private double salePrice;
     private TreeMap<Integer, Double> discounts; //[0]quantity,[1]discountPercentage
     private double costPrice;
@@ -17,13 +18,20 @@ public class Item implements SaleLineItem {
 
     public Item(String barcode) {
         this.barcode = barcode;
-        discounts = new TreeMap<>();
+        this.discounts = new TreeMap<>();
+        this.stock = new HashMap<>();
+        this.min_stock = new HashMap<>();
+        this.max_stock = new HashMap<>();
     }
 
-    public Item(String barcode, String name, double costPrice, double salePrice) {
+    public Item(String barcode, String name, String description, double costPrice, double salePrice) {
         this.barcode = barcode;
         this.name = name;
+        this.description = description;
         this.discounts = new TreeMap<>();
+        this.stock = new HashMap<>();
+        this.min_stock = new HashMap<>();
+        this.max_stock = new HashMap<>();
         this.costPrice = costPrice;
         this.salePrice = salePrice;
     }
@@ -31,18 +39,23 @@ public class Item implements SaleLineItem {
     public String getName() {
         return this.name;
     }
+
     public double getCostPrice() {
         return this.costPrice;
     }
+
     public double getSalePrice() {
         return this.salePrice;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public void setCostPrice(double costPrice) {
         this.costPrice = costPrice;
     }
+
     public void setSalePrice(double salePrice) {
         this.salePrice = salePrice;
     }
@@ -55,7 +68,7 @@ public class Item implements SaleLineItem {
     public double getPrice(int quantity) {
         if (discounts.lowerKey(quantity) == null)
             return salePrice;
-        return salePrice - salePrice * discounts.lowerKey(quantity);
+        return salePrice - salePrice * (discounts.lowerKey(quantity) / 100);
     }
 
     @Override
@@ -70,8 +83,9 @@ public class Item implements SaleLineItem {
     public TreeMap<Integer, Double> getDiscounts() {
         return discounts;
     }
-    public void addDiscount(int quantity, double percantage) {
-        discounts.put(quantity, percantage);
+
+    public void addDiscount(int quantity, double percentage) {
+        discounts.put(quantity, percentage);
     }
 
     public void removeDiscount(int quantity) {

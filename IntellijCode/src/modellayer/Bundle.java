@@ -5,37 +5,58 @@ import java.util.*;
 public class Bundle implements SaleLineItem {
     private String name;
     private double salePrice;
+    private String description;
     private String barcode;
     private TreeMap<Integer, Double> discounts;
 
     private HashMap<Item, Integer> items;
 
-    public Bundle(String name, String barcode, double salePrice) {
-        this.name = name;
+    public Bundle(String barcode, String name, String description, double salePrice) {
         this.barcode = barcode;
+        this.name = name;
+        this.description = description;
         this.salePrice = salePrice;
+        this.discounts = new TreeMap<>();
+        this.items = new HashMap<>();
     }
 
     public Bundle(String barcode) {
-        this.name = name;
         this.barcode = barcode;
+        this.discounts = new TreeMap<>();
+        this.items = new HashMap<>();
     }
+
     public String getName() {
         return this.name;
     }
-    public double getSalePrice() {
-        return this.salePrice;
-    }
+
+//    public double getSalePrice() {
+//        return this.salePrice;
+//    }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public void setSalePrice(double salePrice) {
         this.salePrice = salePrice;
     }
 
+    public boolean addItem(Item item, int amount) {
+        if (!items.containsKey(item)) {
+            items.put(item, amount);
+            return true;
+        }
+        return false;
+    }
+
+
     @Override
     public double getPrice(int quantity) {
-        return salePrice * quantity;
+//        return salePrice * quantity;
+        if (discounts.lowerKey(quantity) == null)
+            return salePrice;
+        return salePrice - salePrice * (discounts.lowerKey(quantity) / 100);
     }
 
     @Override
@@ -95,6 +116,7 @@ public class Bundle implements SaleLineItem {
     public void removeDiscount(int quantity) {
         discounts.remove(quantity);
     }
+
     public TreeMap<Integer, Double> getDiscounts() {
         return discounts;
     }

@@ -6,14 +6,15 @@ import modellayer.Location;
 import modellayer.SaleLineItem;
 import modellayer.containers.BundleCont;
 
+@Deprecated
 public class BundleController {
 
     private static BundleCont bundleCont = BundleCont.getInstance();
 
     public boolean addBundle(String barcode, String name, double costPrice, double salePrice) {
         if (!bundleCont.containsKey(barcode)) {
-            Item item = new Item(barcode, name, costPrice, salePrice);
-            bundleCont.put(barcode, item);
+//            Item item = new Item(barcode, name, costPrice, salePrice);
+//            bundleCont.put(barcode, item);
             return true;
         }
         return false;
