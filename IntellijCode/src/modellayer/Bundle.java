@@ -109,16 +109,23 @@ public class Bundle implements SaleLineItem {
         return 0;
     }
 
-    public void addDiscount(int quantity, double percantage) {
-        discounts.put(quantity, percantage);
+    public void setDiscount(int amount, double percentage) {
+        discounts.put(amount, percentage);
     }
 
-    public void removeDiscount(int quantity) {
-        discounts.remove(quantity);
+    public boolean removeDiscount(int amount) {
+        if (discounts.containsKey(amount)) {
+            discounts.remove(amount);
+            return true;
+        }
+        return false;
     }
 
     public TreeMap<Integer, Double> getDiscounts() {
         return discounts;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
