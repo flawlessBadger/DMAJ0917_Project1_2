@@ -1,6 +1,8 @@
 package modellayer;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Item implements SaleLineItem {
@@ -40,7 +42,7 @@ public class Item implements SaleLineItem {
 
     //stock management
     public void addStock(int quantity, Location location) {
-        stock.put(location, stock.get(location) + quantity);
+        stock.put(location, (stock.containsKey(location)) ? stock.get(location) + quantity : quantity);
     }
 
     @Override
@@ -88,9 +90,9 @@ public class Item implements SaleLineItem {
 
     @Override
     public double getPrice(int quantity) {
-        if (discounts.lowerKey(quantity) == null)
-            return salePrice;
-        return salePrice - salePrice * (discounts.lowerKey(quantity) / 100);
+//        if (discounts.floorKey(quantity) == null)
+//            return salePrice;
+        return salePrice - salePrice * (discounts.floorKey(quantity) / 100);
     }
 
 
@@ -117,5 +119,40 @@ public class Item implements SaleLineItem {
 
     public void setStock(Location location, int amount) {
         this.stock.put(location, amount);
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("Name:        " + name +
+                "\nBarcode:     " + barcode +
+                "\nDescription: " + description +
+                "\nSalePrice:   " + salePrice);
+        for (Map.Entry<Integer, Double> entry : discounts.entrySet()) {
+            s.append((discounts.firstKey().equals(entry.getKey())) ? "\nDiscounts:   " : "\n             ");
+            s.append(entry.getKey()).append("pcs ... ").append(entry.getValue()).append("%");
+        }
+
+        Iterator iterator = stock.entrySet().iterator();
+        if (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            s.append("\nStock:       ").append(entry.getKey()).append(" ... ").append(entry.getValue()).append("pcs");
+            while (iterator.hasNext()) {
+                entry = (Map.Entry) iterator.next();
+                s.append("\n             ").append(entry.getKey()).append(" ... ").append(entry.getValue()).append("pcs");
+            }
+        }
+
+        iterator = minStock.entrySet().iterator();
+        if (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            s.append("\nMin. stock:  ").append(entry.getKey()).append(" ... ").append(entry.getValue()).append("pcs");
+            while (iterator.hasNext()) {
+                entry = (Map.Entry) iterator.next();
+                s.append("\n             ").append(entry.getKey()).append(" ... ").append(entry.getValue()).append("pcs");
+            }
+        }
+
+        return s.toString();
     }
 }

@@ -120,4 +120,18 @@ public class Bundle implements SaleLineItem {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("Name:        " + name +
+                "\nBarcode:     " + barcode +
+                "\nDescription: " + description +
+                "\nSalePrice:   " + salePrice);
+        for (Map.Entry<Integer, Double> entry : discounts.entrySet()) {
+            s.append((discounts.firstKey().equals(entry.getKey())) ? "\nDiscounts:   " : "\n             ");
+            s.append(entry.getKey()).append("pcs ... ").append(entry.getValue()).append("%");
+        }
+
+        return s.toString();
+    }
 }

@@ -30,7 +30,7 @@ public abstract class Menu {
         } catch (Exception e) {
         }
         if (input <= 0 || input > commandWords.size() + 3) {
-            System.err.println("Invalid input"+String.valueOf(input));
+            System.err.println("Invalid input" + String.valueOf(input));
             menuPrompt();
         } else if (commandWords.size() + 1 == input) {
             System.out.println("\fGoodbye");
@@ -72,7 +72,7 @@ public abstract class Menu {
     public String inputString(String title) {
         System.out.print(title);
         String input = "";
-        while(input.length() <= 0){
+        while (input.length() <= 0) {
             input = sc.nextLine();
         }
 
@@ -80,22 +80,24 @@ public abstract class Menu {
     }
 
     public double inputDouble(String title) {
-        System.out.print(title);
-        double input = -1;
-        try {
-            input = Double.valueOf(sc.nextLine());
-        } catch (Exception e) {
+        while (true) {
+            System.out.print(title);
+            try {
+                return Double.valueOf(sc.nextLine());
+            } catch (Exception e) {
+                System.err.println("Not a number");
+            }
         }
-        return input;
     }
 
     public int inputInteger(String title) {
-        System.out.print(title);
-        int input = -1;
-        try {
-            input = Integer.valueOf(sc.nextLine());
-        } catch (Exception e) {
+        while (true) {
+            System.out.print(title);
+            try {
+                return Integer.valueOf(sc.nextLine());
+            } catch (Exception e) {
+                System.err.println("Not an Integer");
+            }
         }
-        return input;
     }
 }
