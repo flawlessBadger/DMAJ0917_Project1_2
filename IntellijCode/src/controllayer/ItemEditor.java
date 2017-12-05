@@ -2,13 +2,14 @@ package controllayer;
 
 import modellayer.Item;
 import modellayer.Location;
+import modellayer.containers.ItemCont;
 
 public class ItemEditor {
 
     Item item;
 
-    public ItemEditor(Item item) {
-        this.item = item;
+    public ItemEditor(String barcode) {
+        this.item = ItemCont.getInstance().get(barcode);
     }
 
     public void setName(String name) {

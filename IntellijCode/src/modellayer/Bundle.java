@@ -26,14 +26,6 @@ public class Bundle implements SaleLineItem {
         this.items = new HashMap<>();
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-//    public double getSalePrice() {
-//        return this.salePrice;
-//    }
-
     public void setName(String name) {
         this.name = name;
     }

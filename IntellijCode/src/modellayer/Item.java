@@ -37,55 +37,11 @@ public class Item implements SaleLineItem {
         this.salePrice = salePrice;
     }
 
-    public String getName() {
-        return this.name;
-    }
 
-    public double getCostPrice() {
-        return this.costPrice;
-    }
-
-    public double getSalePrice() {
-        return this.salePrice;
-    }
-
-
+    //stock management
     public void addStock(int quantity, Location location) {
         stock.put(location, stock.get(location) + quantity);
     }
-
-    @Override
-    public double getPrice(int quantity) {
-        if (discounts.lowerKey(quantity) == null)
-            return salePrice;
-        return salePrice - salePrice * (discounts.lowerKey(quantity) / 100);
-    }
-
-    @Override
-    public double getDiscount(int quantity) {
-        if (discounts.lowerKey(quantity) == null)
-            return 0;
-        return discounts.lowerKey(quantity);
-    }
-
-
-    //discounts
-    public TreeMap<Integer, Double> getDiscounts() {
-        return discounts;
-    }
-
-    public void setDiscount(int amount, double percentage) {
-        discounts.put(amount, percentage);
-    }
-
-    public boolean removeDiscount(int amount) {
-        if (discounts.containsKey(amount)) {
-            discounts.remove(amount);
-            return true;
-        }
-        return false;
-    }
-
 
     @Override
     public int checkStock(Location location) {
@@ -102,11 +58,43 @@ public class Item implements SaleLineItem {
         return false;
     }
 
+
+    //discounts management
+    public void setDiscount(int amount, double percentage) {
+        discounts.put(amount, percentage);
+    }
+
+    @Override
+    public double getDiscount(int quantity) {
+        if (discounts.lowerKey(quantity) == null)
+            return 0;
+        return discounts.lowerKey(quantity);
+    }
+
+    public boolean removeDiscount(int amount) {
+        if (discounts.containsKey(amount)) {
+            discounts.remove(amount);
+            return true;
+        }
+        return false;
+    }
+
+
+    //getters
     @Override
     public String getBarcode() {
         return barcode;
     }
 
+    @Override
+    public double getPrice(int quantity) {
+        if (discounts.lowerKey(quantity) == null)
+            return salePrice;
+        return salePrice - salePrice * (discounts.lowerKey(quantity) / 100);
+    }
+
+
+    //setters
     public void setName(String name) {
         this.name = name;
     }

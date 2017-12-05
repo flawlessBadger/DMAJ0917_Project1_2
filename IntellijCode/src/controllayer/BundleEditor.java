@@ -2,13 +2,14 @@ package controllayer;
 
 import modellayer.Bundle;
 import modellayer.Location;
+import modellayer.containers.BundleCont;
 
 public class BundleEditor {
 
     Bundle bundle;
 
-    public BundleEditor(Bundle bundle) {
-        this.bundle = bundle;
+    public BundleEditor(String barcode) {
+        this.bundle = BundleCont.getInstance().get(barcode);
     }
 
     public void setName(String name) {

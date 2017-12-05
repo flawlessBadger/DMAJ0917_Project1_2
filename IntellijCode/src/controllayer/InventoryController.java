@@ -24,14 +24,6 @@ public class InventoryController {
         bundleCont.get(bundleBarcode).addItem(itemCont.get(barcode), amount);
     }
 
-    public ItemEditor getItemEditor(String barcode) {
-        return new ItemEditor(itemCont.get(barcode));
-    }
-
-    public BundleEditor getBundleEditor(String barcode) {
-        return new BundleEditor(bundleCont.get(barcode));
-    }
-
     //TODO: location setting
     public void addStock(String barcode, int amount) {
         itemCont.get(barcode).addStock(amount, Location.DIY);
