@@ -28,7 +28,24 @@ public class Item implements SaleLineItem {
         this.salePrice = salePrice;
     }
 
-
+    public String getName() {
+        return this.name;
+    }
+    public double getCostPrice() {
+        return this.costPrice;
+    }
+    public double getSalePrice() {
+        return this.salePrice;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setCostPrice(double costPrice) {
+        this.costPrice = costPrice;
+    }
+    public void setSalePrice(double salePrice) {
+        this.salePrice = salePrice;
+    }
 
     public void addStock(int quantity, Location location) {
         stock.put(location, stock.get(location) + quantity);
