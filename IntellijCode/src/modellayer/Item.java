@@ -1,27 +1,28 @@
 package modellayer;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.TreeMap;
 
 public class Item implements SaleLineItem {
     private String name;
+
+
     private String description;
     private double salePrice;
     private TreeMap<Integer, Double> discounts; //[0]quantity,[1]discountPercentage
     private double costPrice;
 
     private HashMap<Location, Integer> stock;
-    private HashMap<Location, Integer> min_stock;
-    private HashMap<Location, Integer> max_stock;
+    private HashMap<Location, Integer> minStock;
+    private HashMap<Location, Integer> maxStock;
     private String barcode;
 
     public Item(String barcode) {
         this.barcode = barcode;
         this.discounts = new TreeMap<>();
         this.stock = new HashMap<>();
-        this.min_stock = new HashMap<>();
-        this.max_stock = new HashMap<>();
+        this.minStock = new HashMap<>();
+        this.maxStock = new HashMap<>();
     }
 
     public Item(String barcode, String name, String description, double costPrice, double salePrice) {
@@ -30,8 +31,8 @@ public class Item implements SaleLineItem {
         this.description = description;
         this.discounts = new TreeMap<>();
         this.stock = new HashMap<>();
-        this.min_stock = new HashMap<>();
-        this.max_stock = new HashMap<>();
+        this.minStock = new HashMap<>();
+        this.maxStock = new HashMap<>();
         this.costPrice = costPrice;
         this.salePrice = salePrice;
     }
@@ -48,17 +49,6 @@ public class Item implements SaleLineItem {
         return this.salePrice;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCostPrice(double costPrice) {
-        this.costPrice = costPrice;
-    }
-
-    public void setSalePrice(double salePrice) {
-        this.salePrice = salePrice;
-    }
 
     public void addStock(int quantity, Location location) {
         stock.put(location, stock.get(location) + quantity);
@@ -84,12 +74,16 @@ public class Item implements SaleLineItem {
         return discounts;
     }
 
-    public void addDiscount(int quantity, double percentage) {
-        discounts.put(quantity, percentage);
+    public void setDiscount(int amount, double percentage) {
+        discounts.put(amount, percentage);
     }
 
-    public void removeDiscount(int quantity) {
-        discounts.remove(quantity);
+    public boolean removeDiscount(int amount) {
+        if (discounts.containsKey(amount)) {
+            discounts.remove(amount);
+            return true;
+        }
+        return false;
     }
 
 
@@ -111,5 +105,29 @@ public class Item implements SaleLineItem {
     @Override
     public String getBarcode() {
         return barcode;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCostPrice(double costPrice) {
+        this.costPrice = costPrice;
+    }
+
+    public void setSalePrice(double salePrice) {
+        this.salePrice = salePrice;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setMinStock(Location location, int amount) {
+        this.minStock.put(location, amount);
+    }
+
+    public void setStock(Location location, int amount) {
+        this.stock.put(location, amount);
     }
 }

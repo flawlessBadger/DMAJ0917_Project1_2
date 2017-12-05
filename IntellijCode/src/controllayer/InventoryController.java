@@ -9,8 +9,8 @@ import modellayer.containers.ItemCont;
 
 public class InventoryController {
 
-    private static ItemCont<String, Item> itemCont = ItemCont.getInstance();
-    private static BundleCont<String, Bundle> bundleCont = BundleCont.getInstance();
+    private ItemCont<String, Item> itemCont = ItemCont.getInstance();
+    private BundleCont<String, Bundle> bundleCont = BundleCont.getInstance();
 
     public void createItem(String barcode, String name, String description, double salePrice, double costPrice) {
         itemCont.put(barcode, new Item(barcode, name, description, costPrice, salePrice));
@@ -23,6 +23,49 @@ public class InventoryController {
     public void addToBundle(String bundleBarcode, String barcode, int amount) {
         bundleCont.get(bundleBarcode).addItem(itemCont.get(barcode), amount);
     }
+
+    public ItemEditor getItemEditor(String barcode) {
+        return new ItemEditor(itemCont.get(barcode));
+    }
+
+    public BundleEditor getBundleEditor(String barcode) {
+        return new BundleEditor(bundleCont.get(barcode));
+    }
+
+    //TODO: location setting
+    public void addStock(String barcode, int amount) {
+        itemCont.get(barcode).addStock(amount, Location.DIY);
+    }
+
+    public boolean remove(String barcode) {
+        return (itemCont.remove(barcode) != null || bundleCont.remove(barcode) != null);
+    }
+
+    public boolean isValidItem(String barcode) {
+        return itemCont.containsKey(barcode);
+    }
+
+    public boolean isValidBundle(String barcode) {
+        return bundleCont.containsKey(barcode);
+    }
+
+    public boolean isBarcodeAvailable(String barcode) {
+        return !(itemCont.containsKey(barcode) || bundleCont.containsKey(barcode));
+    }
+
+
+//    public boolean isItem(barcode){
+//
+//    }
+
+//    public Item getItem(String barcode) {
+//        return (Item) getSaleLineItem(barcode);
+//    }
+//
+//    public SaleLineItem getSaleLineItem(String barcode) {
+//        return (SaleLineItem) itemCont.getOrDefault(barcode, null);
+//    }
+
 
 //    public boolean removeItem(String barcode) {
 //        if (!itemCont.containsKey(barcode)) {
@@ -60,46 +103,6 @@ public class InventoryController {
 //            return true;
 //        }
 //        return false;
-//    }
-
-
-    public ItemEditor getItemEditor(String barcode) {
-        return new ItemEditor(itemCont.get(barcode));
-    }
-
-    public BundleEditor getBundleEditor(String barcode) {
-        return new BundleEditor(bundleCont.get(barcode));
-    }
-
-    public void addStock(String barcode, int amount) {
-        itemCont.get(barcode).addStock(amount, Location.DIY);
-    }
-
-    public boolean remove(String barcode) {
-        return (itemCont.remove(barcode) != null || bundleCont.remove(barcode) != null);
-    }
-
-    public boolean isValidItem(String barcode) {
-        return itemCont.containsKey(barcode);
-    }
-    public boolean isValidBundle(String barcode) {
-        return bundleCont.containsKey(barcode);
-    }
-
-
-    public boolean isBarcodeAvailable(String barcode) {
-        return !(itemCont.containsKey(barcode) || bundleCont.containsKey(barcode));
-    }
-//    public boolean isItem(barcode){
-//
-//    }
-
-//    public Item getItem(String barcode) {
-//        return (Item) getSaleLineItem(barcode);
-//    }
-//
-//    public SaleLineItem getSaleLineItem(String barcode) {
-//        return (SaleLineItem) itemCont.getOrDefault(barcode, null);
 //    }
 
 
