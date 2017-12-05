@@ -1,14 +1,12 @@
 package modellayer;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class Bundle implements SaleLineItem {
     private String name;
     private double salePrice;
     private String barcode;
+    private TreeMap<Integer, Double> discounts;
 
     private HashMap<Item, Integer> items;
 
@@ -70,4 +68,20 @@ public class Bundle implements SaleLineItem {
     public String getBarcode() {
         return barcode;
     }
+
+
+    //discounts
+    @Override
+    public double getDiscount(int quantity) {
+        return 0;
+    }
+
+    public void addDiscount(int quantity, double percantage) {
+        discounts.put(quantity, percantage);
+    }
+
+    public void removeDiscount(int quantity) {
+        discounts.remove(quantity);
+    }
+
 }

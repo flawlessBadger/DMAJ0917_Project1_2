@@ -69,8 +69,5 @@ public abstract class Menu {
         System.out.println("###################");
     }
 
-    protected void addMenuItem(String s) {
-
-    }
 
 }
