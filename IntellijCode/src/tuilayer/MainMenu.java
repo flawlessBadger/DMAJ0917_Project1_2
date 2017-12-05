@@ -24,6 +24,10 @@ public class MainMenu extends Menu {
         commandWords.add("managedvd");
         commandWords.add("loanCopy");
 
+        HashMap<String,String> hm = new HashMap<>();
+        hm.put("bleh","blah");
+        hm.put("bleh","blah");
+
         printMenu();
         menuPrompt();
     }
