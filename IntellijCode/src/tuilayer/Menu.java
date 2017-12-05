@@ -23,7 +23,7 @@ public abstract class Menu {
     }
 
     public void menuPrompt() {
-        System.out.print("> ");
+        System.out.println("> ");
         int input = -1;
         try {
             input = Integer.valueOf(sc.nextLine());
@@ -65,9 +65,37 @@ public abstract class Menu {
         System.out.println("(" + String.valueOf(commandWords.size() + 1) + ") exit");
         System.out.println("(" + String.valueOf(commandWords.size() + 2) + ") clear");
         if (parent != null)
-            System.out.println("(" + String.valueOf(commandWords.size() + 1) + ") back");
+            System.out.println("(" + String.valueOf(commandWords.size() + 3) + ") back");
         System.out.println("###################");
     }
 
+    public String inputString(String title) {
+        System.out.print(title);
+        String input = "";
+        while(input.length() <= 0){
+            input = sc.nextLine();
+        }
 
+        return input;
+    }
+
+    public double inputDouble(String title) {
+        System.out.print(title);
+        double input = -1;
+        try {
+            input = Double.valueOf(sc.nextLine());
+        } catch (Exception e) {
+        }
+        return input;
+    }
+
+    public int inputInteger(String title) {
+        System.out.print(title);
+        int input = -1;
+        try {
+            input = Integer.valueOf(sc.nextLine());
+        } catch (Exception e) {
+        }
+        return input;
+    }
 }
