@@ -20,6 +20,18 @@ public class Bundle implements SaleLineItem {
         this.name = name;
         this.barcode = barcode;
     }
+    public String getName() {
+        return this.name;
+    }
+    public double getSalePrice() {
+        return this.salePrice;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setSalePrice(double salePrice) {
+        this.salePrice = salePrice;
+    }
 
     @Override
     public double getPrice(int quantity) {
@@ -82,6 +94,9 @@ public class Bundle implements SaleLineItem {
 
     public void removeDiscount(int quantity) {
         discounts.remove(quantity);
+    }
+    public TreeMap<Integer, Double> getDiscounts() {
+        return discounts;
     }
 
 }

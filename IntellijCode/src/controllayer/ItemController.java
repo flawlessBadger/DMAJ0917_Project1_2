@@ -1,13 +1,9 @@
 package controllayer;
 
-import modellayer.Bundle;
 import modellayer.Item;
 import modellayer.Location;
 import modellayer.SaleLineItem;
-import modellayer.containers.BundleCont;
 import modellayer.containers.ItemCont;
-
-import java.util.List;
 
 public class ItemController {
 
@@ -43,10 +39,23 @@ public class ItemController {
         }
         return false;
     }
+    public boolean updateItem(String barcode, String name, double costPrice, double salePrice) {
+        if (itemCont.containsKey(barcode)) {
+            Item item = (Item)itemCont.get(barcode);
 
-    public SaleLineItem getLineItem(String barcode) {
-        if (itemCont.containsKey(barcode))
-            return (Item)itemCont.get(barcode);
-        return BundleCont.getInstance().get(barcode);
+            item.setName(name);
+            item.setCostPrice(costPrice);
+            item.setSalePrice(salePrice);
+
+            itemCont.replace(barcode, item);
+            return true;
+        }
+        return false;
+    }
+    public Item getItem(String barcode) {
+        return (Item)getSaleLineItem(barcode);
+    }
+    public SaleLineItem getSaleLineItem(String barcode) {
+        return (SaleLineItem)itemCont.getOrDefault(barcode, null);
     }
 }
