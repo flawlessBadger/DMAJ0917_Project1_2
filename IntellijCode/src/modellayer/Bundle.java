@@ -1,31 +1,54 @@
 package modellayer;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class Bundle implements SaleLineItem {
     private String name;
     private double salePrice;
+    private String description;
     private String barcode;
+    private TreeMap<Integer, Double> discounts;
 
     private HashMap<Item, Integer> items;
 
-    public Bundle(String name, String barcode, double salePrice) {
-        this.name = name;
+    public Bundle(String barcode, String name, String description, double salePrice) {
         this.barcode = barcode;
+        this.name = name;
+        this.description = description;
         this.salePrice = salePrice;
+        this.discounts = new TreeMap<>();
+        this.items = new HashMap<>();
     }
 
     public Bundle(String barcode) {
-        this.name = name;
         this.barcode = barcode;
+        this.discounts = new TreeMap<>();
+        this.items = new HashMap<>();
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSalePrice(double salePrice) {
+        this.salePrice = salePrice;
+    }
+
+    public boolean addItem(Item item, int amount) {
+        if (!items.containsKey(item)) {
+            items.put(item, amount);
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public double getPrice(int quantity) {
-        return salePrice * quantity;
+//        return salePrice * quantity;
+        if (discounts.lowerKey(quantity) == null)
+            return salePrice;
+        return salePrice - salePrice * (discounts.lowerKey(quantity) / 100);
     }
 
     @Override
@@ -69,5 +92,46 @@ public class Bundle implements SaleLineItem {
     @Override
     public String getBarcode() {
         return barcode;
+    }
+
+
+    //discounts
+    @Override
+    public double getDiscount(int quantity) {
+        return 0;
+    }
+
+    public void setDiscount(int amount, double percentage) {
+        discounts.put(amount, percentage);
+    }
+
+    public boolean removeDiscount(int amount) {
+        if (discounts.containsKey(amount)) {
+            discounts.remove(amount);
+            return true;
+        }
+        return false;
+    }
+
+    public TreeMap<Integer, Double> getDiscounts() {
+        return discounts;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("Name:        " + name +
+                "\nBarcode:     " + barcode +
+                "\nDescription: " + description +
+                "\nSalePrice:   " + salePrice);
+        for (Map.Entry<Integer, Double> entry : discounts.entrySet()) {
+            s.append((discounts.firstKey().equals(entry.getKey())) ? "\nDiscounts:   " : "\n             ");
+            s.append(entry.getKey()).append("pcs ... ").append(entry.getValue()).append("%");
+        }
+
+        return s.toString();
     }
 }

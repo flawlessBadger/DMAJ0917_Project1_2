@@ -23,14 +23,14 @@ public abstract class Menu {
     }
 
     public void menuPrompt() {
-        System.out.print("> ");
+        System.out.println("> ");
         int input = -1;
         try {
             input = Integer.valueOf(sc.nextLine());
         } catch (Exception e) {
         }
         if (input <= 0 || input > commandWords.size() + 3) {
-            System.err.println("Invalid input"+String.valueOf(input));
+            System.err.println("Invalid input" + String.valueOf(input));
             menuPrompt();
         } else if (commandWords.size() + 1 == input) {
             System.out.println("\fGoodbye");
@@ -69,8 +69,35 @@ public abstract class Menu {
         System.out.println("###################");
     }
 
-    protected void addMenuItem(String s) {
+    public String inputString(String title) {
+        System.out.print(title);
+        String input = "";
+        while (input.length() <= 0) {
+            input = sc.nextLine();
+        }
 
+        return input;
     }
 
+    public double inputDouble(String title) {
+        while (true) {
+            System.out.print(title);
+            try {
+                return Double.valueOf(sc.nextLine());
+            } catch (Exception e) {
+                System.err.println("Not a number");
+            }
+        }
+    }
+
+    public int inputInteger(String title) {
+        while (true) {
+            System.out.print(title);
+            try {
+                return Integer.valueOf(sc.nextLine());
+            } catch (Exception e) {
+                System.err.println("Not an Integer");
+            }
+        }
+    }
 }

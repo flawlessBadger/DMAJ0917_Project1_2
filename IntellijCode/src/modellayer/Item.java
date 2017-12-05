@@ -1,59 +1,48 @@
 package modellayer;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Item implements SaleLineItem {
     private String name;
+
+
+    private String description;
     private double salePrice;
     private TreeMap<Integer, Double> discounts; //[0]quantity,[1]discountPercentage
     private double costPrice;
 
     private HashMap<Location, Integer> stock;
-    private HashMap<Location, Integer> min_stock;
+    private HashMap<Location, Integer> minStock;
+    private HashMap<Location, Integer> maxStock;
     private String barcode;
 
     public Item(String barcode) {
         this.barcode = barcode;
-        discounts = new TreeMap<>();
+        this.discounts = new TreeMap<>();
+        this.stock = new HashMap<>();
+        this.minStock = new HashMap<>();
+        this.maxStock = new HashMap<>();
     }
 
-    public Item(String barcode, String name, double costPrice, double salePrice) {
+    public Item(String barcode, String name, String description, double costPrice, double salePrice) {
         this.barcode = barcode;
         this.name = name;
-        discounts = new TreeMap<>();
+        this.description = description;
+        this.discounts = new TreeMap<>();
+        this.stock = new HashMap<>();
+        this.minStock = new HashMap<>();
+        this.maxStock = new HashMap<>();
         this.costPrice = costPrice;
         this.salePrice = salePrice;
     }
 
-    public void addDiscount(int quantity, double percantage) {
-        discounts.put(quantity, percantage);
-    }
 
-    public void removeDiscount(int quantity) {
-        stock.remove(quantity);
-    }
-
+    //stock management
     public void addStock(int quantity, Location location) {
-        stock.put(location, stock.get(location) + quantity);
-    }
-
-    @Override
-    public double getPrice(int quantity) {
-        if (discounts.lowerKey(quantity) == null)
-            return salePrice;
-        return salePrice - salePrice * discounts.lowerKey(quantity);
-    }
-
-    public double getDiscount(int quantity) {
-        if (discounts.lowerKey(quantity) == null)
-            return 0;
-        return discounts.lowerKey(quantity);
-    }
-
-    public TreeMap<Integer, Double> getDiscounts() {
-        return discounts;
+        stock.put(location, (stock.containsKey(location)) ? stock.get(location) + quantity : quantity);
     }
 
     @Override
@@ -71,8 +60,99 @@ public class Item implements SaleLineItem {
         return false;
     }
 
+
+    //discounts management
+    public void setDiscount(int amount, double percentage) {
+        discounts.put(amount, percentage);
+    }
+
+    @Override
+    public double getDiscount(int quantity) {
+        if (discounts.lowerKey(quantity) == null)
+            return 0;
+        return discounts.lowerKey(quantity);
+    }
+
+    public boolean removeDiscount(int amount) {
+        if (discounts.containsKey(amount)) {
+            discounts.remove(amount);
+            return true;
+        }
+        return false;
+    }
+
+
+    //getters
     @Override
     public String getBarcode() {
         return barcode;
+    }
+
+    @Override
+    public double getPrice(int quantity) {
+//        if (discounts.floorKey(quantity) == null)
+//            return salePrice;
+        return salePrice - salePrice * (discounts.floorKey(quantity) / 100);
+    }
+
+
+    //setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCostPrice(double costPrice) {
+        this.costPrice = costPrice;
+    }
+
+    public void setSalePrice(double salePrice) {
+        this.salePrice = salePrice;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setMinStock(Location location, int amount) {
+        this.minStock.put(location, amount);
+    }
+
+    public void setStock(Location location, int amount) {
+        this.stock.put(location, amount);
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("Name:        " + name +
+                "\nBarcode:     " + barcode +
+                "\nDescription: " + description +
+                "\nSalePrice:   " + salePrice);
+        for (Map.Entry<Integer, Double> entry : discounts.entrySet()) {
+            s.append((discounts.firstKey().equals(entry.getKey())) ? "\nDiscounts:   " : "\n             ");
+            s.append(entry.getKey()).append("pcs ... ").append(entry.getValue()).append("%");
+        }
+
+        Iterator iterator = stock.entrySet().iterator();
+        if (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            s.append("\nStock:       ").append(entry.getKey()).append(" ... ").append(entry.getValue()).append("pcs");
+            while (iterator.hasNext()) {
+                entry = (Map.Entry) iterator.next();
+                s.append("\n             ").append(entry.getKey()).append(" ... ").append(entry.getValue()).append("pcs");
+            }
+        }
+
+        iterator = minStock.entrySet().iterator();
+        if (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            s.append("\nMin. stock:  ").append(entry.getKey()).append(" ... ").append(entry.getValue()).append("pcs");
+            while (iterator.hasNext()) {
+                entry = (Map.Entry) iterator.next();
+                s.append("\n             ").append(entry.getKey()).append(" ... ").append(entry.getValue()).append("pcs");
+            }
+        }
+
+        return s.toString();
     }
 }

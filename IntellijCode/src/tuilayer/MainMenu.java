@@ -1,7 +1,5 @@
 package tuilayer;
 
-import java.util.*;
-
 /**
  * Write a description of class MainMenuUI here.
  *
@@ -19,16 +17,8 @@ public class MainMenu extends Menu {
 
     public MainMenu() {
         super("Main Menu", null);
-        commandWords.add("Manage employees");
-        commandWords.add("Manage items");
-        commandWords.add("Manage bundle");
-        commandWords.add("Manage Sale");
-
-        /*
-        HashMap<String,String> hm = new HashMap<>();
-        hm.put("bleh","blah");
-        hm.put("bleh","blah");
-        */
+        commandWords.add("Manage Inventory");
+        commandWords.add("Create Sale");
 
         printMenu();
         menuPrompt();
@@ -38,18 +28,13 @@ public class MainMenu extends Menu {
     public void resolver(int i) {
         switch(i){
             case 0:
-                new ManageEmployee(this);
+                new ManageInventory(this);
                 break;
             case 1:
-                new ManageItem(this);
                 break;
-            case 2:
-                new ManageBundle(this);
-                break;
-            case 3:
-                new ManageSale(this);
-                break;
+
         }
+
     }
 
 }
