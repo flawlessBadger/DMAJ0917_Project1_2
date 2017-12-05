@@ -32,9 +32,7 @@ public class MainMenu extends Menu {
                 break;
             case 1:
                 break;
-
         }
-
     }
 
 }

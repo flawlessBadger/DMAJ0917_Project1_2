@@ -69,7 +69,13 @@ public abstract class Menu {
         System.out.println("###################");
     }
 
-    public String inputString(String title) {
+    void resetMenu(String title){
+        printMenu();
+        System.out.print(title+"\n");
+        menuPrompt();
+    }
+
+    String inputString(String title) {
         System.out.print(title);
         String input = "";
         while (input.length() <= 0) {
@@ -79,7 +85,7 @@ public abstract class Menu {
         return input;
     }
 
-    public double inputDouble(String title) {
+    double inputDouble(String title) {
         while (true) {
             System.out.print(title);
             try {
@@ -90,7 +96,7 @@ public abstract class Menu {
         }
     }
 
-    public int inputInteger(String title) {
+    int inputInteger(String title) {
         while (true) {
             System.out.print(title);
             try {
