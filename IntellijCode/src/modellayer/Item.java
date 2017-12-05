@@ -22,7 +22,7 @@ public class Item implements SaleLineItem {
     public Item(String barcode, String name, double costPrice, double salePrice) {
         this.barcode = barcode;
         this.name = name;
-        discounts = new TreeMap<>();
+        this.discounts = new TreeMap<>();
         this.costPrice = costPrice;
         this.salePrice = salePrice;
     }
