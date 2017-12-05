@@ -74,7 +74,7 @@ public class ManageInventory extends Menu {
         }else{
             if(invCtrl.isValidItem(barcode)){
                 System.out.print("There is a item with this barcode!\n");
-            }else if(invCtrl.isValidBundle(barcode)){
+            }else{
                 System.out.print("There is a bundle with this barcode!\n");
             }
         }
