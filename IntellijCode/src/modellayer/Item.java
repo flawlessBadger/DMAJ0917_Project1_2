@@ -12,6 +12,7 @@ public class Item implements SaleLineItem {
 
     private HashMap<Location, Integer> stock;
     private HashMap<Location, Integer> min_stock;
+    private HashMap<Location, Integer> max_stock;
     private String barcode;
 
     public Item(String barcode) {
@@ -27,13 +28,7 @@ public class Item implements SaleLineItem {
         this.salePrice = salePrice;
     }
 
-    public void addDiscount(int quantity, double percantage) {
-        discounts.put(quantity, percantage);
-    }
 
-    public void removeDiscount(int quantity) {
-        stock.remove(quantity);
-    }
 
     public void addStock(int quantity, Location location) {
         stock.put(location, stock.get(location) + quantity);
@@ -46,15 +41,26 @@ public class Item implements SaleLineItem {
         return salePrice - salePrice * discounts.lowerKey(quantity);
     }
 
+    @Override
     public double getDiscount(int quantity) {
         if (discounts.lowerKey(quantity) == null)
             return 0;
         return discounts.lowerKey(quantity);
     }
 
+
+    //discounts
     public TreeMap<Integer, Double> getDiscounts() {
         return discounts;
     }
+    public void addDiscount(int quantity, double percantage) {
+        discounts.put(quantity, percantage);
+    }
+
+    public void removeDiscount(int quantity) {
+        discounts.remove(quantity);
+    }
+
 
     @Override
     public int checkStock(Location location) {

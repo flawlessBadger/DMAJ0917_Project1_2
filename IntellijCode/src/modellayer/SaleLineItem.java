@@ -9,4 +9,6 @@ public interface SaleLineItem {
     boolean removeStock(int amount, Location location);
 
     String getBarcode();
+
+    double getDiscount(int quantity);
 }
