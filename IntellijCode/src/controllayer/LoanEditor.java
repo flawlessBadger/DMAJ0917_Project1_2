@@ -6,7 +6,7 @@ import modellayer.containers.LoanCont;
 
 public class LoanEditor {
 
-    Loan loan;
+    private Loan loan;
 
     public LoanEditor(String barcode) {
         this.loan = LoanCont.getInstance().get(barcode);
@@ -34,4 +34,7 @@ public class LoanEditor {
         loan.setPeriod(period);
     }
 
+    public String toString() {
+        return loan.toString();
+    }
 }
