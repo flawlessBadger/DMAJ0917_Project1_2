@@ -1,16 +1,15 @@
 package controllayer;
 
-import modellayer.Bundle;
-import modellayer.Item;
-import modellayer.Location;
-import modellayer.SaleLineItem;
+import modellayer.*;
 import modellayer.containers.BundleCont;
 import modellayer.containers.ItemCont;
+import modellayer.containers.LoanCont;
 
 public class InventoryController {
 
     private ItemCont<String, Item> itemCont = ItemCont.getInstance();
     private BundleCont<String, Bundle> bundleCont = BundleCont.getInstance();
+    private LoanCont<String, Loan> loanCont = LoanCont.getInstance();
 
     public void createItem(String barcode, String name, String description, double salePrice, double costPrice) {
         itemCont.put(barcode, new Item(barcode, name, description, costPrice, salePrice));
@@ -18,6 +17,10 @@ public class InventoryController {
 
     public void createBundle(String barcode, String name, String description, double salePrice) {
         bundleCont.put(barcode, new Bundle(barcode, name, description, salePrice));
+    }
+
+    public void createLoan(String barcode, String name, String description, double salePrice, double discount, Location location, int period) {
+        loanCont.put(barcode, new Loan(barcode, name, description, salePrice, discount, location, period));
     }
 
     public void addToBundle(String bundleBarcode, String barcode, int amount) {
