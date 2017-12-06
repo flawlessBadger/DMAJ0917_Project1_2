@@ -13,7 +13,7 @@ public class EditItem extends Menu {
         commandWords.add("Set sale price");
         commandWords.add("Set cost price");
         commandWords.add("Set minimum stock");
-        commandWords.add("Restock");
+        commandWords.add("Set stock");
         commandWords.add("Set discount");
         commandWords.add("Remove discount");
 
@@ -45,8 +45,8 @@ public class EditItem extends Menu {
                 resetMenu("Minimum stock has been edited!");
                 break;
             case 5:
-                item.setStock(inputInteger("Restock: "));
-                resetMenu("Restock was done!");
+                item.setStock(inputInteger("Set stock: "));
+                resetMenu("Stock has been edited!");
                 break;
             case 6:
                 item.setDiscount(inputInteger("Quantity: "),inputDouble("Discount in percent: "));

@@ -1,5 +1,6 @@
 package tuilayer;
 
+
 /**
  * Write a description of class MainMenuUI here.
  *
@@ -26,13 +27,15 @@ public class MainMenu extends Menu {
 
     @Override
     public void resolver(int i) {
-        switch(i){
+        switch (i) {
             case 0:
                 new ManageInventory(this);
                 break;
             case 1:
                 break;
+
         }
+
     }
 
 }

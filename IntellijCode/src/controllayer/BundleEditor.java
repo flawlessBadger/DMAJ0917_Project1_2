@@ -24,7 +24,6 @@ public class BundleEditor {
         bundle.setSalePrice(salePrice);
     }
 
-
     public void setDiscount(int amount, double discount) {
         bundle.setDiscount(amount, discount);
     }

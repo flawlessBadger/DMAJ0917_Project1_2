@@ -131,7 +131,6 @@ public class Bundle implements SaleLineItem {
             s.append((discounts.firstKey().equals(entry.getKey())) ? "\nDiscounts:   " : "\n             ");
             s.append(entry.getKey()).append("pcs ... ").append(entry.getValue()).append("%");
         }
-
         return s.toString();
     }
 }
