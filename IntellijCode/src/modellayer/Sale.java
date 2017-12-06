@@ -4,15 +4,17 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Sale {
-    int id;
-    double discount;
+
+    private static int nextId = 0;
+    private int id;
+    private double discount;
     private ArrayList<SaleLineItem> saleLineItems;
     private Payment paymentOption;
     private Date timestamp;
 
-    public Sale(int id) {
-        timestamp = new Date();
-        this.id = id;
+    public Sale() {
+        this.id = ++nextId;
+        this.discount = 1;
+        this.timestamp = new Date();
     }
-
 }
