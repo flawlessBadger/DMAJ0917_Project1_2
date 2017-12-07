@@ -6,7 +6,7 @@ import modellayer.containers.BundleCont;
 
 public class BundleEditor {
 
-    Bundle bundle;
+    private Bundle bundle;
 
     public BundleEditor(String barcode) {
         this.bundle = BundleCont.getInstance().get(barcode);
@@ -30,5 +30,9 @@ public class BundleEditor {
 
     public boolean removeDiscount(int amount) {
         return bundle.removeDiscount(amount);
+    }
+
+    public String toString(){
+        return bundle.toString();
     }
 }

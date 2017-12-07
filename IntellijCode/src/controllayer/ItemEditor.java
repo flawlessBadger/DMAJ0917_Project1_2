@@ -46,4 +46,8 @@ public class ItemEditor {
         return item.removeDiscount(amount);
     }
 
+    public String toString(){
+        return item.toString();
+    }
+
 }
