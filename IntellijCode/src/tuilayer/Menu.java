@@ -69,9 +69,9 @@ public abstract class Menu {
         System.out.println("###################");
     }
 
-    void resetMenu(String title){
+    void resetMenu(String message){
         printMenu();
-        System.out.print(title+"\n");
+        System.out.print(message+"\n");
         menuPrompt();
     }
 
