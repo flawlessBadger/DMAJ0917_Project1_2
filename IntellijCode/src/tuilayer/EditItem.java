@@ -1,4 +1,5 @@
 package tuilayer;
+
 import controllayer.ItemEditor;
 
 public class EditItem extends Menu {
@@ -16,6 +17,7 @@ public class EditItem extends Menu {
         commandWords.add("Set stock");
         commandWords.add("Set discount");
         commandWords.add("Remove discount");
+        commandWords.add("Show details");
 
         printMenu();
         menuPrompt();
@@ -23,42 +25,46 @@ public class EditItem extends Menu {
 
     @Override
     public void resolver(int i) {
-        switch(i){
+        switch (i) {
             case 0:
                 item.setName(inputString("Name: "));
-                resetMenu("Name has been edited!");
+                resetMenu("Name has been set!");
                 break;
             case 1:
                 item.setDescription(inputString("Description: "));
-                resetMenu("Description has been edited!");
+                resetMenu("Description has been set!");
                 break;
             case 2:
                 item.setSalePrice(inputDouble("Sale price: "));
-                resetMenu("Sale price has been edited!");
+                resetMenu("Sale price has been set!");
                 break;
             case 3:
                 item.setCostPrice(inputDouble("Cost price: "));
-                resetMenu("Cost price has been edited!");
+                resetMenu("Cost price has been set!");
                 break;
             case 4:
                 item.setMinStock(inputInteger("Minimum stock: "));
-                resetMenu("Minimum stock has been edited!");
+                resetMenu("Minimum stock has been set!");
                 break;
             case 5:
-                item.setStock(inputInteger("Set stock: "));
-                resetMenu("Stock has been edited!");
+                item.setStock(inputInteger("Amount: "));
+                resetMenu("Stock has been set!");
                 break;
             case 6:
-                item.setDiscount(inputInteger("Quantity: "),inputDouble("Discount in percent: "));
-                resetMenu("Discount has been edited!");
+                item.setDiscount(inputInteger("Quantity: "), inputDouble("Discount in percent: "));
+                resetMenu("Discount has been set!");
                 break;
             case 7:
-                if (item.removeDiscount(inputInteger("Quantity: "))){
+                if (item.removeDiscount(inputInteger("Quantity: "))) {
                     resetMenu("Discount has been deleted!");
-                }else{
+                } else {
                     resetMenu("Discount was not found!");
                 }
                 break;
+            case 8:
+                resetMenu(item.toString());
+                break;
+
         }
     }
 }

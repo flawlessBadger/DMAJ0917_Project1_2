@@ -8,13 +8,13 @@ import java.util.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public abstract class Menu {
-    protected Scanner sc;
+abstract class Menu {
+    private Scanner sc;
     private String name;
     protected ArrayList<String> commandWords;
     private Menu parent;
 
-    public Menu(String name, Menu parent) {
+    Menu(String name, Menu parent) {
 
         this.name = name;
         this.parent = parent;
@@ -22,7 +22,7 @@ public abstract class Menu {
         commandWords = new ArrayList();
     }
 
-    public void menuPrompt() {
+    void menuPrompt() {
         System.out.println("> ");
         int input = -1;
         try {
@@ -30,7 +30,7 @@ public abstract class Menu {
         } catch (Exception e) {
         }
         if (input <= 0 || input > commandWords.size() + 3) {
-            System.err.println("Invalid input" + String.valueOf(input));
+            printErr("Invalid input");
             menuPrompt();
         } else if (commandWords.size() + 1 == input) {
             System.out.println("\fGoodbye");
@@ -53,7 +53,7 @@ public abstract class Menu {
 
     }
 
-    public abstract void resolver(int i);
+    abstract void resolver(int i);
 
     void printMenu() {
         System.out.println("\n\n\n\n\n\n\n\n\n###################");
@@ -69,9 +69,9 @@ public abstract class Menu {
         System.out.println("###################");
     }
 
-    void resetMenu(String message){
+    void resetMenu(String message) {
         printMenu();
-        System.out.print(message+"\n");
+        System.out.println(message);
         menuPrompt();
     }
 
@@ -91,7 +91,7 @@ public abstract class Menu {
             try {
                 return Double.valueOf(sc.nextLine());
             } catch (Exception e) {
-                System.err.println("Not a number");
+                printErr("Not a number");
             }
         }
     }
@@ -102,8 +102,17 @@ public abstract class Menu {
             try {
                 return Integer.valueOf(sc.nextLine());
             } catch (Exception e) {
-                System.err.println("Not an Integer");
+                printErr("Not an Integer");
             }
+        }
+    }
+
+
+    void printErr(String message) {
+        System.err.println(message);
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException ignored) {
         }
     }
 }

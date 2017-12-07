@@ -5,14 +5,14 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 public class Employee {
-    private String accountName;
+    //    private String accountName;
     private String name;
     private String address;
     private byte[] hashPassword;
     private int accessLevel;
 
-    public Employee(String accountName, String name, String address, int accessLevel, String password) {
-        this.accountName = accountName;
+    public Employee(String name, String address, int accessLevel, String password) {
+//        this.accountName = accountName;
         this.name = name;
         this.address = address;
         this.accessLevel = accessLevel;
@@ -56,10 +56,21 @@ public class Employee {
         this.accessLevel = accessLevel;
     }
 
+    public void setPassword(String password) {
+        try {
+            hashPassword = MessageDigest.getInstance("MD5").digest(password.getBytes());
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public String toString() {
-        return "Account name: " + accountName +
-                "\nName:         " + name +
-                "\nAccess level: " + accessLevel;
+        return
+                "Name:         " + name +
+                        "\nAddress:      " + address +
+                        "\nAccess level: " + accessLevel;
     }
+
+
 }

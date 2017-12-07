@@ -2,14 +2,6 @@ package tuilayer;
 
 
 import controllayer.Session;
-import modellayer.Employee;
-import modellayer.Item;
-import modellayer.containers.EmployeeCont;
-import modellayer.containers.ItemCont;
-
-import java.util.Iterator;
-import java.util.Map;
-
 /**
  * Write a description of class MainMenuUI here.
  *
@@ -52,7 +44,7 @@ public class MainMenu extends Menu {
                     break;
             } catch (Exception ignored) {
             }
-            System.err.println("Login failed");
+            printErr("Login failed");
         }
 
     }

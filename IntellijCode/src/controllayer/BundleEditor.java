@@ -1,7 +1,6 @@
 package controllayer;
 
 import modellayer.Bundle;
-import modellayer.Location;
 import modellayer.containers.BundleCont;
 
 public class BundleEditor {
@@ -35,4 +34,6 @@ public class BundleEditor {
     public String toString(){
         return bundle.toString();
     }
+
+    //TODO:set location
 }
