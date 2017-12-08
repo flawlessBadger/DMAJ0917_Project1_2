@@ -1,7 +1,6 @@
 package modellayer.containers;
 
 import modellayer.Employee;
-import modellayer.Item;
 
 import java.util.HashMap;
 

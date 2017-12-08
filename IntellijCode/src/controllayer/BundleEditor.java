@@ -34,6 +34,4 @@ public class BundleEditor {
     public String toString(){
         return bundle.toString();
     }
-
-    //TODO:set location
 }

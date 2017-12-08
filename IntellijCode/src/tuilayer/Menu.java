@@ -1,6 +1,7 @@
 package tuilayer;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Write a description of class tuilayer.Menu here.

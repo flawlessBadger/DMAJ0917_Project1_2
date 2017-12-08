@@ -1,6 +1,9 @@
 package controllayer;
 
-import modellayer.*;
+import modellayer.Bundle;
+import modellayer.Item;
+import modellayer.Loan;
+import modellayer.Location;
 import modellayer.containers.BundleCont;
 import modellayer.containers.ItemCont;
 import modellayer.containers.LoanCont;

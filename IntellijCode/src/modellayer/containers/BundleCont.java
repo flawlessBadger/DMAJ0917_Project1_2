@@ -1,7 +1,6 @@
 package modellayer.containers;
 
 import modellayer.Bundle;
-import modellayer.Item;
 
 import java.util.HashMap;
 

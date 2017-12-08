@@ -4,8 +4,6 @@ import modellayer.Employee;
 import modellayer.Location;
 import modellayer.containers.EmployeeCont;
 
-import java.security.NoSuchAlgorithmException;
-
 public class Session {
     private static Session ourInstance = new Session();
     private Location location;
