@@ -1,6 +1,5 @@
 package tuilayer;
 
-
 import controllayer.Session;
 /**
  * Write a description of class MainMenuUI here.
@@ -13,13 +12,13 @@ public class MainMenu extends Menu {
      * Constructor for objects of class MainMenuUI
      */
 
-
     public MainMenu() {
         super("Main Menu", null);
-        commandWords.add("Manage Inventory");
-        commandWords.add("Create Sale");
-
         login();
+
+        commandWords.add("Manage Inventory");
+        commandWords.add("Manage Employee");
+        commandWords.add("Create Sale");
 
         printMenu();
         menuPrompt();
@@ -32,6 +31,7 @@ public class MainMenu extends Menu {
                 new ManageInventory(this);
                 break;
             case 1:
+                new ManageEmployee(this);
                 break;
         }
 
@@ -41,6 +41,7 @@ public class MainMenu extends Menu {
         while (true) {
             try {
                 if (Session.getInstance().login(inputString("Login: "), inputString("Password: "), inputString("Location: ")))
+                    setSession(Session.getInstance());
                     break;
             } catch (Exception ignored) {
             }

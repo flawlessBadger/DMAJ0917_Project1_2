@@ -1,5 +1,7 @@
 package tuilayer;
 
+import controllayer.Session;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,6 +16,7 @@ abstract class Menu {
     private String name;
     protected ArrayList<String> commandWords;
     private Menu parent;
+    protected Session session;
 
     Menu(String name, Menu parent) {
 
@@ -55,6 +58,10 @@ abstract class Menu {
     }
 
     abstract void resolver(int i);
+
+    void setSession(Session newSession){
+        session = newSession;
+    }
 
     void printMenu() {
         System.out.println("\n\n\n\n\n\n\n\n\n###################");

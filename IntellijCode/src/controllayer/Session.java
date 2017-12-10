@@ -33,7 +33,7 @@ public class Session {
     }
 
     public boolean isAllowed(int necessaryAccessLevel) {
-        return employee.getAccessLevel() <= necessaryAccessLevel;
+        return employee.getAccessLevel() >= necessaryAccessLevel;
     }
 
 }
