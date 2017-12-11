@@ -10,7 +10,7 @@ public class ManageEmployee extends Menu{
 
         commandWords.add("Create Employee");
         commandWords.add("Edit Employee");
-        commandWords.add("List all Employees");
+        commandWords.add("List All Employees");
 
         printMenu();
         menuPrompt();

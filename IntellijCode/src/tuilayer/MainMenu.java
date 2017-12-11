@@ -18,6 +18,7 @@ public class MainMenu extends Menu {
 
         commandWords.add("Manage Inventory");
         commandWords.add("Manage Employee");
+        commandWords.add("Manage Customer");
         commandWords.add("Create Sale");
 
         printMenu();
@@ -32,6 +33,9 @@ public class MainMenu extends Menu {
                 break;
             case 1:
                 new ManageEmployee(this);
+                break;
+            case 2:
+                new ManageCustomer(this);
                 break;
         }
 
