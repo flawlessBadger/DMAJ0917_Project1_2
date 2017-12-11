@@ -3,9 +3,9 @@ package tuilayer;
 import controllayer.EmployeeEditor;
 
 public class EditEmployee extends Menu {
-    EmployeeEditor employee;
+    private EmployeeEditor employee;
 
-    public EditEmployee(Menu parent, String userName){
+    EditEmployee(Menu parent, String userName){
         super("Edit Employee",parent);
         employee = new EmployeeEditor(userName);
 

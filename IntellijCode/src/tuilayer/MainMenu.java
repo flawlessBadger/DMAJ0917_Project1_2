@@ -14,7 +14,7 @@ public class MainMenu extends Menu {
 
     public MainMenu() {
         super("Main Menu", null);
-        login();
+        //login();
 
         commandWords.add("Manage Inventory");
         commandWords.add("Manage Employee");

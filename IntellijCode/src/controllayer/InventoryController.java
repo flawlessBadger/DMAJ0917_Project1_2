@@ -22,8 +22,8 @@ public class InventoryController {
         bundleCont.put(barcode, new Bundle(barcode, name, description, salePrice));
     }
 
-    public void createLoan(String barcode, String name, String description, double salePrice, double discount, Location location, int period) {
-        loanCont.put(barcode, new Loan(barcode, name, description, salePrice, discount, location, period));
+    public void createLoan(String barcode, String name, String description, double salePrice, double discount, String location, int period) {
+        loanCont.put(barcode, new Loan(barcode, name, description, salePrice, discount, Location.valueOf(location), period));
     }
 
     public void addToBundle(String bundleBarcode, String barcode, int amount) {
