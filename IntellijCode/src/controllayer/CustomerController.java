@@ -13,8 +13,8 @@ public class CustomerController {
         StringBuilder s = new StringBuilder();
         for (Map.Entry<Integer, Customer> entry : customerCont.entrySet()) {
             s.append("\n###################################");
-            s.append("\nID:        " + entry.getKey());
-            s.append("\n" + entry.getValue().toString());
+            s.append("\nID:        ").append(entry.getKey());
+            s.append("\n").append(entry.getValue().toString());
         }
         s.append("\n###################################");
         return s.toString();

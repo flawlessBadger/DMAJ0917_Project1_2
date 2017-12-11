@@ -36,7 +36,7 @@ public class InventoryController {
     }
 
     public boolean remove(String barcode) {
-        return (itemCont.remove(barcode) != null || bundleCont.remove(barcode) != null);
+        return (itemCont.remove(barcode) != null || bundleCont.remove(barcode) != null || loanCont.remove(barcode) != null);
     }
 
     public boolean isValidItem(String barcode) {
@@ -47,8 +47,12 @@ public class InventoryController {
         return bundleCont.containsKey(barcode);
     }
 
+    public boolean isValidLoan(String barcode) {
+        return loanCont.containsKey(barcode);
+    }
+
     public boolean isBarcodeAvailable(String barcode) {
-        return !(itemCont.containsKey(barcode) || bundleCont.containsKey(barcode));
+        return !(itemCont.containsKey(barcode) || bundleCont.containsKey(barcode) || loanCont.containsKey(barcode));
     }
 
 
