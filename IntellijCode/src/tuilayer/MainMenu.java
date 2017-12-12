@@ -1,6 +1,6 @@
 package tuilayer;
 
-
+import controllayer.Session;
 /**
  * Write a description of class MainMenuUI here.
  *
@@ -12,13 +12,13 @@ public class MainMenu extends Menu {
      * Constructor for objects of class MainMenuUI
      */
 
-    public static void main(String[] args) {
-        new MainMenu();
-    }
-
     public MainMenu() {
         super("Main Menu", null);
+        //login();
+
         commandWords.add("Manage Inventory");
+        commandWords.add("Manage Employee");
+        commandWords.add("Manage Customer");
         commandWords.add("Create Sale");
 
         printMenu();
@@ -32,8 +32,24 @@ public class MainMenu extends Menu {
                 new ManageInventory(this);
                 break;
             case 1:
+                new ManageEmployee(this);
                 break;
+            case 2:
+                new ManageCustomer(this);
+                break;
+        }
 
+    }
+
+    private void login() {
+        while (true) {
+            try {
+                if (Session.getInstance().login(inputString("Login: "), inputString("Password: "), inputString("Location: ")))
+                    setSession(Session.getInstance());
+                    break;
+            } catch (Exception ignored) {
+            }
+            printErr("Login failed");
         }
 
     }

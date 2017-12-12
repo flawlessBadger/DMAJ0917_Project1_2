@@ -125,7 +125,6 @@ public class Item implements SaleLineItem {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder("Name:        " + name +
-                "\nBarcode:     " + barcode +
                 "\nDescription: " + description +
                 "\nSalePrice:   " + salePrice);
         for (Map.Entry<Integer, Double> entry : discounts.entrySet()) {

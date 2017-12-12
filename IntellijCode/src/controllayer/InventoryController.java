@@ -1,6 +1,9 @@
 package controllayer;
 
-import modellayer.*;
+import modellayer.Bundle;
+import modellayer.Item;
+import modellayer.Loan;
+import modellayer.Location;
 import modellayer.containers.BundleCont;
 import modellayer.containers.ItemCont;
 import modellayer.containers.LoanCont;
@@ -19,8 +22,8 @@ public class InventoryController {
         bundleCont.put(barcode, new Bundle(barcode, name, description, salePrice));
     }
 
-    public void createLoan(String barcode, String name, String description, double salePrice, double discount, Location location, int period) {
-        loanCont.put(barcode, new Loan(barcode, name, description, salePrice, discount, location, period));
+    public void createLoan(String barcode, String name, String description, double salePrice, double discount, String location, int period) {
+        loanCont.put(barcode, new Loan(barcode, name, description, salePrice, discount, Location.valueOf(location), period));
     }
 
     public void addToBundle(String bundleBarcode, String barcode, int amount) {
@@ -33,7 +36,7 @@ public class InventoryController {
     }
 
     public boolean remove(String barcode) {
-        return (itemCont.remove(barcode) != null || bundleCont.remove(barcode) != null);
+        return (itemCont.remove(barcode) != null || bundleCont.remove(barcode) != null || loanCont.remove(barcode) != null);
     }
 
     public boolean isValidItem(String barcode) {
@@ -44,8 +47,12 @@ public class InventoryController {
         return bundleCont.containsKey(barcode);
     }
 
+    public boolean isValidLoan(String barcode) {
+        return loanCont.containsKey(barcode);
+    }
+
     public boolean isBarcodeAvailable(String barcode) {
-        return !(itemCont.containsKey(barcode) || bundleCont.containsKey(barcode));
+        return !(itemCont.containsKey(barcode) || bundleCont.containsKey(barcode) || loanCont.containsKey(barcode));
     }
 
 

@@ -1,7 +1,6 @@
 package controllayer;
 
 import modellayer.Bundle;
-import modellayer.Location;
 import modellayer.containers.BundleCont;
 
 public class BundleEditor {

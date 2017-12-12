@@ -6,9 +6,11 @@ import modellayer.containers.ItemCont;
 
 public class ItemEditor {
 
-    Item item;
+    private Item item;
+    private String barcode;
 
     public ItemEditor(String barcode) {
+        this.barcode = barcode;
         this.item = ItemCont.getInstance().get(barcode);
     }
 
@@ -46,8 +48,8 @@ public class ItemEditor {
         return item.removeDiscount(amount);
     }
 
-    public String toString(){
-        return item.toString();
+    public String toString() {
+        return "Barcode:     " + barcode + "\n" + item.toString();
     }
 
 }

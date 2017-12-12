@@ -9,6 +9,7 @@ public class ManageInventory extends Menu {
 
         commandWords.add("Create Item");
         commandWords.add("Create Bundle");
+        commandWords.add("Create Loanable Item");
         commandWords.add("Edit");
         commandWords.add("Restock");
         commandWords.add("Remove");
@@ -27,12 +28,15 @@ public class ManageInventory extends Menu {
                 createBundle();
                 break;
             case 2:
-                edit();
+                createLoan();
                 break;
             case 3:
-                restock();
+                edit();
                 break;
             case 4:
+                restock();
+                break;
+            case 5:
                 remove();
                 break;
         }
@@ -47,11 +51,7 @@ public class ManageInventory extends Menu {
 
             resetMenu("Item created successfully");
         }else{
-            if(invCtrl.isValidItem(barcode)){
-                resetMenu("Barcode is already used by an item!");
-            }else{
-                resetMenu("Barcode is already used by an bundle!");
-            }
+            checkBarcode(barcode);
         }
     }
 
@@ -78,13 +78,33 @@ public class ManageInventory extends Menu {
 
             resetMenu("Bundle created successfully");
         }else{
-            if(invCtrl.isValidItem(barcode)){
-                resetMenu("Barcode is already used by an item!\n");
-            }else{
-                resetMenu("Barcode is already used by an bundle!\n");
-            }
+            checkBarcode(barcode);
         }
     }
+
+    private void createLoan(){
+        String barcode = inputString("Barcode: ");
+
+        if(invCtrl.isBarcodeAvailable(barcode)){
+
+            invCtrl.createLoan(barcode,inputString("Name: "),inputString("Description: "),inputDouble("Sale Price: "), inputDouble("Discount in percent"),inputString("Location: "),inputInteger("Period: "));
+
+            resetMenu("Loanable Item created successfully");
+        }else{
+            checkBarcode(barcode);
+        }
+    }
+
+    private void checkBarcode(String barcode){
+        if(invCtrl.isValidItem(barcode)){
+            resetMenu("Barcode is already used by an item!");
+        }else if(invCtrl.isValidBundle(barcode)){
+            resetMenu("Barcode is already used by an bundle!");
+        }else{
+            resetMenu("Barcode is already used by an loanable item!");
+        }
+    }
+
 
     private void edit(){
         String barcode = inputString("Barcode: ");
@@ -94,8 +114,10 @@ public class ManageInventory extends Menu {
         }else{
             if (invCtrl.isValidBundle(barcode)){
                 new EditBundle(this,barcode);
-            }else{
+            }else if(invCtrl.isValidItem(barcode)){
                 new EditItem(this,barcode);
+            }else{
+                new EditLoan(this, barcode);
             }
         }
     }
@@ -109,8 +131,10 @@ public class ManageInventory extends Menu {
             if (invCtrl.isValidItem(barcode)){
                 invCtrl.addStock(barcode,inputInteger("Quantity: "));
                 resetMenu("Quantity was added!");
-            }else{
+            }else if(invCtrl.isValidBundle(barcode)){
                 resetMenu("Barcode is already used by an bundle!");
+            }else{
+                resetMenu("Barcode is already used by an loanable item!");
             }
         }
     }
@@ -124,8 +148,10 @@ public class ManageInventory extends Menu {
             if(invCtrl.remove(barcode)){
                 if(invCtrl.isValidItem(barcode)){
                     resetMenu("Item with barcode "+barcode+" was deleted!");
-                }else{
+                }else if(invCtrl.isValidBundle(barcode)){
                     resetMenu("Bundle with barcode "+barcode+" was deleted!");
+                }else{
+                    resetMenu("Loanable item with barcode "+barcode+" was deleted!");
                 }
             }else{
                 resetMenu("Something went wrong!");

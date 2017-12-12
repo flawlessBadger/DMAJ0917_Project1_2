@@ -1,7 +1,6 @@
 package controllayer;
 
 import modellayer.Loan;
-import modellayer.Location;
 import modellayer.containers.LoanCont;
 
 public class LoanEditor {
