@@ -47,10 +47,10 @@ public class Bundle implements SaleLineItem {
 
     @Override
     public double getPrice(int quantity) {
-        if (discounts.lowerKey(quantity) == null)
+        if (discounts.floorKey(quantity) == null)
             return salePrice;
 
-        return salePrice * (1 - (discounts.lowerKey(quantity) / 100));
+        return salePrice * (1 - (discounts.floorKey(quantity) / 100));
     }
 
     @Override

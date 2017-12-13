@@ -5,8 +5,8 @@ import modellayer.containers.EmployeeCont;
 
 public class EmployeeEditor {
 
-    Employee employee;
-    String login;
+    private Employee employee;
+    private String login;
 
     public EmployeeEditor(String login) {
         this.login = login;

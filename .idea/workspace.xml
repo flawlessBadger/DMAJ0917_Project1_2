@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a051efb8-4260-4367-8e2d-38a8d7fef7c2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="a051efb8-4260-4367-8e2d-38a8d7fef7c2" name="Default" comment="loan controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/IntellijCode/src/Main.java" afterPath="$PROJECT_DIR$/IntellijCode/src/Main.java" />
-      <change beforePath="$PROJECT_DIR$/IntellijCode/src/controllayer/BundleController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerController.java" afterPath="$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerController.java" />
+      <change beforePath="$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerEditor.java" afterPath="$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerEditor.java" />
+      <change beforePath="$PROJECT_DIR$/IntellijCode/src/controllayer/EmployeeEditor.java" afterPath="$PROJECT_DIR$/IntellijCode/src/controllayer/EmployeeEditor.java" />
       <change beforePath="$PROJECT_DIR$/IntellijCode/src/controllayer/InventoryController.java" afterPath="$PROJECT_DIR$/IntellijCode/src/controllayer/InventoryController.java" />
+      <change beforePath="$PROJECT_DIR$/IntellijCode/src/controllayer/SaleController.java" afterPath="$PROJECT_DIR$/IntellijCode/src/controllayer/SaleController.java" />
+      <change beforePath="$PROJECT_DIR$/IntellijCode/src/controllayer/Session.java" afterPath="$PROJECT_DIR$/IntellijCode/src/controllayer/Session.java" />
+      <change beforePath="$PROJECT_DIR$/IntellijCode/src/modellayer/Bundle.java" afterPath="$PROJECT_DIR$/IntellijCode/src/modellayer/Bundle.java" />
+      <change beforePath="$PROJECT_DIR$/IntellijCode/src/modellayer/Item.java" afterPath="$PROJECT_DIR$/IntellijCode/src/modellayer/Item.java" />
+      <change beforePath="$PROJECT_DIR$/IntellijCode/src/tuilayer/MainMenu.java" afterPath="$PROJECT_DIR$/IntellijCode/src/tuilayer/MainMenu.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,19 +22,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InventoryController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/InventoryController.java">
+      <file leaf-file-name="SaleController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/SaleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding>
-                <element signature="e#1520#1521#0" expanded="true" />
-                <element signature="e#1651#1652#0" expanded="true" />
-                <element signature="e#1909#1910#0" expanded="true" />
-                <element signature="e#1961#1962#0" expanded="true" />
-                <element signature="e#2018#2019#0" expanded="true" />
-                <element signature="e#2141#2142#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="109">
+              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,6 +46,8 @@
     <findStrings>
       <find>barcode</find>
       <find>.err</find>
+      <find>lower</find>
+      <find>addstock</find>
     </findStrings>
     <replaceStrings>
       <replace>bundle</replace>
@@ -69,28 +67,31 @@
         <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/LoginController.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/Emplyee.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/tuilayer/Login.java" />
-        <option value="$PROJECT_DIR$/IntellijCode/src/tuilayer/MainMenu.java" />
-        <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/Item.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/ItemEditor.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/Employee.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/tuilayer/EditItem.java" />
-        <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/EmployeeEditor.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/BundleEditor.java" />
-        <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/Bundle.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/containers/EmployeeCont.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/containers/BundleCont.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/tuilayer/Menu.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/LoanEditor.java" />
-        <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/Session.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/tuilayer/EditBundle.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/EmployeeController.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/Customer.java" />
-        <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerEditor.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/containers/CustomerCont.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerController.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/tuilayer/ManageEmployee.java" />
-        <option value="$PROJECT_DIR$/IntellijCode/src/Main.java" />
+        <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/Loan.java" />
+        <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/Item.java" />
+        <option value="$PROJECT_DIR$/IntellijCode/src/modellayer/Bundle.java" />
+        <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerEditor.java" />
+        <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/EmployeeEditor.java" />
+        <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/SaleController.java" />
+        <option value="$PROJECT_DIR$/IntellijCode/src/tuilayer/ManageInventory.java" />
+        <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/Session.java" />
         <option value="$PROJECT_DIR$/IntellijCode/src/controllayer/InventoryController.java" />
+        <option value="$PROJECT_DIR$/IntellijCode/src/tuilayer/MainMenu.java" />
+        <option value="$PROJECT_DIR$/IntellijCode/src/Main.java" />
       </list>
     </option>
   </component>
@@ -122,8 +123,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,13 +150,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controllayer" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DMAJ0917_Project1_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMAJ0917_Project1_2" type="462c0819:PsiDirectoryNode" />
-              <item name="IntellijCode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modellayer" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -168,6 +162,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
@@ -183,10 +178,18 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/controllayer/InventoryController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/controllayer/SaleController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/modellayer/Bundle.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/modellayer/Customer.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/modellayer/Item.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/modellayer/Loan.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/modellayer/Payment.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/modellayer/Sale.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/modellayer/SaleLineItem.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/modellayer/containers/SaleCont.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/tuilayer/MainMenu.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/tuilayer/ManageEmployee.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/tuilayer/Menu.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -194,8 +197,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/tuilayer/EditCustomer.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/tuilayer/ManageCustomer.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/IntellijCode/src/tuilayer/CreateSale.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -421,7 +423,8 @@
       <option name="presentableId" value="Default" />
       <updated>1512726531745</updated>
       <workItem from="1512726545146" duration="5682000" />
-      <workItem from="1512986291028" duration="7389000" />
+      <workItem from="1512986291028" duration="9303000" />
+      <workItem from="1513156691801" duration="3351000" />
     </task>
     <task id="LOCAL-00003" summary="import optimization">
       <created>1512732779036</created>
@@ -444,11 +447,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512995038829</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="loan controller">
+      <created>1512998904638</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1512998904638</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31024000" />
+    <option name="totallyTimeSpent" value="36289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -456,14 +466,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.49714285" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278302" sideWeight="0.49714285" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33695653" sideWeight="0.50572246" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3360849" sideWeight="0.49427754" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278302" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3360849" sideWeight="0.49427754" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900944" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -473,8 +483,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -548,30 +558,14 @@
     <MESSAGE value="login" />
     <MESSAGE value="import optimization" />
     <MESSAGE value="customer stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="customer stuff" />
+    <MESSAGE value="loan controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="loan controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DMAJ0917_Project1_2.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/design class diagram.uml" />
     <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -595,14 +589,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/BundleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="60" column="1" lean-forward="true" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/BundleController.java" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -614,158 +601,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/LoginController.java" />
     <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/Login.java" />
     <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/EmployeeManager.java" />
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/SaleLineItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/BundleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/BundleController.java" />
     <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Service.java" />
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/BundleEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#804#805#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" column="39" lean-forward="false" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/EmployeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/EmployeeEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/ItemEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/LoanEditor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/SaleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/Session.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/CustomerCont.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/BundleCont.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/EmployeeCont.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/ItemCont.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/LoanCont.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/SaleCont.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Bundle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -782,39 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="607">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="72" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="43" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Loan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Location.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Payment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,22 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/EditBundle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/EditCustomer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -858,14 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/MainMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/ManageCustomer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -882,26 +672,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/ManageInventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="74" column="36" lean-forward="true" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IntellijCode/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="14" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -916,9 +690,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="77.0" y="14.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="77.0" y="15.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -928,516 +703,783 @@
           <ID>JAVA</ID>
           <OriginalElement />
           <nodes>
-            <node x="324.93749999999994" y="625.0">controllayer.BundleEditor</node>
-            <node x="204.94374401341065" y="317.0">modellayer.Bundle</node>
-            <node x="1311.1401725848393" y="863.0">tuilayer.EditEmployee</node>
-            <node x="790.6996963943631" y="188.0">modellayer.Payment</node>
-            <node x="923.9112496579096" y="317.0">modellayer.Customer</node>
-            <node x="480.4676134031201" y="317.0">modellayer.Loan</node>
-            <node x="1333.467202038862" y="625.0">controllayer.EmployeeEditor</node>
-            <node x="611.7651725848393" y="466.0">modellayer.containers</node>
-            <node x="267.72052972769643" y="982.0">tuilayer.ManageInventory</node>
-            <node x="1012.8501684797484" y="863.0">tuilayer.EditCustomer</node>
-            <node x="973.3501684797484" y="625.0">controllayer.CustomerEditor</node>
-            <node x="784.3501684797484" y="625.0">controllayer.CustomerController</node>
-            <node x="1346.9254207717574" y="317.0">modellayer.Employee</node>
-            <node x="131.0" y="625.0">controllayer.InventoryController</node>
-            <node x="607.9375" y="625.0">controllayer.SaleController</node>
-            <node x="472.93749999999994" y="625.0">controllayer.LoanEditor</node>
-            <node x="378.74999999999994" y="0.0">modellayer.Location</node>
-            <node x="1016.5151725848393" y="982.0">tuilayer.ManageCustomer</node>
-            <node x="403.49999999999994" y="109.0">modellayer.SaleLineItem</node>
-            <node x="228.88684489600485" y="188.0">modellayer.Item</node>
-            <node x="786.4496963943631" y="317.0">modellayer.Sale</node>
-            <node x="1497.467202038862" y="625.0">controllayer.EmployeeController</node>
-            <node x="1184.7339225848393" y="625.0">controllayer.Session</node>
-            <node x="0.0" y="625.0">controllayer.ItemEditor</node>
-            <node x="1176.2339225848393" y="704.0">tuilayer.Menu</node>
-            <node x="1299.1401725848393" y="982.0">tuilayer.ManageEmployee</node>
-            <node x="360.18749999999994" y="863.0">tuilayer.EditBundle</node>
-            <node x="1180.0464225848393" y="1061.0">tuilayer.MainMenu</node>
-            <node x="1197.0464225848393" y="1140.0">Main</node>
-            <node x="230.5" y="863.0">tuilayer.EditItem</node>
+            <node x="1255.5268523143527" y="1803.5">controllayer.BundleEditor</node>
+            <node x="904.7574381174389" y="975.0">modellayer.Bundle</node>
+            <node x="62.0" y="1452.5">modellayer.containers.SaleCont</node>
+            <node x="2284.002296176046" y="2218.0">tuilayer.EditEmployee</node>
+            <node x="467.5" y="1474.5">modellayer.containers.LoanCont</node>
+            <node x="24.25" y="610.5">modellayer.Payment</node>
+            <node x="3182.0089338439348" y="1074.5">modellayer.Customer</node>
+            <node x="1370.9916666666666" y="1474.5">modellayer.containers.ItemCont</node>
+            <node x="352.95833333333326" y="975.0">modellayer.Loan</node>
+            <node x="980.5657714507723" y="1474.5">modellayer.containers.BundleCont</node>
+            <node x="2359.502296176046" y="1419.0">controllayer.EmployeeEditor</node>
+            <node x="3099.702296176046" y="1452.0">modellayer.containers.CustomerCont</node>
+            <node x="1562.4905845543335" y="2405.0">tuilayer.ManageInventory</node>
+            <node x="2892.952296176046" y="2218.0">tuilayer.EditCustomer</node>
+            <node x="2965.702296176046" y="1792.5">controllayer.CustomerEditor</node>
+            <node x="3180.7851856476864" y="1848.5">controllayer.CustomerController</node>
+            <node x="2439.689796176046" y="554.0">modellayer.Employee</node>
+            <node x="763.5268523143529" y="1749.5">controllayer.InventoryController</node>
+            <node x="924.4494115606614" y="2218.0">tuilayer.EditLoan</node>
+            <node x="146.5" y="1848.5">controllayer.SaleController</node>
+            <node x="445.5" y="1803.5">controllayer.LoanEditor</node>
+            <node x="1103.2683218170716" y="0.0">modellayer.Location</node>
+            <node x="2968.283933843935" y="2449.0">tuilayer.ManageCustomer</node>
+            <node x="572.132438117439" y="221.0">modellayer.SaleLineItem</node>
+            <node x="1267.4847274947283" y="411.0">modellayer.Item</node>
+            <node x="0.0" y="1086.0">modellayer.Sale</node>
+            <node x="2602.514796176046" y="1464.0">controllayer.EmployeeController</node>
+            <node x="1974.8128067765556" y="1430.0">controllayer.Session</node>
+            <node x="2404.189796176046" y="1118.5">modellayer.containers.EmployeeCont</node>
+            <node x="1647.6878067765556" y="1759.5">controllayer.ItemEditor</node>
+            <node x="1915.6878067765556" y="1727.0">tuilayer.Menu</node>
+            <node x="2187.206944444444" y="2716.0">tuilayer.MainMenu</node>
+            <node x="2369.7714338439346" y="2460.0">tuilayer.ManageEmployee</node>
+            <node x="1435.752296176046" y="2218.0">tuilayer.EditBundle</node>
+            <node x="2181.706944444444" y="2862.0">Main</node>
+            <node x="1775.002296176046" y="2218.0">tuilayer.EditItem</node>
           </nodes>
           <notes />
           <edges>
             <edge source="controllayer.LoanEditor" target="modellayer.Loan">
-              <point x="-28.75" y="-14.5" />
-              <point x="501.68749999999994" y="446.0" />
-              <point x="512.9676134031201" y="446.0" />
-              <point x="-6.5" y="14.5" />
+              <point x="-46.5" y="-104.0" />
+              <point x="492.0" y="1687.0" />
+              <point x="457.0" y="1687.0" />
+              <point x="457.0" y="1399.0" />
+              <point x="458.95833333333326" y="1399.0" />
+              <point x="-106.0" y="192.0" />
             </edge>
             <edge source="tuilayer.EditEmployee" target="tuilayer.Menu">
-              <point x="-16.375" y="-14.5" />
-              <point x="1360.2651725848393" y="803.0" />
-              <point x="1255.6714225848393" y="803.0" />
-              <point x="38.4375" y="14.5" />
+              <point x="-30.5" y="-48.5" />
+              <point x="2375.502296176046" y="2128.0" />
+              <point x="2157.6600289987778" y="2128.0" />
+              <point x="101.47222222222217" y="180.5" />
             </edge>
             <edge source="controllayer.CustomerEditor" target="modellayer.Customer">
-              <point x="36.25" y="-14.5" />
-              <point x="1082.1001684797484" y="406.0" />
-              <point x="1022.9112496579096" y="406.0" />
-              <point x="45.0" y="14.5" />
+              <point x="-48.75" y="-115.0" />
+              <point x="3014.452296176046" y="1389.0" />
+              <point x="3212.3422671772682" y="1389.0" />
+              <point x="-151.66666666666652" y="92.5" />
             </edge>
-            <edge source="controllayer.BundleEditor" target="modellayer.containers">
-              <point x="32.0" y="-14.5" />
-              <point x="420.93749999999994" y="585.0" />
-              <point x="649.7651725848393" y="585.0" />
-              <point x="-38.0" y="14.5" />
+            <edge source="controllayer.Session" target="modellayer.containers.EmployeeCont">
+              <point x="115.19999999999982" y="-93.0" />
+              <point x="2234.0128067765554" y="1399.0" />
+              <point x="2449.564796176046" y="1399.0" />
+              <point x="-136.125" y="48.5" />
+            </edge>
+            <edge source="controllayer.CustomerEditor" target="modellayer.containers.CustomerCont">
+              <point x="48.75" y="-115.0" />
+              <point x="3111.952296176046" y="1707.0" />
+              <point x="3161.5356295093798" y="1707.0" />
+              <point x="-123.66666666666652" y="71.0" />
             </edge>
             <edge source="modellayer.Sale" target="modellayer.Payment">
-              <point x="18.25" y="-14.5" />
-              <point x="0.0" y="14.5" />
+              <point x="-75.25" y="-81.0" />
+              <point x="0.0" y="47.5" />
             </edge>
-            <edge source="controllayer.CustomerController" target="modellayer.containers">
-              <point x="-33.8" y="-14.5" />
-              <point x="835.0501684797484" y="585.0" />
-              <point x="704.0508868705535" y="585.0" />
-              <point x="16.28571428571422" y="14.5" />
+            <edge source="tuilayer.EditLoan" target="tuilayer.Menu">
+              <point x="80.625" y="-48.5" />
+              <point x="1112.5744115606612" y="2158.0" />
+              <point x="1939.1044734432223" y="2158.0" />
+              <point x="-117.08333333333326" y="180.5" />
+            </edge>
+            <edge source="modellayer.containers.SaleCont" target="modellayer.Sale">
+              <point x="-62.5" y="-70.5" />
+              <point x="124.5" y="1399.0" />
+              <point x="150.5" y="1399.0" />
+              <point x="0.0" y="81.0" />
+            </edge>
+            <edge source="controllayer.EmployeeEditor" target="modellayer.containers.EmployeeCont">
+              <point x="53.75" y="-104.0" />
+              <point x="2520.752296176046" y="1399.0" />
+              <point x="2540.314796176046" y="1399.0" />
+              <point x="-45.375" y="48.5" />
             </edge>
             <edge source="tuilayer.EditCustomer" target="tuilayer.Menu">
-              <point x="16.5" y="-14.5" />
-              <point x="1095.3501684797484" y="803.0" />
-              <point x="1199.2964225848393" y="803.0" />
-              <point x="-17.9375" y="14.5" />
+              <point x="-85.125" y="-48.5" />
+              <point x="2921.327296176046" y="2118.0" />
+              <point x="2173.271140109889" y="2118.0" />
+              <point x="117.08333333333348" y="180.5" />
             </edge>
             <edge source="tuilayer.Menu" target="controllayer.Session">
-              <point x="20.5" y="-14.5" />
-              <point x="1237.7339225848393" y="679.0" />
-              <point x="1232.7339225848393" y="679.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="modellayer.containers" target="modellayer.Employee">
-              <point x="69.66666666666674" y="-14.5" />
-              <point x="757.4318392515061" y="426.0" />
-              <point x="1366.9879207717574" y="426.0" />
-              <point x="-33.4375" y="14.5" />
+              <point x="-70.25" y="-180.5" />
+              <point x="1985.9378067765556" y="1707.0" />
+              <point x="2022.8128067765556" y="1707.0" />
+              <point x="-96.0" y="93.0" />
             </edge>
             <edge source="tuilayer.EditItem" target="controllayer.ItemEditor">
-              <point x="-36.75" y="-14.5" />
-              <point x="242.75" y="843.0" />
-              <point x="50.0" y="843.0" />
-              <point x="50.0" y="679.0" />
-              <point x="27.75" y="679.0" />
-              <point x="-27.75" y="14.5" />
+              <point x="-26.375" y="-48.5" />
+              <point x="1854.127296176046" y="2138.0" />
+              <point x="1833.6878067765556" y="2138.0" />
+              <point x="62.0" y="148.0" />
             </edge>
-            <edge source="modellayer.containers" target="modellayer.Sale">
-              <point x="19.0" y="-14.5" />
-              <point x="706.7651725848393" y="376.0" />
-              <point x="822.9496963943631" y="376.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="controllayer.EmployeeController" target="modellayer.containers">
-              <point x="-33.60000000000002" y="-14.5" />
-              <point x="1547.867202038862" y="525.0" />
-              <point x="758.336601156268" y="525.0" />
-              <point x="70.57142857142867" y="14.5" />
-            </edge>
-            <edge source="controllayer.SaleController" target="modellayer.containers">
-              <point x="16.75" y="-14.5" />
-              <point x="691.6875" y="605.0" />
-              <point x="682.3366011562678" y="605.0" />
-              <point x="-5.428571428571445" y="14.5" />
+            <edge source="modellayer.containers.CustomerCont" target="modellayer.Customer">
+              <point x="-92.75" y="-71.0" />
+              <point x="3192.452296176046" y="1399.0" />
+              <point x="3273.0089338439348" y="1399.0" />
+              <point x="-91.0" y="92.5" />
             </edge>
             <edge source="tuilayer.EditItem" target="tuilayer.Menu">
-              <point x="36.75" y="-14.5" />
-              <point x="316.25" y="773.0" />
-              <point x="1183.9214225848393" y="773.0" />
-              <point x="-33.3125" y="14.5" />
+              <point x="79.125" y="-48.5" />
+              <point x="1959.627296176046" y="2198.0" />
+              <point x="2001.5489178876667" y="2198.0" />
+              <point x="-54.638888888888914" y="180.5" />
+            </edge>
+            <edge source="tuilayer.ManageInventory" target="tuilayer.EditLoan">
+              <point x="-33.14285714285711" y="-125.5" />
+              <point x="1645.3477274114762" y="2365.0" />
+              <point x="1031.9494115606612" y="2365.0" />
+              <point x="0.0" y="48.5" />
             </edge>
             <edge source="tuilayer.MainMenu" target="tuilayer.ManageCustomer">
-              <point x="-27.75" y="-14.5" />
-              <point x="1207.7964225848393" y="1031.0" />
-              <point x="1094.5151725848393" y="1031.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="modellayer.containers" target="modellayer.Item">
-              <point x="-44.33333333333326" y="-14.5" />
-              <point x="643.4318392515061" y="396.0" />
-              <point x="469.96761340312014" y="396.0" />
-              <point x="469.96761340312014" y="277.0" />
-              <point x="287.02970203886196" y="277.0" />
-              <point x="21.14285714285711" y="14.5" />
+              <point x="72.08333333333348" y="-48.0" />
+              <point x="2345.790277777778" y="2696.0" />
+              <point x="3093.783933843935" y="2696.0" />
+              <point x="0.0" y="81.5" />
             </edge>
             <edge source="controllayer.CustomerController" target="modellayer.Customer">
-              <point x="67.6" y="-14.5" />
-              <point x="936.4501684797484" y="605.0" />
-              <point x="990.9112496579096" y="605.0" />
-              <point x="990.9112496579096" y="406.0" />
-              <point x="1004.9112496579096" y="406.0" />
-              <point x="27.0" y="14.5" />
+              <point x="0.0" y="-59.0" />
+              <point x="3394.2851856476864" y="1697.0" />
+              <point x="3481.202296176046" y="1697.0" />
+              <point x="3481.202296176046" y="1399.0" />
+              <point x="3394.3422671772682" y="1399.0" />
+              <point x="30.333333333333485" y="92.5" />
+            </edge>
+            <edge source="controllayer.BundleEditor" target="modellayer.containers.BundleCont">
+              <point x="-62.0" y="-104.0" />
+              <point x="1317.5268523143527" y="1667.0" />
+              <point x="1256.3991047841055" y="1667.0" />
+              <point x="110.33333333333326" y="48.5" />
             </edge>
             <edge source="tuilayer.ManageInventory" target="tuilayer.Menu">
-              <point x="38.5" y="-14.5" />
-              <point x="383.22052972769643" y="932.0" />
-              <point x="1155.3501684797484" y="932.0" />
-              <point x="1155.3501684797484" y="823.0" />
-              <point x="1209.5464225848393" y="823.0" />
-              <point x="-7.6875" y="14.5" />
+              <point x="99.42857142857133" y="-125.5" />
+              <point x="1777.9191559829046" y="2385.0" />
+              <point x="2043.1798702686192" y="2385.0" />
+              <point x="2043.1798702686192" y="2188.0" />
+              <point x="2032.771140109889" y="2188.0" />
+              <point x="-23.416666666666515" y="180.5" />
             </edge>
-            <edge source="controllayer.LoanEditor" target="modellayer.containers">
-              <point x="28.75" y="-14.5" />
-              <point x="559.1875" y="595.0" />
-              <point x="660.6223154419822" y="595.0" />
-              <point x="-27.14285714285711" y="14.5" />
+            <edge source="controllayer.InventoryController" target="modellayer.containers.ItemCont">
+              <point x="181.53846153846143" y="-158.0" />
+              <point x="1181.0653138528144" y="1697.0" />
+              <point x="1420.4916666666666" y="1697.0" />
+              <point x="-99.0" y="48.5" />
             </edge>
             <edge source="controllayer.InventoryController" target="modellayer.Bundle">
-              <point x="-18.555555555555657" y="-14.5" />
-              <point x="195.94444444444434" y="515.0" />
-              <point x="178.80627394636053" y="515.0" />
-              <point x="178.80627394636053" y="436.0" />
-              <point x="214.04374401341056" y="436.0" />
-              <point x="-36.40000000000009" y="14.5" />
+              <point x="0.0" y="-158.0" />
+              <point x="999.5268523143529" y="1647.0" />
+              <point x="910.8083333333333" y="1647.0" />
+              <point x="910.8083333333333" y="1399.0" />
+              <point x="995.357438117439" y="1399.0" />
+              <point x="-60.39999999999998" y="192.0" />
             </edge>
-            <edge source="controllayer.CustomerEditor" target="modellayer.containers">
-              <point x="-36.25" y="-14.5" />
-              <point x="1009.6001684797484" y="575.0" />
-              <point x="714.9080297276964" y="575.0" />
-              <point x="27.14285714285711" y="14.5" />
-            </edge>
-            <edge source="controllayer.EmployeeEditor" target="modellayer.containers">
-              <point x="-36.0" y="-14.5" />
-              <point x="1369.467202038862" y="545.0" />
-              <point x="736.6223154419822" y="545.0" />
-              <point x="48.85714285714289" y="14.5" />
+            <edge source="modellayer.containers.ItemCont" target="modellayer.Item">
+              <point x="74.25" y="-48.5" />
+              <point x="1593.7416666666666" y="1399.0" />
+              <point x="1535.175373099123" y="1399.0" />
+              <point x="1535.175373099123" y="955.0" />
+              <point x="1530.699013209014" y="955.0" />
+              <point x="95.71428571428578" y="247.0" />
             </edge>
             <edge source="tuilayer.EditCustomer" target="controllayer.CustomerEditor">
-              <point x="-16.5" y="-14.5" />
-              <point x="1062.3501684797484" y="753.0" />
-              <point x="1051.3604705459773" y="753.0" />
-              <point x="1051.3604705459773" y="679.0" />
-              <point x="1082.1001684797484" y="679.0" />
-              <point x="36.25" y="14.5" />
+              <point x="28.375" y="-48.5" />
+              <point x="3034.827296176046" y="2198.0" />
+              <point x="3014.452296176046" y="2198.0" />
+              <point x="-48.75" y="115.0" />
             </edge>
             <edge source="tuilayer.MainMenu" target="tuilayer.ManageInventory">
-              <point x="-46.25" y="-14.5" />
-              <point x="1189.2964225848393" y="1041.0" />
-              <point x="344.72052972769643" y="1041.0" />
-              <point x="0.0" y="14.5" />
+              <point x="-72.08333333333348" y="-48.0" />
+              <point x="2201.623611111111" y="2696.0" />
+              <point x="1678.4905845543335" y="2696.0" />
+              <point x="0.0" y="125.5" />
             </edge>
             <edge source="controllayer.BundleEditor" target="modellayer.Bundle">
-              <point x="-32.0" y="-14.5" />
-              <point x="356.93749999999994" y="525.0" />
-              <point x="332.24302562260556" y="525.0" />
-              <point x="332.24302562260556" y="446.0" />
-              <point x="250.44374401341065" y="446.0" />
-              <point x="0.0" y="14.5" />
+              <point x="62.0" y="-104.0" />
+              <point x="1441.5268523143527" y="1667.0" />
+              <point x="1323.6416666666664" y="1667.0" />
+              <point x="1323.6416666666664" y="1389.0" />
+              <point x="1176.5574381174388" y="1389.0" />
+              <point x="120.79999999999995" y="192.0" />
+            </edge>
+            <edge source="tuilayer.EditLoan" target="controllayer.LoanEditor">
+              <point x="-26.875" y="-48.5" />
+              <point x="1005.0744115606614" y="2108.0" />
+              <point x="585.0" y="2108.0" />
+              <point x="46.5" y="104.0" />
             </edge>
             <edge source="controllayer.ItemEditor" target="modellayer.Item">
-              <point x="0.0" y="-14.5" />
-              <point x="55.5" y="605.0" />
-              <point x="82.1650041050907" y="605.0" />
-              <point x="82.1650041050907" y="237.0" />
-              <point x="234.17255918171907" y="237.0" />
-              <point x="-31.71428571428578" y="14.5" />
+              <point x="0.0" y="-148.0" />
+              <point x="1771.6878067765556" y="1707.0" />
+              <point x="1796.3768523143528" y="1707.0" />
+              <point x="1796.3768523143528" y="955.0" />
+              <point x="1578.5561560661567" y="955.0" />
+              <point x="143.57142857142844" y="247.0" />
             </edge>
             <edge source="tuilayer.MainMenu" target="tuilayer.Menu">
-              <point x="9.25" y="-14.5" />
-              <point x="1244.7964225848393" y="1041.0" />
-              <point x="1241.0464225848393" y="1041.0" />
-              <point x="1241.0464225848393" y="843.0" />
-              <point x="1235.1714225848393" y="843.0" />
-              <point x="17.9375" y="14.5" />
+              <point x="-43.25" y="-48.0" />
+              <point x="2230.456944444444" y="2686.0" />
+              <point x="2106.752296176046" y="2686.0" />
+              <point x="2106.752296176046" y="2198.0" />
+              <point x="2048.382251221" y="2198.0" />
+              <point x="-7.805555555555657" y="180.5" />
+            </edge>
+            <edge source="controllayer.LoanEditor" target="modellayer.containers.LoanCont">
+              <point x="46.5" y="-104.0" />
+              <point x="585.0" y="1707.0" />
+              <point x="620.0" y="1707.0" />
+              <point x="0.0" y="48.5" />
             </edge>
             <edge source="tuilayer.ManageCustomer" target="tuilayer.EditCustomer">
-              <point x="0.0" y="-14.5" />
-              <point x="1094.5151725848393" y="922.0" />
-              <point x="1078.8501684797484" y="922.0" />
-              <point x="0.0" y="14.5" />
+              <point x="0.0" y="-81.5" />
+              <point x="3093.783933843935" y="2335.0" />
+              <point x="3006.452296176046" y="2335.0" />
+              <point x="0.0" y="48.5" />
             </edge>
             <edge source="modellayer.Bundle" target="modellayer.Location">
-              <point x="11.375" y="-14.5" />
-              <point x="261.81874401341065" y="287.0" />
-              <point x="318.2529163245763" y="287.0" />
-              <point x="318.2529163245763" y="89.0" />
-              <point x="424.2" y="89.0" />
-              <point x="-5.0499999999999545" y="14.5" />
+              <point x="-37.75" y="-192.0" />
+              <point x="1018.0074381174389" y="201.0" />
+              <point x="1180.6683218170717" y="201.0" />
+              <point x="-8.599999999999909" y="70.5" />
             </edge>
             <edge source="controllayer.SaleController" target="modellayer.Loan">
-              <point x="-50.25" y="-14.5" />
-              <point x="624.6875" y="545.0" />
-              <point x="563.6223154419821" y="545.0" />
-              <point x="563.6223154419821" y="446.0" />
-              <point x="525.9676134031201" y="446.0" />
-              <point x="6.5" y="14.5" />
+              <point x="23.25" y="-59.0" />
+              <point x="309.25" y="1707.0" />
+              <point x="340.0833333333335" y="1707.0" />
+              <point x="340.0833333333335" y="1399.0" />
+              <point x="388.2916666666665" y="1399.0" />
+              <point x="-176.66666666666674" y="192.0" />
             </edge>
             <edge source="tuilayer.ManageInventory" target="tuilayer.EditItem">
-              <point x="-12.833333333333258" y="-14.5" />
-              <point x="331.8871963943632" y="942.0" />
-              <point x="279.5" y="942.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="modellayer.containers" target="modellayer.Loan">
-              <point x="-31.66666666666663" y="-14.5" />
-              <point x="656.0985059181726" y="386.0" />
-              <point x="538.9676134031201" y="386.0" />
-              <point x="19.5" y="14.5" />
+              <point x="33.14285714285711" y="-125.5" />
+              <point x="1711.6334416971904" y="2365.0" />
+              <point x="1880.502296176046" y="2365.0" />
+              <point x="0.0" y="48.5" />
             </edge>
             <edge source="tuilayer.ManageInventory" target="tuilayer.EditBundle">
-              <point x="12.833333333333258" y="-14.5" />
-              <point x="357.5538630610297" y="922.0" />
-              <point x="417.68749999999994" y="922.0" />
-              <point x="0.0" y="14.5" />
+              <point x="0.0" y="-125.5" />
+              <point x="1678.4905845543335" y="2355.0" />
+              <point x="1549.752296176046" y="2355.0" />
+              <point x="0.0" y="48.5" />
+            </edge>
+            <edge source="controllayer.SaleController" target="modellayer.containers.SaleCont">
+              <point x="-23.25" y="-59.0" />
+              <point x="262.75" y="1707.0" />
+              <point x="249.5" y="1707.0" />
+              <point x="62.5" y="70.5" />
+            </edge>
+            <edge source="modellayer.containers.LoanCont" target="modellayer.Loan">
+              <point x="76.25" y="-48.5" />
+              <point x="696.25" y="1399.0" />
+              <point x="600.2916666666665" y="1399.0" />
+              <point x="35.33333333333326" y="192.0" />
+            </edge>
+            <edge source="controllayer.SaleController" target="modellayer.containers.LoanCont">
+              <point x="69.75" y="-59.0" />
+              <point x="355.75" y="1697.0" />
+              <point x="498.0" y="1697.0" />
+              <point x="-122.0" y="48.5" />
             </edge>
             <edge source="controllayer.InventoryController" target="modellayer.Location">
-              <point x="-74.22222222222217" y="-14.5" />
-              <point x="140.27777777777783" y="545.0" />
-              <point x="68.77214696223359" y="545.0" />
-              <point x="68.77214696223359" y="59.0" />
-              <point x="393.90000000000003" y="59.0" />
-              <point x="-35.34999999999991" y="14.5" />
+              <point x="-72.61538461538453" y="-158.0" />
+              <point x="926.9114676989684" y="1667.0" />
+              <point x="873.9583333333333" y="1667.0" />
+              <point x="873.9583333333333" y="191.0" />
+              <point x="1163.4683218170717" y="191.0" />
+              <point x="-25.799999999999955" y="70.5" />
             </edge>
             <edge source="controllayer.InventoryController" target="modellayer.Item">
-              <point x="-55.66666666666674" y="-14.5" />
-              <point x="158.83333333333326" y="535.0" />
-              <point x="141.00627394636058" y="535.0" />
-              <point x="141.00627394636058" y="247.0" />
-              <point x="244.74398775314774" y="247.0" />
-              <point x="-21.14285714285711" y="14.5" />
+              <point x="108.9230769230769" y="-158.0" />
+              <point x="1108.4499292374298" y="1677.0" />
+              <point x="1349.4916666666666" y="1677.0" />
+              <point x="1349.4916666666666" y="945.0" />
+              <point x="1387.1275846375856" y="945.0" />
+              <point x="-47.85714285714289" y="247.0" />
             </edge>
             <edge source="tuilayer.MainMenu" target="controllayer.Session">
-              <point x="27.75" y="-14.5" />
-              <point x="1263.2964225848393" y="1041.0" />
-              <point x="1274.3276725848393" y="1041.0" />
-              <point x="1274.3276725848393" y="679.0" />
-              <point x="1264.7339225848393" y="679.0" />
-              <point x="32.0" y="14.5" />
+              <point x="14.416666666666515" y="-48.0" />
+              <point x="2288.123611111111" y="2696.0" />
+              <point x="2273.502296176046" y="2696.0" />
+              <point x="2273.502296176046" y="1707.0" />
+              <point x="2214.8128067765556" y="1707.0" />
+              <point x="96.0" y="93.0" />
             </edge>
             <edge source="modellayer.Loan" target="modellayer.Location">
-              <point x="26.0" y="-14.5" />
-              <point x="545.4676134031201" y="297.0" />
-              <point x="661.6938038793105" y="297.0" />
-              <point x="661.6938038793105" y="69.0" />
-              <point x="454.49999999999994" y="69.0" />
-              <point x="25.25" y="14.5" />
+              <point x="-141.33333333333326" y="-192.0" />
+              <point x="423.625" y="945.0" />
+              <point x="358.00743811743905" y="945.0" />
+              <point x="358.00743811743905" y="161.0" />
+              <point x="1111.8683218170715" y="161.0" />
+              <point x="-77.40000000000009" y="70.5" />
             </edge>
             <edge source="tuilayer.EditBundle" target="tuilayer.Menu">
-              <point x="43.125" y="-14.5" />
-              <point x="460.81249999999994" y="793.0" />
-              <point x="1194.1714225848393" y="793.0" />
-              <point x="-23.0625" y="14.5" />
+              <point x="28.5" y="-48.5" />
+              <point x="1578.252296176046" y="2168.0" />
+              <point x="1954.7155845543334" y="2168.0" />
+              <point x="-101.47222222222217" y="180.5" />
             </edge>
             <edge source="controllayer.ItemEditor" target="modellayer.Location">
-              <point x="-37.0" y="-14.5" />
-              <point x="18.5" y="605.0" />
-              <point x="26.449999999999818" y="605.0" />
-              <point x="26.449999999999818" y="49.0" />
-              <point x="383.7999999999999" y="49.0" />
-              <point x="-45.450000000000045" y="14.5" />
+              <point x="82.66666666666674" y="-148.0" />
+              <point x="1854.3544734432223" y="1707.0" />
+              <point x="1874.5856295093795" y="1707.0" />
+              <point x="1874.5856295093795" y="181.0" />
+              <point x="1232.2683218170716" y="181.0" />
+              <point x="43.0" y="70.5" />
             </edge>
             <edge source="tuilayer.MainMenu" target="tuilayer.ManageEmployee">
-              <point x="46.25" y="-14.5" />
-              <point x="1281.7964225848393" y="1041.0" />
-              <point x="1376.6401725848393" y="1041.0" />
-              <point x="0.0" y="14.5" />
+              <point x="43.25" y="-48.0" />
+              <point x="2316.956944444444" y="2686.0" />
+              <point x="2489.7714338439346" y="2686.0" />
+              <point x="0.0" y="70.5" />
             </edge>
             <edge source="controllayer.EmployeeEditor" target="modellayer.Employee">
-              <point x="36.0" y="-14.5" />
-              <point x="1441.467202038862" y="446.0" />
-              <point x="1407.1129207717574" y="446.0" />
-              <point x="6.6875" y="14.5" />
+              <point x="-53.75" y="-104.0" />
+              <point x="2413.252296176046" y="1389.0" />
+              <point x="2393.689796176046" y="1389.0" />
+              <point x="2393.689796176046" y="945.0" />
+              <point x="2530.939796176046" y="945.0" />
+              <point x="-54.75" y="104.0" />
             </edge>
             <edge source="tuilayer.EditEmployee" target="controllayer.EmployeeEditor">
-              <point x="49.125" y="-14.5" />
-              <point x="1425.7651725848393" y="843.0" />
-              <point x="1404.0151725848393" y="843.0" />
-              <point x="1404.0151725848393" y="679.0" />
-              <point x="1441.467202038862" y="679.0" />
-              <point x="36.0" y="14.5" />
+              <point x="91.5" y="-48.5" />
+              <point x="2497.502296176046" y="2198.0" />
+              <point x="2472.502296176046" y="2198.0" />
+              <point x="2472.502296176046" y="1707.0" />
+              <point x="2520.752296176046" y="1707.0" />
+              <point x="53.75" y="104.0" />
             </edge>
             <edge source="controllayer.SaleController" target="modellayer.Sale">
-              <point x="50.25" y="-14.5" />
-              <point x="725.1875" y="605.0" />
-              <point x="847.2830297276964" y="605.0" />
-              <point x="24.33333333333337" y="14.5" />
+              <point x="-116.25" y="-59.0" />
+              <point x="169.75" y="1707.0" />
+              <point x="51.5" y="1707.0" />
+              <point x="51.5" y="1399.0" />
+              <point x="50.16666666666674" y="1399.0" />
+              <point x="-100.33333333333326" y="81.0" />
             </edge>
             <edge source="modellayer.Item" target="modellayer.Location">
-              <point x="-24.666666666666742" y="-14.5" />
-              <point x="241.2201782293381" y="168.0" />
-              <point x="242.72222222222217" y="168.0" />
-              <point x="242.72222222222217" y="69.0" />
-              <point x="403.99999999999994" y="69.0" />
-              <point x="-25.25" y="14.5" />
-            </edge>
-            <edge source="tuilayer.ManageCustomer" target="tuilayer.Menu">
-              <point x="31.19999999999999" y="-14.5" />
-              <point x="1125.7151725848394" y="952.0" />
-              <point x="1213.9214225848393" y="952.0" />
-              <point x="1213.9214225848393" y="843.0" />
-              <point x="1219.7964225848393" y="843.0" />
-              <point x="2.5625" y="14.5" />
+              <point x="0.0" y="-247.0" />
+              <point x="1434.9847274947283" y="201.0" />
+              <point x="1197.8683218170715" y="201.0" />
+              <point x="8.599999999999909" y="70.5" />
             </edge>
             <edge source="controllayer.EmployeeController" target="modellayer.Employee">
-              <point x="33.60000000000002" y="-14.5" />
-              <point x="1615.067202038862" y="605.0" />
-              <point x="1592.467202038862" y="605.0" />
-              <point x="1592.467202038862" y="426.0" />
-              <point x="1433.8629207717574" y="426.0" />
-              <point x="33.4375" y="14.5" />
+              <point x="80.19999999999982" y="-59.0" />
+              <point x="2883.2147961760456" y="1399.0" />
+              <point x="2945.6573883061374" y="1399.0" />
+              <point x="2945.6573883061374" y="935.0" />
+              <point x="2676.939796176046" y="935.0" />
+              <point x="91.25" y="104.0" />
+            </edge>
+            <edge source="tuilayer.ManageCustomer" target="tuilayer.Menu">
+              <point x="-100.40000000000009" y="-81.5" />
+              <point x="2993.3839338439348" y="2355.0" />
+              <point x="2205.099518398268" y="2355.0" />
+              <point x="2205.099518398268" y="2158.0" />
+              <point x="2110.8266956654447" y="2158.0" />
+              <point x="54.63888888888914" y="180.5" />
             </edge>
             <edge source="tuilayer.ManageInventory" target="controllayer.InventoryController">
-              <point x="-38.5" y="-14.5" />
-              <point x="306.22052972769643" y="952.0" />
-              <point x="220.0" y="952.0" />
-              <point x="220.0" y="679.0" />
-              <point x="256.25" y="679.0" />
-              <point x="41.75" y="14.5" />
-            </edge>
-            <edge source="modellayer.containers" target="modellayer.Customer">
-              <point x="31.66666666666663" y="-14.5" />
-              <point x="719.4318392515058" y="386.0" />
-              <point x="932.9112496579096" y="386.0" />
-              <point x="-45.0" y="14.5" />
+              <point x="-66.28571428571422" y="-125.5" />
+              <point x="1612.2048702686193" y="2375.0" />
+              <point x="673.919938117439" y="2375.0" />
+              <point x="673.919938117439" y="2138.0" />
+              <point x="1117.526852314353" y="2138.0" />
+              <point x="118.0" y="158.0" />
             </edge>
             <edge source="controllayer.Session" target="modellayer.Employee">
-              <point x="38.39999999999998" y="-14.5" />
-              <point x="1271.1339225848392" y="605.0" />
-              <point x="1327.2316707717573" y="605.0" />
-              <point x="1327.2316707717573" y="446.0" />
-              <point x="1393.7379207717574" y="446.0" />
-              <point x="-6.6875" y="14.5" />
-            </edge>
-            <edge source="modellayer.containers" target="modellayer.Bundle">
-              <point x="-69.66666666666663" y="-14.5" />
-              <point x="618.0985059181726" y="416.0" />
-              <point x="268.6437440134107" y="416.0" />
-              <point x="18.200000000000045" y="14.5" />
-            </edge>
-            <edge source="controllayer.Session" target="modellayer.containers">
-              <point x="-38.400000000000034" y="-14.5" />
-              <point x="1194.3339225848392" y="565.0" />
-              <point x="725.7651725848393" y="565.0" />
-              <point x="38.0" y="14.5" />
+              <point x="0.0" y="-93.0" />
+              <point x="2118.8128067765556" y="1399.0" />
+              <point x="2096.9018523143527" y="1399.0" />
+              <point x="2096.9018523143527" y="925.0" />
+              <point x="2457.939796176046" y="925.0" />
+              <point x="-127.75" y="104.0" />
             </edge>
             <edge source="modellayer.Bundle" target="modellayer.Item">
-              <point x="-34.125" y="-14.5" />
-              <point x="216.31874401341065" y="267.0" />
-              <point x="265.88684489600485" y="267.0" />
-              <point x="0.0" y="14.5" />
+              <point x="37.75" y="-192.0" />
+              <point x="1093.507438117439" y="945.0" />
+              <point x="1291.4132989232999" y="945.0" />
+              <point x="-143.57142857142844" y="247.0" />
+            </edge>
+            <edge source="controllayer.InventoryController" target="modellayer.containers.LoanCont">
+              <point x="-217.8461538461538" y="-158.0" />
+              <point x="781.6806984681991" y="1707.0" />
+              <point x="681.0" y="1707.0" />
+              <point x="61.0" y="48.5" />
             </edge>
             <edge source="tuilayer.ManageEmployee" target="controllayer.EmployeeController">
-              <point x="62.0" y="-14.5" />
-              <point x="1438.6401725848393" y="962.0" />
-              <point x="1580.0151725848393" y="962.0" />
-              <point x="1580.0151725848393" y="679.0" />
-              <point x="1623.467202038862" y="679.0" />
-              <point x="42.0" y="14.5" />
+              <point x="96.0" y="-70.5" />
+              <point x="2585.7714338439346" y="2385.0" />
+              <point x="2818.5628067765556" y="2385.0" />
+              <point x="2818.5628067765556" y="1707.0" />
+              <point x="2903.264796176046" y="1707.0" />
+              <point x="100.25" y="59.0" />
             </edge>
             <edge source="controllayer.InventoryController" target="modellayer.Loan">
-              <point x="18.555555555555657" y="-14.5" />
-              <point x="233.05555555555566" y="535.0" />
-              <point x="399.11802562260556" y="535.0" />
-              <point x="399.11802562260556" y="426.0" />
-              <point x="486.9676134031201" y="426.0" />
-              <point x="-32.5" y="14.5" />
+              <point x="-108.9230769230769" y="-158.0" />
+              <point x="890.603775391276" y="1677.0" />
+              <point x="794.0000000000001" y="1677.0" />
+              <point x="794.0000000000001" y="1379.0" />
+              <point x="741.625" y="1379.0" />
+              <point x="176.66666666666674" y="192.0" />
             </edge>
             <edge source="modellayer.Item" target="modellayer.SaleLineItem">
-              <point x="24.666666666666742" y="-14.5" />
-              <point x="290.5535115626716" y="158.0" />
-              <point x="418.99999999999994" y="158.0" />
-              <point x="-46.5" y="14.5" />
+              <point x="-111.66666666666674" y="-247.0" />
+              <point x="1323.3180608280618" y="391.0" />
+              <point x="824.132438117439" y="391.0" />
+              <point x="108.0" y="70.0" />
             </edge>
             <edge source="modellayer.Sale" target="modellayer.SaleLineItem">
-              <point x="-18.25" y="-14.5" />
-              <point x="804.6996963943631" y="257.0" />
-              <point x="632.1938038793105" y="257.0" />
-              <point x="632.1938038793105" y="158.0" />
-              <point x="511.99999999999994" y="158.0" />
-              <point x="46.5" y="14.5" />
+              <point x="75.25" y="-81.0" />
+              <point x="225.75" y="955.0" />
+              <point x="590.382438117439" y="955.0" />
+              <point x="590.382438117439" y="391.0" />
+              <point x="608.132438117439" y="391.0" />
+              <point x="-108.0" y="70.0" />
             </edge>
-            <edge source="controllayer.ItemEditor" target="modellayer.containers">
-              <point x="37.0" y="-14.5" />
-              <point x="92.5" y="555.0" />
-              <point x="617.1937440134107" y="555.0" />
-              <point x="-70.57142857142856" y="14.5" />
+            <edge source="controllayer.CustomerController" target="modellayer.containers.CustomerCont">
+              <point x="-170.80000000000018" y="-59.0" />
+              <point x="3223.485185647686" y="1707.0" />
+              <point x="3285.202296176046" y="1707.0" />
+              <point x="0.0" y="71.0" />
+            </edge>
+            <edge source="controllayer.ItemEditor" target="modellayer.containers.ItemCont">
+              <point x="-82.66666666666674" y="-148.0" />
+              <point x="1689.0211401098888" y="1707.0" />
+              <point x="1618.4916666666666" y="1707.0" />
+              <point x="99.0" y="48.5" />
             </edge>
             <edge source="controllayer.Session" target="modellayer.Location">
-              <point x="0.0" y="-14.5" />
-              <point x="1232.7339225848393" y="49.0" />
-              <point x="474.7" y="49.0" />
-              <point x="45.450000000000045" y="14.5" />
+              <point x="-57.59999999999991" y="-93.0" />
+              <point x="2061.2128067765557" y="1399.0" />
+              <point x="2085.9018523143527" y="1399.0" />
+              <point x="2085.9018523143527" y="161.0" />
+              <point x="1266.6683218170715" y="161.0" />
+              <point x="77.39999999999986" y="70.5" />
             </edge>
             <edge source="tuilayer.ManageEmployee" target="tuilayer.EditEmployee">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
+              <point x="0.0" y="-70.5" />
+              <point x="2489.7714338439346" y="2365.0" />
+              <point x="2406.002296176046" y="2365.0" />
+              <point x="0.0" y="48.5" />
             </edge>
             <edge source="Main" target="tuilayer.MainMenu">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
+              <point x="0.0" y="-25.5" />
+              <point x="0.0" y="48.0" />
+            </edge>
+            <edge source="controllayer.InventoryController" target="modellayer.containers.BundleCont">
+              <point x="72.61538461538453" y="-158.0" />
+              <point x="1072.1422369297375" y="1667.0" />
+              <point x="1146.0657714507724" y="1667.0" />
+              <point x="0.0" y="48.5" />
+            </edge>
+            <edge source="controllayer.EmployeeController" target="modellayer.containers.EmployeeCont">
+              <point x="-80.19999999999982" y="-59.0" />
+              <point x="2722.814796176046" y="1399.0" />
+              <point x="2721.814796176046" y="1399.0" />
+              <point x="136.125" y="48.5" />
             </edge>
             <edge source="tuilayer.EditBundle" target="controllayer.BundleEditor">
-              <point x="-43.125" y="-14.5" />
-              <point x="374.56249999999994" y="753.0" />
-              <point x="383.43749999999994" y="753.0" />
-              <point x="383.43749999999994" y="679.0" />
-              <point x="356.93749999999994" y="679.0" />
-              <point x="-32.0" y="14.5" />
+              <point x="-85.5" y="-48.5" />
+              <point x="1464.252296176046" y="2138.0" />
+              <point x="1317.5268523143527" y="2138.0" />
+              <point x="-62.0" y="104.0" />
+            </edge>
+            <edge source="modellayer.containers.EmployeeCont" target="modellayer.Employee">
+              <point x="-90.75" y="-48.5" />
+              <point x="2494.939796176046" y="955.0" />
+              <point x="2567.439796176046" y="955.0" />
+              <point x="-18.25" y="104.0" />
             </edge>
             <edge source="modellayer.Loan" target="modellayer.SaleLineItem">
-              <point x="-26.0" y="-14.5" />
-              <point x="493.4676134031201" y="277.0" />
-              <point x="603.6938038793105" y="277.0" />
-              <point x="603.6938038793105" y="168.0" />
-              <point x="480.99999999999994" y="168.0" />
-              <point x="15.5" y="14.5" />
+              <point x="141.33333333333326" y="-192.0" />
+              <point x="706.2916666666665" y="955.0" />
+              <point x="672.3099884837384" y="955.0" />
+              <point x="672.3099884837384" y="381.0" />
+              <point x="680.132438117439" y="381.0" />
+              <point x="-36.0" y="70.0" />
             </edge>
             <edge source="modellayer.SaleLineItem" target="modellayer.Location">
-              <point x="0.0" y="-14.5" />
-              <point x="465.49999999999994" y="89.0" />
-              <point x="434.2999999999999" y="89.0" />
-              <point x="5.0499999999999545" y="14.5" />
+              <point x="0.0" y="-70.0" />
+              <point x="716.132438117439" y="181.0" />
+              <point x="1146.2683218170716" y="181.0" />
+              <point x="-43.0" y="70.5" />
             </edge>
             <edge source="tuilayer.ManageCustomer" target="controllayer.CustomerController">
-              <point x="-62.400000000000006" y="-14.5" />
-              <point x="1032.1151725848392" y="922.0" />
-              <point x="867.6025041050907" y="922.0" />
-              <point x="867.6025041050907" y="679.0" />
-              <point x="826.6001684797484" y="679.0" />
-              <point x="-42.25" y="14.5" />
+              <point x="50.19999999999982" y="-81.5" />
+              <point x="3143.9839338439347" y="2375.0" />
+              <point x="3444.7711401098886" y="2375.0" />
+              <point x="3444.7711401098886" y="2198.0" />
+              <point x="3287.5351856476864" y="2198.0" />
+              <point x="-106.75" y="59.0" />
+            </edge>
+            <edge source="modellayer.containers.BundleCont" target="modellayer.Bundle">
+              <point x="82.75" y="-48.5" />
+              <point x="1228.8157714507724" y="1399.0" />
+              <point x="1116.1574381174391" y="1399.0" />
+              <point x="60.40000000000009" y="192.0" />
             </edge>
             <edge source="tuilayer.ManageEmployee" target="tuilayer.Menu">
-              <point x="-62.0" y="-14.5" />
-              <point x="1314.6401725848393" y="962.0" />
-              <point x="1246.1714225848393" y="962.0" />
-              <point x="1246.1714225848393" y="833.0" />
-              <point x="1240.2964225848393" y="833.0" />
-              <point x="23.0625" y="14.5" />
+              <point x="-48.0" y="-70.5" />
+              <point x="2441.7714338439346" y="2375.0" />
+              <point x="2194.099518398268" y="2375.0" />
+              <point x="2194.099518398268" y="2168.0" />
+              <point x="2095.2155845543334" y="2168.0" />
+              <point x="39.02777777777783" y="180.5" />
             </edge>
             <edge source="modellayer.Bundle" target="modellayer.SaleLineItem">
-              <point x="34.125" y="-14.5" />
-              <point x="284.56874401341065" y="297.0" />
-              <point x="375.2529163245763" y="297.0" />
-              <point x="375.2529163245763" y="168.0" />
-              <point x="449.99999999999994" y="168.0" />
-              <point x="-15.5" y="14.5" />
-            </edge>
-            <edge source="controllayer.InventoryController" target="modellayer.containers">
-              <point x="55.66666666666674" y="-14.5" />
-              <point x="270.16666666666674" y="565.0" />
-              <point x="628.0508868705535" y="565.0" />
-              <point x="-59.714285714285666" y="14.5" />
+              <point x="-113.25" y="-192.0" />
+              <point x="942.5074381174389" y="945.0" />
+              <point x="683.3099884837384" y="945.0" />
+              <point x="683.3099884837384" y="391.0" />
+              <point x="752.132438117439" y="391.0" />
+              <point x="36.0" y="70.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.7296450939457203" x="787.3962804005722" y="445.60228898426317" />
+          <settings layout="Hierarchic Group" zoom="0.30565649813610746" x="2140.0" y="1766.0" />
           <SelectedNodes />
-          <Categories />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+          </Categories>
           <SCOPE>Project Files</SCOPE>
           <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/CreateSale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="77" column="27" lean-forward="false" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Bundle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="98" column="5" lean-forward="true" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Loan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="68" column="23" lean-forward="false" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
+          <folding>
+            <element signature="e#2094#2095#0" expanded="true" />
+            <element signature="e#2136#2137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/SaleLineItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/EmployeeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/BundleEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/Payment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/BundleCont.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/CustomerCont.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/EmployeeCont.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/SaleCont.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/LoanCont.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/modellayer/containers/ItemCont.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/ItemEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/ManageInventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="130" column="35" lean-forward="false" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/EmployeeEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/InventoryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="96">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding>
-            <element signature="e#1520#1521#0" expanded="true" />
-            <element signature="e#1651#1652#0" expanded="true" />
-            <element signature="e#1909#1910#0" expanded="true" />
-            <element signature="e#1961#1962#0" expanded="true" />
-            <element signature="e#2018#2019#0" expanded="true" />
-            <element signature="e#2141#2142#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+            <element signature="e#1775#1776#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/MainMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/EditLoan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/EditBundle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/tuilayer/EditCustomer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-218">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/CustomerEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="23" />
+          <folding>
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IntellijCode/src/controllayer/SaleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>

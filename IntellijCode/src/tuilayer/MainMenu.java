@@ -1,6 +1,7 @@
 package tuilayer;
 
 import controllayer.Session;
+
 /**
  * Write a description of class MainMenuUI here.
  *
@@ -48,7 +49,7 @@ public class MainMenu extends Menu {
             try {
                 if (Session.getInstance().login(inputString("Login: "), inputString("Password: "), inputString("Location: ")))
                     setSession(Session.getInstance());
-                    break;
+                break;
             } catch (Exception ignored) {
             }
             printErr("Login failed");

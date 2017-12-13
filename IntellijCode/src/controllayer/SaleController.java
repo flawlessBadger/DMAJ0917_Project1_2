@@ -9,9 +9,8 @@ public class SaleController {
     //TODO:check if sum of items in items and bundles is not exceeding the amount in stock
 
 
-    private static SaleCont<Sale> saleCont = SaleCont.getInstance();
-    private static LoanCont<String, Loan> loanCont = LoanCont.getInstance();
-    private static CustomerCont<Integer, Customer> customerCont = CustomerCont.getInstance();
+    private SaleCont<Sale> saleCont = SaleCont.getInstance();
+    private CustomerCont<Integer, Customer> customerCont = CustomerCont.getInstance();
     private InventoryController inventoryCtrl;
     private Sale tempSale;
 
@@ -32,10 +31,8 @@ public class SaleController {
     }
     public boolean addSaleLineItem(String barcode) {
         SaleLineItem saleLineItem = inventoryCtrl.getSaleLineItem(barcode);
-        if (saleLineItem == null)
-            return false;
+        return saleLineItem != null && tempSale.addSaleLineItem(saleLineItem);
 
-        return tempSale.addSaleLineItem(saleLineItem);
     }
     public boolean finishSale(int paymentId, double discount) {
         if (tempSale == null)
@@ -60,12 +57,5 @@ public class SaleController {
         saleCont.add(tempSale);
         tempSale = null;
         return true;
-    }
-
-    public boolean isValidLoan(String barcode) {
-        return loanCont.containsKey(barcode);
-    }
-    public int returnLoan(String barcode) {
-        return loanCont.get(barcode).returnLoan();
     }
 }

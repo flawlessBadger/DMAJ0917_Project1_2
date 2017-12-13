@@ -68,9 +68,9 @@ public class Item implements SaleLineItem {
 
     @Override
     public double getDiscount(int quantity) {
-        if (discounts.lowerKey(quantity) == null)
+        if (discounts.floorKey(quantity) == null)
             return 0;
-        return discounts.lowerKey(quantity);
+        return discounts.floorKey(quantity);
     }
 
     public boolean removeDiscount(int amount) {

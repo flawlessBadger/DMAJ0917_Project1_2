@@ -28,6 +28,10 @@ public class Session {
 
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
     public Employee getEmployee() {
         return employee;
     }

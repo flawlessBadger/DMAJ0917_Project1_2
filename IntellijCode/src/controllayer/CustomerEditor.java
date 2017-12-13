@@ -4,8 +4,8 @@ import modellayer.Customer;
 import modellayer.containers.CustomerCont;
 
 public class CustomerEditor {
-    Customer customer;
-    int id;
+    private Customer customer;
+    private int id;
 
     public CustomerEditor(int id) {
         this.id = id;

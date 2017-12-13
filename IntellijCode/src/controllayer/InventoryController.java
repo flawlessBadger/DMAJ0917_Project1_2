@@ -7,9 +7,9 @@ import modellayer.containers.LoanCont;
 
 public class InventoryController {
 
-    private static ItemCont<String, Item> itemCont = ItemCont.getInstance();
-    private static BundleCont<String, Bundle> bundleCont = BundleCont.getInstance();
-    private static LoanCont<String, Loan> loanCont = LoanCont.getInstance();
+    private ItemCont<String, Item> itemCont = ItemCont.getInstance();
+    private BundleCont<String, Bundle> bundleCont = BundleCont.getInstance();
+    private LoanCont<String, Loan> loanCont = LoanCont.getInstance();
 
     public void createItem(String barcode, String name, String description, double salePrice, double costPrice) {
         itemCont.put(barcode, new Item(barcode, name, description, costPrice, salePrice));
@@ -37,15 +37,10 @@ public class InventoryController {
         return null;
     }
 
-    public void addStock(String barcode, int amount, Location location) {
-        SaleLineItem saleLineItem = getSaleLineItem(barcode);
-
-        //This salelineitem doesn't exists
-        if (saleLineItem == null)
-            return;
-
-        saleLineItem.addStock(amount, location);
+    public void addStock(String barcode, int amount) {
+        getSaleLineItem(barcode).addStock(amount, Session.getInstance().getLocation());
     }
+
     public boolean removeStock(String barcode, int amount, Location location) {
         SaleLineItem saleLineItem = getSaleLineItem(barcode);
 
@@ -55,6 +50,7 @@ public class InventoryController {
 
         return saleLineItem.removeStock(amount, location);
     }
+
     public int getStock(String barcode, Location location) {
         SaleLineItem saleLineItem = getSaleLineItem(barcode);
 
@@ -64,6 +60,7 @@ public class InventoryController {
 
         return saleLineItem.checkStock(location);
     }
+
     public boolean checkStock(String barcode, Location location) {
         SaleLineItem saleLineItem = getSaleLineItem(barcode);
 
