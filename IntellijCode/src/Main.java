@@ -1,4 +1,7 @@
+import controllayer.InventoryController;
 import modellayer.Customer;
+import modellayer.Location;
+import modellayer.SaleLineItem;
 import modellayer.containers.CustomerCont;
 import tuilayer.MainMenu;
 
@@ -17,7 +20,11 @@ public class Main {
         Customer customer = new Customer("Asd", "Asd", "Asd", "Asd", 20);
         CustomerCont.getInstance().put(CustomerCont.getInstance().getID(), customer);
 
+        InventoryController inventoryController = new InventoryController();
+        inventoryController.createItem("1", "ASd", "ASd", 123.4, 99.9);
 
+        SaleLineItem saleLineItem = inventoryController.getSaleLineItem("1");
+        saleLineItem.addStock(1, Location.DIY);
 
         new MainMenu();
     }

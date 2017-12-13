@@ -132,10 +132,10 @@ public class Sale {
     }
     private void checkForBundles() {
         boolean hasItems;
-        for (Bundle bundle : (HashSet<Bundle>)bundleCont.values()) {
+        for (Bundle bundle : bundleCont.values()) {
             hasItems = true;
             for (Item item : bundle.getItems()) {
-                if (!saleLineItems.containsKey((SaleLineItem)item)) {
+                if (!saleLineItems.containsKey(item)) {
                     hasItems = false;
                     break;
                 }
