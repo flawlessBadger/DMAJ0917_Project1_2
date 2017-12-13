@@ -40,6 +40,7 @@ public class MainMenu extends Menu {
                 break;
             case 3:
                 new CreateSale(this);
+                break;
         }
 
     }
