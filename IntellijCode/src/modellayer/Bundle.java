@@ -1,17 +1,14 @@
 package modellayer;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Bundle implements SaleLineItem {
+
     private String name;
     private double salePrice;
     private String description;
     private String barcode;
     private TreeMap<Integer, Double> discounts;
-
     private HashMap<Item, Integer> items;
 
     public Bundle(String barcode, String name, String description, double salePrice) {
@@ -19,12 +16,6 @@ public class Bundle implements SaleLineItem {
         this.name = name;
         this.description = description;
         this.salePrice = salePrice;
-        this.discounts = new TreeMap<>();
-        this.items = new HashMap<>();
-    }
-
-    public Bundle(String barcode) {
-        this.barcode = barcode;
         this.discounts = new TreeMap<>();
         this.items = new HashMap<>();
     }
@@ -44,14 +35,29 @@ public class Bundle implements SaleLineItem {
         }
         return false;
     }
+    public HashSet<Item> getItems() {
+        return new HashSet<Item>(items.keySet());
+    }
 
 
     @Override
+    public double getSalePrice() {
+        return salePrice;
+    }
+
+    @Override
     public double getPrice(int quantity) {
-//        return salePrice * quantity;
         if (discounts.lowerKey(quantity) == null)
             return salePrice;
-        return salePrice - salePrice * (discounts.lowerKey(quantity) / 100);
+
+        return salePrice * (1 - (discounts.lowerKey(quantity) / 100));
+    }
+
+    @Override
+    public void addStock(int amount, Location location) {
+        for (Item item : items.keySet()) {
+            item.addStock(amount, location);
+        }
     }
 
     @Override

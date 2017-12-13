@@ -40,9 +40,9 @@ public class Item implements SaleLineItem {
     }
 
 
-    //stock management
+    @Override
     public void addStock(int quantity, Location location) {
-        stock.put(location, (stock.containsKey(location)) ? stock.get(location) + quantity : quantity);
+        stock.put(location, quantity + stock.getOrDefault(location, 0));
     }
 
     @Override
@@ -88,6 +88,10 @@ public class Item implements SaleLineItem {
         return barcode;
     }
 
+    @Override
+    public double getSalePrice() {
+        return salePrice;
+    }
     @Override
     public double getPrice(int quantity) {
 //        if (discounts.floorKey(quantity) == null)

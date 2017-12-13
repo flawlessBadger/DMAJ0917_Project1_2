@@ -37,6 +37,8 @@ public class MainMenu extends Menu {
             case 2:
                 new ManageCustomer(this);
                 break;
+            case 3:
+                new CreateSale(this);
         }
 
     }

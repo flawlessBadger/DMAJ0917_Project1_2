@@ -15,7 +15,7 @@ abstract class Menu {
     private Scanner sc;
     private String name;
     protected ArrayList<String> commandWords;
-    private Menu parent;
+    protected Menu parent;
     protected Session session;
 
     Menu(String name, Menu parent) {

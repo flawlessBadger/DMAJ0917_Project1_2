@@ -1,18 +1,15 @@
 package controllayer;
 
-import modellayer.Bundle;
-import modellayer.Item;
-import modellayer.Loan;
-import modellayer.Location;
+import modellayer.*;
 import modellayer.containers.BundleCont;
 import modellayer.containers.ItemCont;
 import modellayer.containers.LoanCont;
 
 public class InventoryController {
 
-    private ItemCont<String, Item> itemCont = ItemCont.getInstance();
-    private BundleCont<String, Bundle> bundleCont = BundleCont.getInstance();
-    private LoanCont<String, Loan> loanCont = LoanCont.getInstance();
+    private static ItemCont<String, Item> itemCont = ItemCont.getInstance();
+    private static BundleCont<String, Bundle> bundleCont = BundleCont.getInstance();
+    private static LoanCont<String, Loan> loanCont = LoanCont.getInstance();
 
     public void createItem(String barcode, String name, String description, double salePrice, double costPrice) {
         itemCont.put(barcode, new Item(barcode, name, description, costPrice, salePrice));
@@ -30,13 +27,58 @@ public class InventoryController {
         bundleCont.get(bundleBarcode).addItem(itemCont.get(barcode), amount);
     }
 
-    //TODO: location setting
-    public void addStock(String barcode, int amount) {
-        itemCont.get(barcode).addStock(amount, Location.DIY);
+    public SaleLineItem getSaleLineItem(String barcode) {
+        SaleLineItem saleLineItem;
+
+        if ((saleLineItem = itemCont.get(barcode)) != null) return saleLineItem;
+        if ((saleLineItem = bundleCont.get(barcode)) != null) return saleLineItem;
+        if ((saleLineItem = loanCont.get(barcode)) != null) return saleLineItem;
+
+        return null;
+    }
+
+    public void addStock(String barcode, int amount, Location location) {
+        SaleLineItem saleLineItem = getSaleLineItem(barcode);
+
+        //This salelineitem doesn't exists
+        if (saleLineItem == null)
+            return;
+
+        saleLineItem.addStock(amount, location);
+    }
+    public boolean removeStock(String barcode, int amount, Location location) {
+        SaleLineItem saleLineItem = getSaleLineItem(barcode);
+
+        //This salelineitem doesn't exists
+        if (saleLineItem == null)
+            return false;
+
+        return saleLineItem.removeStock(amount, location);
+    }
+    public int getStock(String barcode, Location location) {
+        SaleLineItem saleLineItem = getSaleLineItem(barcode);
+
+        //This salelineitem doesn't exists
+        if (saleLineItem == null)
+            return 0;
+
+        return saleLineItem.checkStock(location);
+    }
+    public boolean checkStock(String barcode, Location location) {
+        SaleLineItem saleLineItem = getSaleLineItem(barcode);
+
+        //This salelineitem doesn't exists or is not on stock
+        if (saleLineItem == null || saleLineItem.checkStock(location) == 0)
+            return false;
+
+        return true;
     }
 
     public boolean remove(String barcode) {
-        return (itemCont.remove(barcode) != null || bundleCont.remove(barcode) != null || loanCont.remove(barcode) != null);
+
+        return (itemCont.remove(barcode) != null ||
+                bundleCont.remove(barcode) != null ||
+                loanCont.remove(barcode) != null);
     }
 
     public boolean isValidItem(String barcode) {

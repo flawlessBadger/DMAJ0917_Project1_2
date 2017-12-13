@@ -27,13 +27,22 @@ public class Loan implements SaleLineItem {
     }
 
     @Override
+    public double getSalePrice() {
+        return salePrice;
+    }
+
+    @Override
     public double getPrice(int quantity) {
         return salePrice - salePrice * discount;
     }
 
     @Override
-    public int checkStock(Location location) {
+    public void addStock(int amount, Location location) {
+        isAvailable = amount > 0;
+    }
 
+    @Override
+    public int checkStock(Location location) {
         return (isAvailable) ? 1 : 0;
     }
 
@@ -54,7 +63,7 @@ public class Loan implements SaleLineItem {
 
     @Override
     public double getDiscount(int quantity) {
-        return 0;
+        return discount;
     }
 
     public int returnLoan() {

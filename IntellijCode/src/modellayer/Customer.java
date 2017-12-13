@@ -15,6 +15,10 @@ public class Customer {
         this.discount = discount;
     }
 
+    public double getDiscount() {
+        return discount;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
