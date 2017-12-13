@@ -32,6 +32,7 @@ public class ManageCustomer extends  Menu {
 
     private void createCustomer(){
         customer.createEmployee(inputString("Name: "), inputString("Address: "),inputString("Telephone: "),inputString("Email: "),inputDouble("Discount in percent: "));
+        resetMenu("Customer created!");
     }
 
     private void edit(){
