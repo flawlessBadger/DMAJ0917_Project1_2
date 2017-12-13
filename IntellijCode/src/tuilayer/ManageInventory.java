@@ -129,7 +129,7 @@ public class ManageInventory extends Menu {
             resetMenu("Item was not found with barcode "+barcode);
         }else{
             if (invCtrl.isValidItem(barcode)){
-                invCtrl.addStock(barcode,inputInteger("Quantity: "));
+                //invCtrl.addStock(barcode,inputInteger("Quantity: "));
                 resetMenu("Quantity was added!");
             }else if(invCtrl.isValidBundle(barcode)){
                 resetMenu("Barcode is already used by an bundle!");

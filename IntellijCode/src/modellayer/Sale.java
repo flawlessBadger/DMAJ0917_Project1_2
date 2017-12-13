@@ -61,6 +61,9 @@ public class Sale {
     public HashSet<SaleLineItem> getSaleLineItems() {
         return new HashSet<SaleLineItem>(saleLineItems.keySet());
     }
+    public boolean hasSaleLineItems() {
+        return !saleLineItems.isEmpty();
+    }
 
     public boolean addSaleLineItem(SaleLineItem saleLineItem) {
         String barcode = saleLineItem.getBarcode();

@@ -55,8 +55,10 @@ public class InventoryController {
         SaleLineItem saleLineItem = getSaleLineItem(barcode);
 
         //This salelineitem doesn't exists
+        /*
         if (saleLineItem == null)
             return 0;
+        */
 
         return saleLineItem.checkStock(location);
     }
@@ -65,7 +67,7 @@ public class InventoryController {
         SaleLineItem saleLineItem = getSaleLineItem(barcode);
 
         //This salelineitem doesn't exists or is not on stock
-        if (saleLineItem == null || saleLineItem.checkStock(location) == 0)
+        if (/*saleLineItem == null || */saleLineItem.checkStock(location) == 0)
             return false;
 
         return true;

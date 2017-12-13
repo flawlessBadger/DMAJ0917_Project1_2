@@ -1,3 +1,5 @@
+import modellayer.Customer;
+import modellayer.containers.CustomerCont;
 import tuilayer.MainMenu;
 
 public class Main {
@@ -11,6 +13,11 @@ public class Main {
 //
 //        System.out.println(
 //                new EmployeeController().toStringAll());
+
+        Customer customer = new Customer("Asd", "Asd", "Asd", "Asd", 20);
+        CustomerCont.getInstance().put(CustomerCont.getInstance().getID(), customer);
+
+
 
         new MainMenu();
     }

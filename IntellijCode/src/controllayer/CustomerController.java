@@ -23,6 +23,9 @@ public class CustomerController {
     public void createEmployee(String name, String address, String phoneNumber, String email, double discount) {
         customerCont.put(customerCont.getID(), new Customer(name, address, phoneNumber, email, discount));
     }
+    public boolean hasCustomer() {
+        return !customerCont.isEmpty();
+    }
 
     public boolean isIDTaken(int id) {
         return !customerCont.containsKey(id);

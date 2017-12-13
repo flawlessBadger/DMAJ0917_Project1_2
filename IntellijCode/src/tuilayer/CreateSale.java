@@ -3,7 +3,8 @@ package tuilayer;
 import controllayer.CustomerController;
 import controllayer.InventoryController;
 import controllayer.SaleController;
-import modellayer.Payment;
+
+import java.util.ArrayList;
 
 public class CreateSale extends  Menu {
 
@@ -16,11 +17,11 @@ public class CreateSale extends  Menu {
         this.saleCtrl = new SaleController();
         this.inventoryCtrl = new InventoryController();
         this.customerCtrl = new CustomerController();
-        createSale();
 
         commandWords.add("Scan product");
         commandWords.add("Finish sale");
 
+        createSale();
         printMenu();
         menuPrompt();
     }
@@ -37,18 +38,20 @@ public class CreateSale extends  Menu {
         }
     }
     private void createSale() {
-        int customer = inputInteger("Choose customer by id: ");
-        while (customerCtrl.isIDTaken(customer)) {
-            System.out.println("There is no customer with the selected id("+Integer.toString(customer)+")!");
+        int customer = -1;
+        if (customerCtrl.hasCustomer() && inputInteger("\nIs it a regular customer?\n"+"(1) Yes\n"+"(2) No\n > " ) == 1) {
             customer = inputInteger("Choose customer by id: ");
+            while (customerCtrl.isIDTaken(customer)) {
+                System.out.println("There is no customer with the selected id(" + Integer.toString(customer) + ")!");
+                customer = inputInteger("Choose customer by id: ");
+            }
         }
 
-        if (!saleCtrl.createSale(customer)) {
+        if (!((customer > 0) ? saleCtrl.createSale(customer) : saleCtrl.createSale())) {
             resetMenu("The sale couldn't be created!");
-        } else {
-            parent.printMenu();
-            parent.menuPrompt();
         }
+
+        resetMenu("The sale was created succesfully!");
     }
     private void addItem() {
         do {
@@ -64,12 +67,13 @@ public class CreateSale extends  Menu {
     }
     private void finishSale() {
         String str = "Choose payment method:\n";
-        for (int i = 0; i < Payment.values().length; i++) {
-            str += "(" + Integer.toString(i+1) + ") " + Payment.values()[i] + "\n";
+        ArrayList<String> paymentMethods = saleCtrl.getPaymentMethods();
+        for (int i = 0; i < paymentMethods.size(); i++) {
+            str += "(" + Integer.toString(i+1) + ") " + paymentMethods.get(i) + "\n";
         }
 
         int payment = inputInteger(str);
-        while (payment > 0 && payment < Payment.values().length+1) {
+        while (payment < 1 && payment > paymentMethods.size()) {
             System.out.println("Your selection("+Integer.toString(payment)+") is not valid!");
             payment = inputInteger(str);
         }
@@ -78,8 +82,7 @@ public class CreateSale extends  Menu {
         if (!saleCtrl.finishSale(payment, discount)) {
             resetMenu("The sale couldn't be finished!");
         } else {
-            parent.printMenu();
-            parent.menuPrompt();
+            parent.resetMenu("The sale is registered to the system!");
         }
     }
 }

@@ -5,6 +5,9 @@ import modellayer.containers.CustomerCont;
 import modellayer.containers.LoanCont;
 import modellayer.containers.SaleCont;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SaleController {
     //TODO:check if sum of items in items and bundles is not exceeding the amount in stock
 
@@ -35,7 +38,7 @@ public class SaleController {
 
     }
     public boolean finishSale(int paymentId, double discount) {
-        if (tempSale == null)
+        if (tempSale == null || !tempSale.hasSaleLineItems())
             return false;
 
         Payment paymentMethod;
@@ -57,5 +60,12 @@ public class SaleController {
         saleCont.add(tempSale);
         tempSale = null;
         return true;
+    }
+    public ArrayList<String> getPaymentMethods() {
+        ArrayList<String> paymentMethods = new ArrayList<>();
+        for (Payment payment : Payment.values()) {
+            paymentMethods.add(payment.toString());
+        }
+        return paymentMethods;
     }
 }
