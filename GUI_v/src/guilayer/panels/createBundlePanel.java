@@ -33,7 +33,7 @@ public class createBundlePanel extends JPanel {
 	
 	private InventoryController invCtrl = new InventoryController();
 	private NotificationWindow notification = new NotificationWindow();
-	
+	//error label
 	private JLabel lblBarErr;
 	
 	private JLabel lblBarcode;
