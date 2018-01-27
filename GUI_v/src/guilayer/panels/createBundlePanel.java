@@ -39,7 +39,6 @@ public class createBundlePanel extends JPanel {
 	private JLabel lblBarcode;
 	private JTextField txtBarcode;
 	private JSeparator barcodeSeparator;
-	
 	private JButton btnBarcode;
 	
 	private JLabel lblName;
