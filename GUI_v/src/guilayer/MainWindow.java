@@ -86,7 +86,7 @@ public class MainWindow {
 		logLeftPanel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\VGrzo\\git\\kjsdgkjs\\GUI_v\\pictures\\xlbyg.png"));
+		lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/pics/xlbyg.png")));
 		lblNewLabel.setBounds(100, 270, 264, 264);
 		logLeftPanel.add(lblNewLabel);
 		
