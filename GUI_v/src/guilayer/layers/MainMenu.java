@@ -178,6 +178,7 @@ public class MainMenu extends JPanel {
 		createSal.add(lblSal);
 		
 		JPanel midPanel = new JPanel();
+		midPanel.setBorder(null);
 		midPanel.setBackground(new Color(255, 235, 205));
 		midPanel.setBounds(200, 0, 800, 771);
 		mainPane.add(midPanel);
