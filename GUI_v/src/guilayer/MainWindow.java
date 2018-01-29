@@ -22,6 +22,9 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainWindow {
 
@@ -136,43 +139,44 @@ public class MainWindow {
 		logRightPanel.add(lblUsername);
 		lblUsername.setFont(new Font("Dubai", Font.BOLD, 14));
 		
-		JPanel btnLogin2 = new JPanel();
-		btnLogin2.setBackground(new Color(255, 235, 205));
-		btnLogin2.setBounds(120, 455, 150, 45);
-		logRightPanel.add(btnLogin2);
-		btnLogin2.setLayout(null);
+		JPanel btnLogin = new JPanel();
+		btnLogin.setBackground(new Color(255, 235, 205));
+		btnLogin.setBounds(120, 455, 150, 45);
+		logRightPanel.add(btnLogin);
+		btnLogin.setLayout(null);
 		
 		JLabel lblLogin = new JLabel("LogIn");
 		lblLogin.setForeground(Color.WHITE);
 		lblLogin.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblLogin.setBounds(58, 0, 34, 44);
-		btnLogin2.add(lblLogin);
+		btnLogin.add(lblLogin);
 		
-		btnLogin2.addMouseListener(new MouseAdapter() {
+		JButton btnSubmit = new JButton("");
+		btnSubmit.setVisible(false);
+		btnSubmit.setBounds(0, 0, 0, 0);
+		btnLogin.add(btnSubmit);
+		
+		btnSubmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				submit();
+			}
+		});
+		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				if(username.getText().length() <= 0 && passwordField.getPassword().length <= 0)
-					notification.errorWindow("Username and Password is missing!","Error");
-				else if(username.getText().length() <= 0) 
-					notification.errorWindow("Username is missing!","Error");
-				else if(passwordField.getPassword().length <= 0) 
-					notification.errorWindow("Password is missing!","Error");
-				else if(username.getText().length() > 0 && passwordField.getPassword().length > 0)
-					if(userLogin(username.getText(),String.valueOf(passwordField.getPassword()))) {
-						menuStateChange("main");
-					}else {
-						notification.errorWindow("Wrong Username or Password!","Error");
-					}
+				submit();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				btnLogin2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+				btnLogin.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnLogin2.setBorder(null);
+				btnLogin.setBorder(null);
 			}
 		});
+		
+		mainFrame.getRootPane().setDefaultButton(btnSubmit);
 	}
 	
 	private boolean userLogin(String username, String password) {
@@ -184,6 +188,20 @@ public class MainWindow {
             	
 		}
 		return false;
+	}
+	
+	private void submit() {
+		if(username.getText().length() <= 0 && passwordField.getPassword().length <= 0)
+			notification.errorWindow("Username and Password is missing!","Error");
+		else if(username.getText().length() <= 0) 
+			notification.errorWindow("Username is missing!","Error");
+		else if(passwordField.getPassword().length <= 0) 
+			notification.errorWindow("Password is missing!","Error");
+		else
+			if (userLogin(username.getText(), String.valueOf(passwordField.getPassword())))
+				menuStateChange("main");
+			else
+				notification.errorWindow("Wrong Username or Password!","Error");
 	}
 	
 	private void menuStateChange(String menuName) {
