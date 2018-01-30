@@ -1,4 +1,4 @@
-package guilayer.panels;
+package guilayer.inventoryPanels;
 
 import javax.swing.JPanel;
 
@@ -98,8 +98,8 @@ public class createBundlePanel extends JPanel {
 				resetPanel();
 			}
 		});
-		createBundle.setBackground(new Color(255, 235, 205));
-		createBundle.setBounds(0, 0, 780, 680);
+		createBundle.setBackground(new Color(210, 180, 118));
+		createBundle.setBounds(0, 0, 800, 657);
 		add(createBundle);
 		createBundle.setLayout(null);
 		

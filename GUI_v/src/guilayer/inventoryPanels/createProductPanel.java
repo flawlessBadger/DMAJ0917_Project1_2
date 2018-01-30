@@ -1,4 +1,4 @@
-package guilayer.panels;
+package guilayer.inventoryPanels;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -76,7 +76,7 @@ public class createProductPanel extends JPanel {
 			}
 		});
 		
-		createItem.setBounds(0, 0, 780, 680);
+		createItem.setBounds(0, 0, 800, 771);
 		add(createItem);
 		createItem.setBorder(null);
 		createItem.setBackground(new Color(255, 235, 205));

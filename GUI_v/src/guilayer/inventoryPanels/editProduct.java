@@ -1,4 +1,4 @@
-package guilayer.panels;
+package guilayer.inventoryPanels;
 
 import javax.swing.JPanel;
 import java.awt.Color;

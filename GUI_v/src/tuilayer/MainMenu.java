@@ -13,6 +13,10 @@ public class MainMenu extends Menu {
      * Constructor for objects of class MainMenuUI
      */
 
+//	public static void main(String[] args) {
+//		new MainMenu();
+//	}
+	
     public MainMenu() {
         super("Main Menu", null);
         //login();

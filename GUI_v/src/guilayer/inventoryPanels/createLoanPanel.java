@@ -1,4 +1,4 @@
-package guilayer.panels;
+package guilayer.inventoryPanels;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -85,10 +85,10 @@ public class createLoanPanel extends JPanel {
 			}
 		});
 		
-		createLoan.setBounds(0, 0, 780, 680);
+		createLoan.setBounds(0, 0, 800, 680);
 		add(createLoan);
 		createLoan.setBorder(null);
-		createLoan.setBackground(new Color(255, 235, 205));
+		createLoan.setBackground(new Color(210, 180, 118));
 		createLoan.setFont(new Font("Dubai", Font.BOLD, 11));
 		createLoan.setLayout(null);
 		

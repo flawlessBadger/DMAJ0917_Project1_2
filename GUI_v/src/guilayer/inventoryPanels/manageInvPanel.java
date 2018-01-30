@@ -1,4 +1,4 @@
-package guilayer.panels;
+package guilayer.inventoryPanels;
 
 import javax.swing.JPanel;
 import java.awt.Color;
@@ -6,8 +6,9 @@ import javax.swing.JTabbedPane;
 import java.awt.Font;
 
 import guilayer.NotificationWindow;
+import guilayer.inventoryPanels.createProductPanel;
 import guilayer.layers.MainMenu;
-import guilayer.panels.createProductPanel;
+
 import javax.swing.event.ChangeListener;
 
 import controllayer.InventoryController;
@@ -50,7 +51,7 @@ public class manageInvPanel extends JPanel {
 		tabbedPane.setBorder(null);
 		tabbedPane.setFont(new Font("Dubai", Font.PLAIN, 14));
 		tabbedPane.setForeground(Color.DARK_GRAY);
-		tabbedPane.setBounds(10, 45, 780, 715);
+		tabbedPane.setBounds(0, 0, 800, 771);
 		add(tabbedPane);
 		
 

@@ -19,12 +19,25 @@ public class EmployeeController {
         s.append("\n###################################");
         return s.toString();
     }
+    
+    public String[][] getData() {
+        String[][] s = new String[employeeCont.size()][4];
+        int i =0;
+        for (Map.Entry<String, Employee> entry : employeeCont.entrySet()) {
+            s[i][0]=entry.getKey();
+            s[i][1]=entry.getValue().getName();
+            s[i][2]=entry.getValue().getAddress();
+            s[i][3]=String.valueOf(entry.getValue().getAccessLevel());
+            i++;
+        }
+        return s;
+    }
 
     public void createEmployee(String login, String name, String address, int accessLevel, String password) {
         employeeCont.put(login, new Employee(name, address, accessLevel, password));
     }
 
     public boolean isLoginTaken(String login) {
-        return !employeeCont.containsKey(login);
+        return employeeCont.containsKey(login);
     }
 }

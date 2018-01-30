@@ -2,6 +2,7 @@ package guilayer;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -22,6 +23,9 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 public class MainWindow {
 
@@ -38,7 +42,14 @@ public class MainWindow {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void start() {
+        try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			UIManager.getDefaults().put("TabbedPane.contentBorderInsets", new Insets(0,0,0,0));
+			UIManager.getDefaults().put("TabbedPane.tabsOverlapBorder", true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -80,13 +91,13 @@ public class MainWindow {
 		menuStateChange("login");
 		
 		JPanel logLeftPanel = new JPanel();
-		logLeftPanel.setBackground(new Color(255, 235, 205));
+		logLeftPanel.setBackground(new Color(210, 180, 118));
 		logLeftPanel.setBounds(0, 0, 500, 771);
 		loginPane.add(logLeftPanel);
 		logLeftPanel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/pics/xlbyg.png")));
+		lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/pics/xlbygS.png")));
 		lblNewLabel.setBounds(100, 270, 264, 264);
 		logLeftPanel.add(lblNewLabel);
 		
@@ -105,7 +116,7 @@ public class MainWindow {
 		logRightPanel.add(separator_1);
 		
 		username = new JTextField();
-		username.setSelectedTextColor(new Color(255, 235, 205));
+		username.setSelectedTextColor(new Color(208, 187, 130));
 		username.setCaretColor(new Color(255, 235, 205));
 		username.setBorder(null);
 		username.setForeground(Color.WHITE);
@@ -137,15 +148,15 @@ public class MainWindow {
 		lblUsername.setFont(new Font("Dubai", Font.BOLD, 14));
 		
 		JPanel btnLogin2 = new JPanel();
-		btnLogin2.setBackground(new Color(255, 235, 205));
-		btnLogin2.setBounds(120, 455, 150, 45);
+		btnLogin2.setBackground(new Color(210, 180, 118));
+		btnLogin2.setBounds(120, 455, 176, 45);
 		logRightPanel.add(btnLogin2);
 		btnLogin2.setLayout(null);
 		
 		JLabel lblLogin = new JLabel("LogIn");
 		lblLogin.setForeground(Color.WHITE);
 		lblLogin.setFont(new Font("Dubai", Font.BOLD, 14));
-		lblLogin.setBounds(58, 0, 34, 44);
+		lblLogin.setBounds(58, 0, 55, 44);
 		btnLogin2.add(lblLogin);
 		
 		btnLogin2.addMouseListener(new MouseAdapter() {

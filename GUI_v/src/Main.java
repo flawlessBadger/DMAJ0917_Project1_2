@@ -1,3 +1,6 @@
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 import controllayer.InventoryController;
 import guilayer.MainWindow;
 import modellayer.Customer;
@@ -9,13 +12,19 @@ import tuilayer.MainMenu;
 import modellayer.containers.*;
 
 public class Main {
+	
+	//main color: #d2b476 / (210, 180, 118)
+	//light color: (255, 235, 205)
+	// background .DARK_GRAY
     public static void main(String[] args) {
 
         Employee em = new Employee("Viktor Grzonkowski", "Nibevej 12", 5, "password");
         Employee em2 = new Employee("Luis Cheung", "Tempeltown", 0, "password");
+        Employee em3 = new Employee("Luis Cheung", "Tempeltown", 0, "a");
 
         EmployeeCont.getInstance().put("Vithoh", em);
         EmployeeCont.getInstance().put("Peng", em2);
+        EmployeeCont.getInstance().put("a", em3);
 
 //        System.out.println(
 //                new EmployeeController().toStringAll());
@@ -33,7 +42,8 @@ public class Main {
         SaleLineItem saleLineItem = inventoryController.getSaleLineItem("1");
         saleLineItem.addStock(1, Location.DIY);
 
+
         //new MainMenu();
-        new MainWindow().main(args);
+        new MainWindow().start();
     }
 }
