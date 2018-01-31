@@ -67,7 +67,7 @@ public class MainMenu extends JPanel {
 		cardPanel.setBounds(200, 0, 800, 771);
 		mainPane.add(cardPanel);
 		cardPanel.add(inventoryManage, "inventoryManage");
-		employeeView.setBackground(new Color(255, 222, 173));
+		employeeView.setBackground(new Color(255, 235, 205));
 		cardPanel.add(employeeView, "employeeView");
 		
 		//left Panel
@@ -97,7 +97,7 @@ public class MainMenu extends JPanel {
 		
 		isActivePanel.setBounds(0, 262, 10, 35);
 		leftPanel.add(isActivePanel);
-		isActivePanel.setBackground(new Color(210, 180, 118));
+		isActivePanel.setBackground(new Color(255, 235, 205));
 		manageInv.setName("manageInv");
 		manageInv.setBackground(Color.DARK_GRAY);
 		manageInv.setBounds(0, 245, 200, 70);
@@ -202,7 +202,7 @@ public class MainMenu extends JPanel {
 		
 		inventoryManage.setAlignmentY(Component.TOP_ALIGNMENT);
 		inventoryManage.setAlignmentX(Component.LEFT_ALIGNMENT);
-		inventoryManage.setBackground(new Color(210, 180, 118));
+		inventoryManage.setBackground(new Color(255, 235, 205));
 		
 		JPanel midPanel = new JPanel();
 		midPanel.setBounds(0, 0, 795, 738);
@@ -210,7 +210,7 @@ public class MainMenu extends JPanel {
 		midPanel.setAlignmentY(Component.TOP_ALIGNMENT);
 		midPanel.setAlignmentX(0.0f);
 		midPanel.setBorder(null);
-		midPanel.setBackground(new Color(210, 180, 118));
+		midPanel.setBackground(new Color(255, 235, 205));
 		midPanel.setLayout(new CardLayout(0, 0));
 	 
 		

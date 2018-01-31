@@ -64,12 +64,16 @@ public class createLoanPanel extends JPanel {
 	
 	String[] selectLocation = {"Do It Yourself", "Timber"};
 	
+	private final static Color background = new Color(255, 235, 205);
+	private final static Color activated = Color.DARK_GRAY;
+	private final static Color deactivated = Color.LIGHT_GRAY;
 	
 	/**
 	 * Create the panel.
 	 */	
 	
 	public createLoanPanel() {
+		setBackground(background);
 		
 		
 		setLayout(null);
@@ -88,12 +92,12 @@ public class createLoanPanel extends JPanel {
 		createLoan.setBounds(0, 0, 800, 680);
 		add(createLoan);
 		createLoan.setBorder(null);
-		createLoan.setBackground(new Color(210, 180, 118));
+		createLoan.setBackground(background);
 		createLoan.setFont(new Font("Dubai", Font.BOLD, 11));
 		createLoan.setLayout(null);
 		
 		lblBarcode = new JLabel("LOANABLE PRODUCT BARCODE");
-		lblBarcode.setForeground(Color.DARK_GRAY);
+		lblBarcode.setForeground(activated);
 		lblBarcode.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblBarcode.setBounds(70, 50, 200, 14);
 		createLoan.add(lblBarcode);
@@ -101,25 +105,25 @@ public class createLoanPanel extends JPanel {
 		txtBarcode = new JTextField("");
 		txtBarcode.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtBarcode.setSelectedTextColor(new Color(64, 64, 64));
-		txtBarcode.setForeground(Color.DARK_GRAY);
+		txtBarcode.setForeground(activated);
 		txtBarcode.setColumns(10);
-		txtBarcode.setCaretColor(Color.DARK_GRAY);
+		txtBarcode.setCaretColor(activated);
 		txtBarcode.setBorder(null);
-		txtBarcode.setBackground(new Color(255, 235, 205));
+		txtBarcode.setBackground(background);
 		txtBarcode.setBounds(70, 75, 200, 30);
 		txtBarcode.setEnabled(true);
 		createLoan.add(txtBarcode);
 		
 		barcodeSeparator = new JSeparator();
-		barcodeSeparator.setBackground(Color.DARK_GRAY);
+		barcodeSeparator.setBackground(activated);
 		barcodeSeparator.setBorder(null);
-		barcodeSeparator.setForeground(Color.DARK_GRAY);
+		barcodeSeparator.setForeground(activated);
 		barcodeSeparator.setBounds(70, 105, 200, 3);
 		createLoan.add(barcodeSeparator);
 		
 		btnCheckBarcode = new JButton("Check Barcode");
 		btnCheckBarcode.setForeground(new Color(30, 144, 255));
-		btnCheckBarcode.setBackground(Color.DARK_GRAY);
+		btnCheckBarcode.setBackground(activated);
 		btnCheckBarcode.setBorderPainted(false);
 		btnCheckBarcode.setBorder(null);
 		btnCheckBarcode.setFont(new Font("Dubai", Font.BOLD, 13));
@@ -133,32 +137,32 @@ public class createLoanPanel extends JPanel {
 		createLoan.add(lblBarErr);
 		
 		lblName = new JLabel("PRODUCT NAME");
-		lblName.setForeground(new Color(192, 192, 192));
+		lblName.setForeground(deactivated);
 		lblName.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblName.setBounds(70, 180, 200, 14);
 		createLoan.add(lblName);
 		
 		nameSeparator = new JSeparator();
-		nameSeparator.setForeground(new Color(192, 192, 192));
+		nameSeparator.setForeground(deactivated);
 		nameSeparator.setBorder(null);
-		nameSeparator.setBackground(new Color(192, 192, 192));
+		nameSeparator.setBackground(deactivated);
 		nameSeparator.setBounds(70, 240, 200, 3);
 		createLoan.add(nameSeparator);
 		
 		txtName = new JTextField("");
 		txtName.setEnabled(false);
-		txtName.setSelectedTextColor(Color.DARK_GRAY);
-		txtName.setForeground(Color.DARK_GRAY);
+		txtName.setSelectedTextColor(activated);
+		txtName.setForeground(activated);
 		txtName.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtName.setColumns(10);
-		txtName.setCaretColor(Color.DARK_GRAY);
+		txtName.setCaretColor(activated);
 		txtName.setBorder(null);
-		txtName.setBackground(new Color(255, 235, 205));
+		txtName.setBackground(background);
 		txtName.setBounds(70, 210, 200, 30);
 		createLoan.add(txtName);
 		
 		lblDescription = new JLabel("PRODUCT DESCRIPTION");
-		lblDescription.setForeground(new Color(192, 192, 192));
+		lblDescription.setForeground(deactivated);
 		lblDescription.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblDescription.setBounds(70, 280, 223, 14);
 		createLoan.add(lblDescription);
@@ -167,44 +171,44 @@ public class createLoanPanel extends JPanel {
 		txtDesc.setEnabled(false);
 		txtDesc.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtDesc.setBorder(null);
-		txtDesc.setBackground(new Color(255, 235, 205));
+		txtDesc.setBackground(background);
 		descScroll = new JScrollPane(txtDesc);
 		descScroll.setBorder(null);
 		descScroll.setBounds(70, 305, 480, 100);
-		descScroll.setBackground(new Color(255, 235, 205));
-		descScroll.setForeground(Color.DARK_GRAY);
+		descScroll.setBackground(background);
+		descScroll.setForeground(activated);
 		descScroll.setFont(new Font("Dubai", Font.PLAIN, 14));
 		createLoan.add(descScroll);
 		
 		DescriptionSeparator = new JSeparator();
-		DescriptionSeparator.setForeground(new Color(192, 192, 192));
+		DescriptionSeparator.setForeground(deactivated);
 		DescriptionSeparator.setBorder(null);
-		DescriptionSeparator.setBackground(new Color(192, 192, 192));
+		DescriptionSeparator.setBackground(deactivated);
 		DescriptionSeparator.setBounds(70, 405, 480, 3);
 		createLoan.add(DescriptionSeparator);
 		
 		lblSalePrice = new JLabel("PRODUCT SALE PRICE");
-		lblSalePrice.setForeground(new Color(192, 192, 192));
+		lblSalePrice.setForeground(deactivated);
 		lblSalePrice.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblSalePrice.setBounds(300, 185, 200, 14);
 		createLoan.add(lblSalePrice);
 		
 		txtSalePrice = new JTextField("");
 		txtSalePrice.setEnabled(false);
-		txtSalePrice.setSelectedTextColor(Color.DARK_GRAY);
-		txtSalePrice.setForeground(Color.DARK_GRAY);
+		txtSalePrice.setSelectedTextColor(activated);
+		txtSalePrice.setForeground(activated);
 		txtSalePrice.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtSalePrice.setColumns(10);
-		txtSalePrice.setCaretColor(Color.DARK_GRAY);
+		txtSalePrice.setCaretColor(activated);
 		txtSalePrice.setBorder(null);
-		txtSalePrice.setBackground(new Color(255, 235, 205));
+		txtSalePrice.setBackground(background);
 		txtSalePrice.setBounds(300, 210, 200, 30);
 		createLoan.add(txtSalePrice);
 		
 		salePriceSeparator = new JSeparator();
-		salePriceSeparator.setForeground(new Color(192, 192, 192));
+		salePriceSeparator.setForeground(deactivated);
 		salePriceSeparator.setBorder(null);
-		salePriceSeparator.setBackground(new Color(192, 192, 192));
+		salePriceSeparator.setBackground(deactivated);
 		salePriceSeparator.setBounds(300, 240, 200, 3);
 		createLoan.add(salePriceSeparator);
 		
@@ -214,7 +218,7 @@ public class createLoanPanel extends JPanel {
 		btnCancelCreating.setEnabled(false);
 		btnCancelCreating.setBorderPainted(false);
 		btnCancelCreating.setBorder(null);
-		btnCancelCreating.setBackground(Color.DARK_GRAY);
+		btnCancelCreating.setBackground(activated);
 		btnCancelCreating.setBounds(435, 600, 116, 23);
 		createLoan.add(btnCancelCreating);
 		
@@ -225,25 +229,25 @@ public class createLoanPanel extends JPanel {
 		btnCreateItem.setBorder(null);
 		btnCreateItem.setFont(new Font("Dubai", Font.BOLD, 13));
 		btnCreateItem.setForeground(new Color(0, 128, 0));
-		btnCreateItem.setBackground(Color.DARK_GRAY);
+		btnCreateItem.setBackground(activated);
 		createLoan.add(btnCreateItem);
 		
 		lblPercent = new JLabel("PRODUCT DISCOUNT 0%");
-		lblPercent.setForeground(new Color(192, 192, 192));
+		lblPercent.setForeground(deactivated);
 		lblPercent.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblPercent.setBounds(70, 420, 200, 14);
 		createLoan.add(lblPercent);
 		
 		percentSlider = new JSlider();
 		percentSlider.setEnabled(false);
-		percentSlider.setBackground(new Color(255, 235, 205));
+		percentSlider.setBackground(background);
 		percentSlider.setValue(0);
-		percentSlider.setForeground(new Color(255, 235, 205));
+		percentSlider.setForeground(background);
 		percentSlider.setBounds(70, 450, 200, 26);
 		createLoan.add(percentSlider);
 		
 		lblProductLocation = new JLabel("PRODUCT LOCATION");
-		lblProductLocation.setForeground(new Color(192, 192, 192));
+		lblProductLocation.setForeground(deactivated);
 		lblProductLocation.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblProductLocation.setBounds(70, 490, 145, 14);
 		createLoan.add(lblProductLocation);
@@ -256,27 +260,27 @@ public class createLoanPanel extends JPanel {
 		createLoan.add(locationBox);
 		
 		lblPeriod = new JLabel("PERIOD <DAYS>");
-		lblPeriod.setForeground(new Color(192, 192, 192));
+		lblPeriod.setForeground(deactivated);
 		lblPeriod.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblPeriod.setBounds(350, 450, 200, 14);
 		createLoan.add(lblPeriod);
 		
 		periodSeparator = new JSeparator();
-		periodSeparator.setForeground(new Color(192, 192, 192));
+		periodSeparator.setForeground(deactivated);
 		periodSeparator.setBorder(null);
-		periodSeparator.setBackground(new Color(192, 192, 192));
+		periodSeparator.setBackground(deactivated);
 		periodSeparator.setBounds(350, 510, 200, 3);
 		createLoan.add(periodSeparator);
 		
 		txtPeriod = new JTextField("");
-		txtPeriod.setSelectedTextColor(Color.DARK_GRAY);
-		txtPeriod.setForeground(Color.DARK_GRAY);
+		txtPeriod.setSelectedTextColor(activated);
+		txtPeriod.setForeground(activated);
 		txtPeriod.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtPeriod.setEnabled(false);
 		txtPeriod.setColumns(10);
-		txtPeriod.setCaretColor(Color.DARK_GRAY);
+		txtPeriod.setCaretColor(activated);
 		txtPeriod.setBorder(null);
-		txtPeriod.setBackground(new Color(255, 235, 205));
+		txtPeriod.setBackground(background);
 		txtPeriod.setBounds(350, 480, 200, 30);
 		createLoan.add(txtPeriod);
 		
@@ -302,45 +306,45 @@ public class createLoanPanel extends JPanel {
 				else if(invCtrl.isBarcodeAvailable(getBarcode())) {
 					
 					btnCheckBarcode.setEnabled(false);
-					lblBarcode.setForeground(new Color(192, 192, 192));
+					lblBarcode.setForeground(deactivated);
 					txtBarcode.setEnabled(false);
-					barcodeSeparator.setBackground(new Color(192, 192, 192));
-					barcodeSeparator.setForeground(new Color(192, 192, 192));
+					barcodeSeparator.setBackground(deactivated);
+					barcodeSeparator.setForeground(deactivated);
 					
 					
 					lblBarErr.setForeground(new Color(34, 139, 34));
 					lblBarErr.setText("Barcode available!");
 					lblBarErr.setVisible(true);
 							
-					lblName.setForeground(Color.DARK_GRAY);
+					lblName.setForeground(activated);
 					txtName.setText("");
 					txtName.setEnabled(true);
-					nameSeparator.setForeground(Color.DARK_GRAY);
-					nameSeparator.setBackground(Color.DARK_GRAY);
+					nameSeparator.setForeground(activated);
+					nameSeparator.setBackground(activated);
 							
-					lblDescription.setForeground(Color.DARK_GRAY);
+					lblDescription.setForeground(activated);
 					txtDesc.setText("");
 					txtDesc.setEnabled(true);
-					DescriptionSeparator.setForeground(Color.DARK_GRAY);
-					DescriptionSeparator.setBackground(Color.DARK_GRAY);
+					DescriptionSeparator.setForeground(activated);
+					DescriptionSeparator.setBackground(activated);
 							
-					lblSalePrice.setForeground(Color.DARK_GRAY);
+					lblSalePrice.setForeground(activated);
 					txtSalePrice.setText("");
 					txtSalePrice.setEnabled(true);
-					salePriceSeparator.setForeground(Color.DARK_GRAY);
-					salePriceSeparator.setBackground(Color.DARK_GRAY);
+					salePriceSeparator.setForeground(activated);
+					salePriceSeparator.setBackground(activated);
 					
-					lblPercent.setForeground(Color.DARK_GRAY);
+					lblPercent.setForeground(activated);
 					percentSlider.setEnabled(true);
 					
-					lblProductLocation.setForeground(Color.DARK_GRAY);
+					lblProductLocation.setForeground(activated);
 					locationBox.setEnabled(true);
 					
-					lblPeriod.setForeground(Color.DARK_GRAY);
+					lblPeriod.setForeground(activated);
 					txtPeriod.setText("");
 					txtPeriod.setEnabled(true);
-					periodSeparator.setForeground(Color.DARK_GRAY);
-					periodSeparator.setBackground(Color.DARK_GRAY);
+					periodSeparator.setForeground(activated);
+					periodSeparator.setBackground(activated);
 					
 					
 					btnCreateItem.setEnabled(true);
@@ -429,46 +433,46 @@ public class createLoanPanel extends JPanel {
 	
 	private void resetPanel() {
 		btnCheckBarcode.setEnabled(true);
-		lblBarcode.setForeground(Color.DARK_GRAY);
+		lblBarcode.setForeground(activated);
 		txtBarcode.setText("");
 		txtBarcode.setEnabled(true);
-		barcodeSeparator.setBackground(Color.DARK_GRAY);
-		barcodeSeparator.setForeground(Color.DARK_GRAY);
+		barcodeSeparator.setBackground(activated);
+		barcodeSeparator.setForeground(activated);
 		
 		lblBarErr.setText("");
 		lblBarErr.setVisible(false);
 				
-		lblName.setForeground(new Color(192, 192, 192));
+		lblName.setForeground(deactivated);
 		txtName.setText("");
 		txtName.setEnabled(false);
-		nameSeparator.setForeground(new Color(192, 192, 192));
-		nameSeparator.setBackground(new Color(192, 192, 192));
+		nameSeparator.setForeground(deactivated);
+		nameSeparator.setBackground(deactivated);
 				
-		lblDescription.setForeground(new Color(192, 192, 192));
+		lblDescription.setForeground(deactivated);
 		txtDesc.setText("");
 		txtDesc.setEnabled(false);
-		DescriptionSeparator.setForeground(new Color(192, 192, 192));
-		DescriptionSeparator.setBackground(new Color(192, 192, 192));
+		DescriptionSeparator.setForeground(deactivated);
+		DescriptionSeparator.setBackground(deactivated);
 				
-		lblSalePrice.setForeground(new Color(192, 192, 192));
+		lblSalePrice.setForeground(deactivated);
 		txtSalePrice.setText("");
 		txtSalePrice.setEnabled(false);
-		salePriceSeparator.setForeground(new Color(192, 192, 192));
-		salePriceSeparator.setBackground(new Color(192, 192, 192));
+		salePriceSeparator.setForeground(deactivated);
+		salePriceSeparator.setBackground(deactivated);
 		
-		lblPercent.setForeground(new Color(192, 192, 192));
+		lblPercent.setForeground(deactivated);
 		percentSlider.setValue(0);
 		percentSlider.setEnabled(false);
 		
-		lblProductLocation.setForeground(new Color(192, 192, 192));
+		lblProductLocation.setForeground(deactivated);
 		locationBox.setSelectedIndex(0);
 		locationBox.setEnabled(false);
 		
-		lblPeriod.setForeground(new Color(192, 192, 192));
+		lblPeriod.setForeground(deactivated);
 		txtPeriod.setText("");
 		txtPeriod.setEnabled(false);
-		periodSeparator.setForeground(new Color(192, 192, 192));
-		periodSeparator.setBackground(new Color(192, 192, 192));
+		periodSeparator.setForeground(deactivated);
+		periodSeparator.setBackground(deactivated);
 		
 		
 		btnCreateItem.setEnabled(false);

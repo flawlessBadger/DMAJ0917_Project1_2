@@ -31,7 +31,7 @@ public class EmployeeView extends JPanel {
 		table = new JTable(new EmployeeModel());
 		table.setPreferredSize(new Dimension(800, 721));
 		table.setPreferredScrollableViewportSize(new Dimension(800, 721));
-		table.setBackground(new Color(255, 222, 173));
+		table.setBackground(new Color(255, 235, 205));
 		table.setRowHeight(35);
 		JTableHeader header = table.getTableHeader();
 		header.setOpaque(true);

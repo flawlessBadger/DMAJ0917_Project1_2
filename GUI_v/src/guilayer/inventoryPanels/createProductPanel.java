@@ -56,6 +56,10 @@ public class createProductPanel extends JPanel {
 	
 	private NotificationWindow notification = new NotificationWindow();
 	private InventoryController invCtrl = new InventoryController();
+	
+	private final static Color background = new Color(255, 235, 205);
+	private final static Color activated = Color.DARK_GRAY;
+	private final static Color deactivated = Color.LIGHT_GRAY;
 	/**
 	 * Create the panel.
 	 */	
@@ -79,13 +83,13 @@ public class createProductPanel extends JPanel {
 		createItem.setBounds(0, 0, 800, 771);
 		add(createItem);
 		createItem.setBorder(null);
-		createItem.setBackground(new Color(255, 235, 205));
+		createItem.setBackground(background);
 		createItem.setFont(new Font("Dubai", Font.BOLD, 11));
 		createItem.setLayout(null);
 		
 		instructor = new JTextArea("1. Insert Barcode\n"+
 									"2. Click \"Check Barcode\"\n");
-		instructor.setBackground(new Color(255, 235, 205));
+		instructor.setBackground(background);
 		instructor.setForeground(new Color(0, 128, 0));
 		instructor.setFont(new Font("Dubai Medium", Font.PLAIN, 14));
 		instructor.setBounds(380, 50, 350, 220);
@@ -95,7 +99,7 @@ public class createProductPanel extends JPanel {
 		createItem.add(instructor);
 		
 		lblBarcode = new JLabel("PRODUCT BARCODE");
-		lblBarcode.setForeground(Color.DARK_GRAY);
+		lblBarcode.setForeground(activated);
 		lblBarcode.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblBarcode.setBounds(70, 50, 200, 14);
 		createItem.add(lblBarcode);
@@ -103,25 +107,25 @@ public class createProductPanel extends JPanel {
 		txtBarcode = new JTextField("");
 		txtBarcode.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtBarcode.setSelectedTextColor(new Color(64, 64, 64));
-		txtBarcode.setForeground(Color.DARK_GRAY);
+		txtBarcode.setForeground(activated);
 		txtBarcode.setColumns(10);
-		txtBarcode.setCaretColor(Color.DARK_GRAY);
+		txtBarcode.setCaretColor(activated);
 		txtBarcode.setBorder(null);
-		txtBarcode.setBackground(new Color(255, 235, 205));
+		txtBarcode.setBackground(background);
 		txtBarcode.setBounds(70, 75, 200, 30);
 		txtBarcode.setEnabled(true);
 		createItem.add(txtBarcode);
 		
 		barcodeSeparator = new JSeparator();
-		barcodeSeparator.setBackground(Color.DARK_GRAY);
+		barcodeSeparator.setBackground(activated);
 		barcodeSeparator.setBorder(null);
-		barcodeSeparator.setForeground(Color.DARK_GRAY);
+		barcodeSeparator.setForeground(activated);
 		barcodeSeparator.setBounds(70, 105, 200, 3);
 		createItem.add(barcodeSeparator);
 		
 		btnCheckBarcode = new JButton("Check Barcode");
 		btnCheckBarcode.setForeground(new Color(30, 144, 255));
-		btnCheckBarcode.setBackground(Color.DARK_GRAY);
+		btnCheckBarcode.setBackground(activated);
 		btnCheckBarcode.setBorderPainted(false);
 		btnCheckBarcode.setBorder(null);
 		btnCheckBarcode.setFont(new Font("Dubai", Font.BOLD, 13));
@@ -135,32 +139,32 @@ public class createProductPanel extends JPanel {
 		createItem.add(lblBarErr);
 		
 		lblName = new JLabel("PRODUCT NAME");
-		lblName.setForeground(new Color(192, 192, 192));
+		lblName.setForeground(deactivated);
 		lblName.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblName.setBounds(70, 180, 200, 14);
 		createItem.add(lblName);
 		
 		nameSeparator = new JSeparator();
-		nameSeparator.setForeground(new Color(192, 192, 192));
+		nameSeparator.setForeground(deactivated);
 		nameSeparator.setBorder(null);
-		nameSeparator.setBackground(new Color(192, 192, 192));
+		nameSeparator.setBackground(deactivated);
 		nameSeparator.setBounds(70, 240, 200, 3);
 		createItem.add(nameSeparator);
 		
 		txtName = new JTextField("");
 		txtName.setEnabled(false);
-		txtName.setSelectedTextColor(Color.DARK_GRAY);
-		txtName.setForeground(Color.DARK_GRAY);
+		txtName.setSelectedTextColor(activated);
+		txtName.setForeground(activated);
 		txtName.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtName.setColumns(10);
-		txtName.setCaretColor(Color.DARK_GRAY);
+		txtName.setCaretColor(activated);
 		txtName.setBorder(null);
-		txtName.setBackground(new Color(255, 235, 205));
+		txtName.setBackground(background);
 		txtName.setBounds(70, 210, 200, 30);
 		createItem.add(txtName);
 		
 		lblDescription = new JLabel("PRODUCT DESCRIPTION");
-		lblDescription.setForeground(new Color(192, 192, 192));
+		lblDescription.setForeground(deactivated);
 		lblDescription.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblDescription.setBounds(70, 280, 200, 14);
 		createItem.add(lblDescription);
@@ -169,69 +173,69 @@ public class createProductPanel extends JPanel {
 		txtDesc.setEnabled(false);
 		txtDesc.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtDesc.setBorder(null);
-		txtDesc.setBackground(new Color(255, 235, 205));
+		txtDesc.setBackground(background);
 		descScroll = new JScrollPane(txtDesc);
 		descScroll.setBorder(null);
 		descScroll.setBounds(70, 305, 480, 100);
-		descScroll.setBackground(new Color(255, 235, 205));
-		descScroll.setForeground(Color.DARK_GRAY);
+		descScroll.setBackground(background);
+		descScroll.setForeground(activated);
 		descScroll.setFont(new Font("Dubai", Font.PLAIN, 14));
 		createItem.add(descScroll);
 		
 		DescriptionSeparator = new JSeparator();
-		DescriptionSeparator.setForeground(new Color(192, 192, 192));
+		DescriptionSeparator.setForeground(deactivated);
 		DescriptionSeparator.setBorder(null);
-		DescriptionSeparator.setBackground(new Color(192, 192, 192));
+		DescriptionSeparator.setBackground(deactivated);
 		DescriptionSeparator.setBounds(70, 405, 480, 3);
 		createItem.add(DescriptionSeparator);
 		
 		lblSalePrice = new JLabel("PRODUCT SALE PRICE");
-		lblSalePrice.setForeground(new Color(192, 192, 192));
+		lblSalePrice.setForeground(deactivated);
 		lblSalePrice.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblSalePrice.setBounds(70, 420, 200, 14);
 		createItem.add(lblSalePrice);
 		
 		txtSalePrice = new JTextField("");
 		txtSalePrice.setEnabled(false);
-		txtSalePrice.setSelectedTextColor(Color.DARK_GRAY);
-		txtSalePrice.setForeground(Color.DARK_GRAY);
+		txtSalePrice.setSelectedTextColor(activated);
+		txtSalePrice.setForeground(activated);
 		txtSalePrice.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtSalePrice.setColumns(10);
-		txtSalePrice.setCaretColor(Color.DARK_GRAY);
+		txtSalePrice.setCaretColor(activated);
 		txtSalePrice.setBorder(null);
-		txtSalePrice.setBackground(new Color(255, 235, 205));
+		txtSalePrice.setBackground(background);
 		txtSalePrice.setBounds(70, 445, 200, 30);
 		createItem.add(txtSalePrice);
 		
 		salePriceSeparator = new JSeparator();
-		salePriceSeparator.setForeground(new Color(192, 192, 192));
+		salePriceSeparator.setForeground(deactivated);
 		salePriceSeparator.setBorder(null);
-		salePriceSeparator.setBackground(new Color(192, 192, 192));
+		salePriceSeparator.setBackground(deactivated);
 		salePriceSeparator.setBounds(70, 475, 200, 3);
 		createItem.add(salePriceSeparator);
 		
 		lblCostPrice = new JLabel("PRODUCT COST PRICE");
-		lblCostPrice.setForeground(new Color(192, 192, 192));
+		lblCostPrice.setForeground(deactivated);
 		lblCostPrice.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblCostPrice.setBounds(350, 420, 200, 14);
 		createItem.add(lblCostPrice);
 		
 		txtCostPrice = new JTextField("");
 		txtCostPrice.setEnabled(false);
-		txtCostPrice.setSelectedTextColor(Color.DARK_GRAY);
-		txtCostPrice.setForeground(Color.DARK_GRAY);
+		txtCostPrice.setSelectedTextColor(activated);
+		txtCostPrice.setForeground(activated);
 		txtCostPrice.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtCostPrice.setColumns(10);
-		txtCostPrice.setCaretColor(Color.DARK_GRAY);
+		txtCostPrice.setCaretColor(activated);
 		txtCostPrice.setBorder(null);
-		txtCostPrice.setBackground(new Color(255, 235, 205));
+		txtCostPrice.setBackground(background);
 		txtCostPrice.setBounds(350, 445, 200, 30);
 		createItem.add(txtCostPrice);
 		
 		costSeparator = new JSeparator();
-		costSeparator.setForeground(new Color(192, 192, 192));
+		costSeparator.setForeground(deactivated);
 		costSeparator.setBorder(null);
-		costSeparator.setBackground(new Color(192, 192, 192));
+		costSeparator.setBackground(deactivated);
 		costSeparator.setBounds(350, 475, 200, 3);
 		createItem.add(costSeparator);
 		
@@ -241,7 +245,7 @@ public class createProductPanel extends JPanel {
 		btnCancelCreating.setEnabled(false);
 		btnCancelCreating.setBorderPainted(false);
 		btnCancelCreating.setBorder(null);
-		btnCancelCreating.setBackground(Color.DARK_GRAY);
+		btnCancelCreating.setBackground(activated);
 		btnCancelCreating.setBounds(435, 560, 116, 23);
 		createItem.add(btnCancelCreating);
 		
@@ -252,7 +256,7 @@ public class createProductPanel extends JPanel {
 		btnCreateItem.setBorder(null);
 		btnCreateItem.setFont(new Font("Dubai", Font.BOLD, 13));
 		btnCreateItem.setForeground(new Color(0, 128, 0));
-		btnCreateItem.setBackground(Color.DARK_GRAY);
+		btnCreateItem.setBackground(activated);
 		createItem.add(btnCreateItem);
 		
 		//Cancel item btn aka reset menu
@@ -271,39 +275,39 @@ public class createProductPanel extends JPanel {
 				else if(invCtrl.isBarcodeAvailable(getBarcode())) {
 					
 					btnCheckBarcode.setEnabled(false);
-					lblBarcode.setForeground(new Color(192, 192, 192));
+					lblBarcode.setForeground(deactivated);
 					txtBarcode.setEnabled(false);
-					barcodeSeparator.setBackground(new Color(192, 192, 192));
-					barcodeSeparator.setForeground(new Color(192, 192, 192));
+					barcodeSeparator.setBackground(deactivated);
+					barcodeSeparator.setForeground(deactivated);
 					
 					
 					lblBarErr.setForeground(new Color(34, 139, 34));
 					lblBarErr.setText("Barcode available!");
 					lblBarErr.setVisible(true);
 							
-					lblName.setForeground(Color.DARK_GRAY);
+					lblName.setForeground(activated);
 					txtName.setText("");
 					txtName.setEnabled(true);
-					nameSeparator.setForeground(Color.DARK_GRAY);
-					nameSeparator.setBackground(Color.DARK_GRAY);
+					nameSeparator.setForeground(activated);
+					nameSeparator.setBackground(activated);
 							
-					lblDescription.setForeground(Color.DARK_GRAY);
+					lblDescription.setForeground(activated);
 					txtDesc.setText("");
 					txtDesc.setEnabled(true);
-					DescriptionSeparator.setForeground(Color.DARK_GRAY);
-					DescriptionSeparator.setBackground(Color.DARK_GRAY);
+					DescriptionSeparator.setForeground(activated);
+					DescriptionSeparator.setBackground(activated);
 							
-					lblSalePrice.setForeground(Color.DARK_GRAY);
+					lblSalePrice.setForeground(activated);
 					txtSalePrice.setText("");
 					txtSalePrice.setEnabled(true);
-					salePriceSeparator.setForeground(Color.DARK_GRAY);
-					salePriceSeparator.setBackground(Color.DARK_GRAY);
+					salePriceSeparator.setForeground(activated);
+					salePriceSeparator.setBackground(activated);
 					
-					lblCostPrice.setForeground(Color.DARK_GRAY);
+					lblCostPrice.setForeground(activated);
 					txtCostPrice.setText("");
 					txtCostPrice.setEnabled(true);
-					costSeparator.setForeground(Color.DARK_GRAY);
-					costSeparator.setBackground(Color.DARK_GRAY);
+					costSeparator.setForeground(activated);
+					costSeparator.setBackground(activated);
 					
 					btnCreateItem.setEnabled(true);
 					btnCancelCreating.setEnabled(true);
@@ -407,38 +411,38 @@ public class createProductPanel extends JPanel {
 	
 	private void resetPanel() {
 		btnCheckBarcode.setEnabled(true);
-		lblBarcode.setForeground(Color.DARK_GRAY);
+		lblBarcode.setForeground(activated);
 		txtBarcode.setText("");
 		txtBarcode.setEnabled(true);
-		barcodeSeparator.setBackground(Color.DARK_GRAY);
-		barcodeSeparator.setForeground(Color.DARK_GRAY);
+		barcodeSeparator.setBackground(activated);
+		barcodeSeparator.setForeground(activated);
 		
 		lblBarErr.setText("");
 		lblBarErr.setVisible(false);
 				
-		lblName.setForeground(new Color(192, 192, 192));
+		lblName.setForeground(deactivated);
 		txtName.setText("");
 		txtName.setEnabled(false);
-		nameSeparator.setForeground(new Color(192, 192, 192));
-		nameSeparator.setBackground(new Color(192, 192, 192));
+		nameSeparator.setForeground(deactivated);
+		nameSeparator.setBackground(deactivated);
 				
-		lblDescription.setForeground(new Color(192, 192, 192));
+		lblDescription.setForeground(deactivated);
 		txtDesc.setText("");
 		txtDesc.setEnabled(false);
-		DescriptionSeparator.setForeground(new Color(192, 192, 192));
-		DescriptionSeparator.setBackground(new Color(192, 192, 192));
+		DescriptionSeparator.setForeground(deactivated);
+		DescriptionSeparator.setBackground(deactivated);
 				
-		lblSalePrice.setForeground(new Color(192, 192, 192));
+		lblSalePrice.setForeground(deactivated);
 		txtSalePrice.setText("");
 		txtSalePrice.setEnabled(false);
-		salePriceSeparator.setForeground(new Color(192, 192, 192));
-		salePriceSeparator.setBackground(new Color(192, 192, 192));
+		salePriceSeparator.setForeground(deactivated);
+		salePriceSeparator.setBackground(deactivated);
 		
-		lblCostPrice.setForeground(new Color(192, 192, 192));
+		lblCostPrice.setForeground(deactivated);
 		txtCostPrice.setText("");
 		txtCostPrice.setEnabled(false);
-		costSeparator.setForeground(new Color(192, 192, 192));
-		costSeparator.setBackground(new Color(192, 192, 192));
+		costSeparator.setForeground(deactivated);
+		costSeparator.setBackground(deactivated);
 		
 		btnCreateItem.setEnabled(false);
 		btnCancelCreating.setEnabled(false);

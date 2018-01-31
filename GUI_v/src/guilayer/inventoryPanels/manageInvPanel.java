@@ -39,18 +39,21 @@ public class manageInvPanel extends JPanel {
 	private JTabbedPane tabbedPane;
 	private JPanel editPanel;
 	private JTextField txtBarcode;
+	
+	private final static Color background = new Color(255, 235, 205);
+	private final static Color activated = Color.DARK_GRAY;
 	/**
 	 * Create the panel.
 	 */
 	public manageInvPanel() {
-		setBackground(new Color(255, 235, 205));
+		setBackground(background);
 		setLayout(null);
 		
 		
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBorder(null);
 		tabbedPane.setFont(new Font("Dubai", Font.PLAIN, 14));
-		tabbedPane.setForeground(Color.DARK_GRAY);
+		tabbedPane.setForeground(activated);
 		tabbedPane.setBounds(0, 0, 800, 771);
 		add(tabbedPane);
 		
@@ -64,38 +67,38 @@ public class manageInvPanel extends JPanel {
 		 * START EDIT PANE
 		 */
 		editPanel = new JPanel();
-		editPanel.setBackground(new Color(255, 235, 205));
+		editPanel.setBackground(background);
 		tabbedPane.addTab("Edit", null, editPanel, null);
 		editPanel.setLayout(new CardLayout(0, 0));
 		
 		JPanel barcodePanel = new JPanel();
-		barcodePanel.setBackground(new Color(255, 235, 205));
+		barcodePanel.setBackground(background);
 		barcodePanel.setLayout(null);
 		
 		JLabel lblBarcode = new JLabel("BARCODE <PRODUCT, BUNDLE OR LOANABLE PRODUCT>");
 		lblBarcode.setHorizontalAlignment(SwingConstants.CENTER);
-		lblBarcode.setForeground(Color.DARK_GRAY);
+		lblBarcode.setForeground(activated);
 		lblBarcode.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblBarcode.setBounds(187, 260, 400, 14);
 		barcodePanel.add(lblBarcode);
 		
 		txtBarcode = new JTextField();
 		txtBarcode.setHorizontalAlignment(SwingConstants.CENTER);
-		txtBarcode.setSelectedTextColor(Color.DARK_GRAY);
-		txtBarcode.setForeground(Color.DARK_GRAY);
+		txtBarcode.setSelectedTextColor(activated);
+		txtBarcode.setForeground(activated);
 		txtBarcode.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtBarcode.setEnabled(true);
 		txtBarcode.setColumns(10);
-		txtBarcode.setCaretColor(Color.DARK_GRAY);
+		txtBarcode.setCaretColor(activated);
 		txtBarcode.setBorder(null);
-		txtBarcode.setBackground(new Color(255, 235, 205));
+		txtBarcode.setBackground(background);
 		txtBarcode.setBounds(187, 285, 400, 30);
 		barcodePanel.add(txtBarcode);
 		
 		JSeparator barcodeSeparator = new JSeparator();
-		barcodeSeparator.setForeground(Color.DARK_GRAY);
+		barcodeSeparator.setForeground(activated);
 		barcodeSeparator.setBorder(null);
-		barcodeSeparator.setBackground(Color.DARK_GRAY);
+		barcodeSeparator.setBackground(activated);
 		barcodeSeparator.setBounds(187, 315, 400, 3);
 		barcodePanel.add(barcodeSeparator);
 		
@@ -104,7 +107,7 @@ public class manageInvPanel extends JPanel {
 		btnCheck.setFont(new Font("Dubai", Font.BOLD, 13));
 		btnCheck.setBorderPainted(false);
 		btnCheck.setBorder(null);
-		btnCheck.setBackground(Color.DARK_GRAY);
+		btnCheck.setBackground(activated);
 		btnCheck.setBounds(337, 330, 100, 23);
 		barcodePanel.add(btnCheck);
 		

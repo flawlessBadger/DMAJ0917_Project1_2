@@ -96,13 +96,13 @@ public class MainWindow {
 		menuStateChange("login");
 
 		JPanel logLeftPanel = new JPanel();
-		logLeftPanel.setBackground(new Color(210, 180, 118));
+		logLeftPanel.setBackground(new Color(255, 235, 205));
 		logLeftPanel.setBounds(0, 0, 500, 771);
 		loginPane.add(logLeftPanel);
 		logLeftPanel.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/pics/xlbygS.png")));
+		lblNewLabel.setIcon(new ImageIcon(MainWindow.class.getResource("/pics/xlbygSE.png")));
 		lblNewLabel.setBounds(100, 270, 264, 264);
 		logLeftPanel.add(lblNewLabel);
 
@@ -153,15 +153,16 @@ public class MainWindow {
 		lblUsername.setFont(new Font("Dubai", Font.BOLD, 14));
 
 		JPanel btnlogin = new JPanel();
-		btnlogin.setBackground(new Color(210, 180, 118));
+		btnlogin.setBackground(new Color(255, 235, 205));
 		btnlogin.setBounds(120, 455, 176, 45);
 		logRightPanel.add(btnlogin);
 		btnlogin.setLayout(null);
 
 		JLabel lblLogin = new JLabel("LogIn");
-		lblLogin.setForeground(Color.WHITE);
+		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLogin.setForeground(Color.DARK_GRAY);
 		lblLogin.setFont(new Font("Dubai", Font.BOLD, 14));
-		lblLogin.setBounds(58, 0, 55, 44);
+		lblLogin.setBounds(0, 0, 176, 44);
 		btnlogin.add(lblLogin);
 
 		JButton btnSubmit = new JButton("");

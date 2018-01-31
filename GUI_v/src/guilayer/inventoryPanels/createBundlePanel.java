@@ -69,6 +69,10 @@ public class createBundlePanel extends JPanel {
 	private Object[][] data = new Object[][]{};
 	private String[] columnNames = new String[]{"Product Barcode","Product Name","Quantity"};
 	
+	private final static Color background = new Color(255, 235, 205);
+	private final static Color activated = Color.DARK_GRAY;
+	private final static Color deactivated = Color.LIGHT_GRAY;
+	
 	//instance table model
 	DefaultTableModel tableModel = new DefaultTableModel(data, columnNames) {
 	    @Override
@@ -86,6 +90,7 @@ public class createBundlePanel extends JPanel {
 	
 	
 	public createBundlePanel() {
+		setBackground(background);
 		setLayout(null);
 		
 		JPanel createBundle = new JPanel();
@@ -98,7 +103,7 @@ public class createBundlePanel extends JPanel {
 				resetPanel();
 			}
 		});
-		createBundle.setBackground(new Color(210, 180, 118));
+		createBundle.setBackground(background);
 		createBundle.setBounds(0, 0, 800, 657);
 		add(createBundle);
 		createBundle.setLayout(null);
@@ -106,25 +111,25 @@ public class createBundlePanel extends JPanel {
 		lblBarcode = new JLabel("BUNDLE BARCODE");
 		lblBarcode.setBounds(70, 50, 200, 14);
 		createBundle.add(lblBarcode);
-		lblBarcode.setForeground(Color.DARK_GRAY);
+		lblBarcode.setForeground(activated);
 		lblBarcode.setFont(new Font("Dubai", Font.BOLD, 14));
 		
 		txtBarcode = new JTextField();
-		txtBarcode.setSelectedTextColor(Color.DARK_GRAY);
-		txtBarcode.setForeground(Color.DARK_GRAY);
+		txtBarcode.setSelectedTextColor(activated);
+		txtBarcode.setForeground(activated);
 		txtBarcode.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtBarcode.setEnabled(true);
 		txtBarcode.setColumns(10);
-		txtBarcode.setCaretColor(Color.DARK_GRAY);
+		txtBarcode.setCaretColor(activated);
 		txtBarcode.setBorder(null);
-		txtBarcode.setBackground(new Color(255, 235, 205));
+		txtBarcode.setBackground(background);
 		txtBarcode.setBounds(70, 75, 200, 30);
 		createBundle.add(txtBarcode);
 		
 		barcodeSeparator = new JSeparator();
-		barcodeSeparator.setForeground(Color.DARK_GRAY);
+		barcodeSeparator.setForeground(activated);
 		barcodeSeparator.setBorder(null);
-		barcodeSeparator.setBackground(Color.DARK_GRAY);
+		barcodeSeparator.setBackground(activated);
 		barcodeSeparator.setBounds(70, 105, 200, 3);
 		createBundle.add(barcodeSeparator);
 		
@@ -133,37 +138,37 @@ public class createBundlePanel extends JPanel {
 		btnBarcode.setFont(new Font("Dubai", Font.BOLD, 13));
 		btnBarcode.setBorderPainted(false);
 		btnBarcode.setBorder(null);
-		btnBarcode.setBackground(Color.DARK_GRAY);
+		btnBarcode.setBackground(activated);
 		btnBarcode.setBounds(70, 120, 100, 23);
 		createBundle.add(btnBarcode);
 		
 		lblName = new JLabel("BUNDLE NAME");
-		lblName.setForeground(Color.LIGHT_GRAY);
+		lblName.setForeground(deactivated);
 		lblName.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblName.setBounds(70, 180, 200, 14);
 		createBundle.add(lblName);
 		
 		txtName = new JTextField();
-		txtName.setSelectedTextColor(Color.DARK_GRAY);
-		txtName.setForeground(Color.DARK_GRAY);
+		txtName.setSelectedTextColor(activated);
+		txtName.setForeground(activated);
 		txtName.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtName.setEnabled(false);
 		txtName.setColumns(10);
-		txtName.setCaretColor(Color.DARK_GRAY);
+		txtName.setCaretColor(activated);
 		txtName.setBorder(null);
-		txtName.setBackground(new Color(255, 235, 205));
+		txtName.setBackground(background);
 		txtName.setBounds(70, 210, 200, 30);
 		createBundle.add(txtName);
 		
 		nameSeparator = new JSeparator();
-		nameSeparator.setForeground(Color.LIGHT_GRAY);
+		nameSeparator.setForeground(deactivated);
 		nameSeparator.setBorder(null);
-		nameSeparator.setBackground(Color.LIGHT_GRAY);
+		nameSeparator.setBackground(deactivated);
 		nameSeparator.setBounds(70, 240, 200, 3);
 		createBundle.add(nameSeparator);
 		
 		lblDescription = new JLabel("BUNDLE DESCRIPTION");
-		lblDescription.setForeground(new Color(192, 192, 192));
+		lblDescription.setForeground(deactivated);
 		lblDescription.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblDescription.setBounds(70, 280, 200, 14);
 		createBundle.add(lblDescription);
@@ -172,69 +177,69 @@ public class createBundlePanel extends JPanel {
 		txtDescription.setEnabled(false);
 		txtDescription.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtDescription.setBorder(null);
-		txtDescription.setBackground(new Color(255, 235, 205));
+		txtDescription.setBackground(background);
 		descScroll = new JScrollPane(txtDescription);
 		descScroll.setBorder(null);
 		descScroll.setBounds(70, 305, 480, 100);
-		descScroll.setBackground(new Color(255, 235, 205));
-		descScroll.setForeground(Color.DARK_GRAY);
+		descScroll.setBackground(background);
+		descScroll.setForeground(activated);
 		descScroll.setFont(new Font("Dubai", Font.PLAIN, 14));
 		createBundle.add(descScroll);
 		
 		descriptionSeparator = new JSeparator();
-		descriptionSeparator.setForeground(new Color(192, 192, 192));
+		descriptionSeparator.setForeground(deactivated);
 		descriptionSeparator.setBorder(null);
-		descriptionSeparator.setBackground(new Color(192, 192, 192));
+		descriptionSeparator.setBackground(deactivated);
 		descriptionSeparator.setBounds(70, 405, 480, 3);
 		createBundle.add(descriptionSeparator);
 		
 		lblSalePrice = new JLabel("BUNDLE SALE PRICE");
-		lblSalePrice.setForeground(new Color(192, 192, 192));
+		lblSalePrice.setForeground(deactivated);
 		lblSalePrice.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblSalePrice.setBounds(300, 180, 200, 14);
 		createBundle.add(lblSalePrice);
 		
 		txtSalePrice = new JTextField();
 		txtSalePrice.setEnabled(false);
-		txtSalePrice.setSelectedTextColor(Color.DARK_GRAY);
-		txtSalePrice.setForeground(Color.DARK_GRAY);
+		txtSalePrice.setSelectedTextColor(activated);
+		txtSalePrice.setForeground(activated);
 		txtSalePrice.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtSalePrice.setColumns(10);
-		txtSalePrice.setCaretColor(Color.DARK_GRAY);
+		txtSalePrice.setCaretColor(activated);
 		txtSalePrice.setBorder(null);
-		txtSalePrice.setBackground(new Color(255, 235, 205));
+		txtSalePrice.setBackground(background);
 		txtSalePrice.setBounds(300, 210, 200, 30);
 		createBundle.add(txtSalePrice);
 		
 		salePriceSeparator = new JSeparator();
-		salePriceSeparator.setForeground(new Color(192, 192, 192));
+		salePriceSeparator.setForeground(deactivated);
 		salePriceSeparator.setBorder(null);
-		salePriceSeparator.setBackground(new Color(192, 192, 192));
+		salePriceSeparator.setBackground(deactivated);
 		salePriceSeparator.setBounds(300, 240, 200, 3);
 		createBundle.add(salePriceSeparator);
 		
 		lblSearchBarcode = new JLabel("SEARCH PRODUCT <BARCODE>");
-		lblSearchBarcode.setForeground(new Color(192, 192, 192));
+		lblSearchBarcode.setForeground(deactivated);
 		lblSearchBarcode.setFont(new Font("Dubai", Font.BOLD, 14));
 		lblSearchBarcode.setBounds(70, 470, 200, 14);
 		createBundle.add(lblSearchBarcode);
 		
 		txtSearchBarcode = new JTextField();
-		txtSearchBarcode.setSelectedTextColor(Color.DARK_GRAY);
-		txtSearchBarcode.setForeground(Color.DARK_GRAY);
+		txtSearchBarcode.setSelectedTextColor(activated);
+		txtSearchBarcode.setForeground(activated);
 		txtSearchBarcode.setFont(new Font("Dubai", Font.PLAIN, 14));
 		txtSearchBarcode.setEnabled(false);
 		txtSearchBarcode.setColumns(10);
-		txtSearchBarcode.setCaretColor(Color.DARK_GRAY);
+		txtSearchBarcode.setCaretColor(activated);
 		txtSearchBarcode.setBorder(null);
-		txtSearchBarcode.setBackground(new Color(255, 235, 205));
+		txtSearchBarcode.setBackground(background);
 		txtSearchBarcode.setBounds(70, 495, 200, 30);
 		createBundle.add(txtSearchBarcode);
 		
 		searchBarcodeSeparator = new JSeparator();
-		searchBarcodeSeparator.setForeground(new Color(192, 192, 192));
+		searchBarcodeSeparator.setForeground(deactivated);
 		searchBarcodeSeparator.setBorder(null);
-		searchBarcodeSeparator.setBackground(new Color(192, 192, 192));
+		searchBarcodeSeparator.setBackground(deactivated);
 		searchBarcodeSeparator.setBounds(70, 525, 200, 3);
 		createBundle.add(searchBarcodeSeparator);
 		
@@ -244,7 +249,7 @@ public class createBundlePanel extends JPanel {
 		btnAdd.setFont(new Font("Dubai", Font.BOLD, 13));
 		btnAdd.setBorderPainted(false);
 		btnAdd.setBorder(null);
-		btnAdd.setBackground(Color.DARK_GRAY);
+		btnAdd.setBackground(activated);
 		btnAdd.setBounds(70, 540, 50, 23);
 		createBundle.add(btnAdd);
 		
@@ -276,7 +281,7 @@ public class createBundlePanel extends JPanel {
 		btnDel.setEnabled(false);
 		btnDel.setBorderPainted(false);
 		btnDel.setBorder(null);
-		btnDel.setBackground(Color.DARK_GRAY);
+		btnDel.setBackground(activated);
 		btnDel.setBounds(220, 540, 50, 23);
 		createBundle.add(btnDel);
 		bndlScroll = new JScrollPane(bndlTable);
@@ -294,7 +299,7 @@ public class createBundlePanel extends JPanel {
 		btnCancel.setEnabled(false);
 		btnCancel.setBorderPainted(false);
 		btnCancel.setBorder(null);
-		btnCancel.setBackground(Color.DARK_GRAY);
+		btnCancel.setBackground(activated);
 		btnCancel.setBounds(585, 630, 116, 23);
 		createBundle.add(btnCancel);
 		
@@ -304,7 +309,7 @@ public class createBundlePanel extends JPanel {
 		btnCreate.setEnabled(false);
 		btnCreate.setBorderPainted(false);
 		btnCreate.setBorder(null);
-		btnCreate.setBackground(Color.DARK_GRAY);
+		btnCreate.setBackground(activated);
 		btnCreate.setBounds(70, 630, 116, 23);
 		createBundle.add(btnCreate);
 		
@@ -317,38 +322,38 @@ public class createBundlePanel extends JPanel {
 				else if(invCtrl.isBarcodeAvailable(getBarcode())) {
 					
 					btnBarcode.setEnabled(false);
-					lblBarcode.setForeground(new Color(192, 192, 192));
+					lblBarcode.setForeground(deactivated);
 					txtBarcode.setEnabled(false);
-					barcodeSeparator.setBackground(new Color(192, 192, 192));
-					barcodeSeparator.setForeground(new Color(192, 192, 192));
+					barcodeSeparator.setBackground(deactivated);
+					barcodeSeparator.setForeground(deactivated);
 					
 					
 					lblBarErr.setForeground(new Color(34, 139, 34));
 					lblBarErr.setText("Barcode available!");
 					lblBarErr.setVisible(true);
 							
-					lblName.setForeground(Color.DARK_GRAY);
+					lblName.setForeground(activated);
 					txtName.setText("");
 					txtName.setEnabled(true);
-					nameSeparator.setForeground(Color.DARK_GRAY);
-					nameSeparator.setBackground(Color.DARK_GRAY);
+					nameSeparator.setForeground(activated);
+					nameSeparator.setBackground(activated);
 							
-					lblDescription.setForeground(Color.DARK_GRAY);
+					lblDescription.setForeground(activated);
 					txtDescription.setText("");
 					txtDescription.setEnabled(true);
-					descriptionSeparator.setForeground(Color.DARK_GRAY);
-					descriptionSeparator.setBackground(Color.DARK_GRAY);
+					descriptionSeparator.setForeground(activated);
+					descriptionSeparator.setBackground(activated);
 							
-					lblSalePrice.setForeground(Color.DARK_GRAY);
+					lblSalePrice.setForeground(activated);
 					txtSalePrice.setText("");
 					txtSalePrice.setEnabled(true);
-					salePriceSeparator.setForeground(Color.DARK_GRAY);
-					salePriceSeparator.setBackground(Color.DARK_GRAY);
+					salePriceSeparator.setForeground(activated);
+					salePriceSeparator.setBackground(activated);
 					
-					lblSearchBarcode.setForeground(Color.DARK_GRAY);
+					lblSearchBarcode.setForeground(activated);
 					txtSearchBarcode.setEnabled(true);
-					searchBarcodeSeparator.setForeground(Color.DARK_GRAY);
-					searchBarcodeSeparator.setBackground(Color.DARK_GRAY);
+					searchBarcodeSeparator.setForeground(activated);
+					searchBarcodeSeparator.setBackground(activated);
 					btnAdd.setEnabled(true);
 					btnDel.setEnabled(true);
 					
@@ -373,17 +378,17 @@ public class createBundlePanel extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				boolean newEntry = true;
 				if(!invCtrl.isBarcodeAvailable(getSearchBarcode())) {
-					
-					for(int i = 0 ; i < tableModel.getRowCount(); i++) {
-						if(((String)tableModel.getValueAt(i, 0)).equals(getSearchBarcode())) {
-							int increaseQuantity = ((int)tableModel.getValueAt(i, 2)) + 1; 
-							tableModel.setValueAt(increaseQuantity, i, 2);
-							newEntry = false;
+					if(invCtrl.isValidItem(getSearchBarcode())) {
+						for(int i = 0 ; i < tableModel.getRowCount(); i++) {
+							if(((String)tableModel.getValueAt(i, 0)).equals(getSearchBarcode())) {
+								int increaseQuantity = ((int)tableModel.getValueAt(i, 2)) + 1; 
+								tableModel.setValueAt(increaseQuantity, i, 2);
+								newEntry = false;
+							}
 						}
+						if(newEntry)
+							tableModel.addRow(new Object[] {getSearchBarcode(),invCtrl.findItem(getSearchBarcode()),1});
 					}
-					
-					if(newEntry)
-						tableModel.addRow(new Object[] {getSearchBarcode(),invCtrl.findItem(getSearchBarcode()),1});
 				}
 					
 			}
@@ -483,38 +488,38 @@ public class createBundlePanel extends JPanel {
 	
 	private void resetPanel() {
 		btnBarcode.setEnabled(true);
-		lblBarcode.setForeground(Color.DARK_GRAY);
+		lblBarcode.setForeground(activated);
 		txtBarcode.setText("");
 		txtBarcode.setEnabled(true);
-		barcodeSeparator.setBackground(Color.DARK_GRAY);
-		barcodeSeparator.setForeground(Color.DARK_GRAY);
+		barcodeSeparator.setBackground(activated);
+		barcodeSeparator.setForeground(activated);
 		
 		lblBarErr.setText("");
 		lblBarErr.setVisible(false);
 				
-		lblName.setForeground(new Color(192, 192, 192));
+		lblName.setForeground(deactivated);
 		txtName.setText("");
 		txtName.setEnabled(false);
-		nameSeparator.setForeground(new Color(192, 192, 192));
-		nameSeparator.setBackground(new Color(192, 192, 192));
+		nameSeparator.setForeground(deactivated);
+		nameSeparator.setBackground(deactivated);
 				
-		lblDescription.setForeground(new Color(192, 192, 192));
+		lblDescription.setForeground(deactivated);
 		txtDescription.setText("");
 		txtDescription.setEnabled(false);
-		descriptionSeparator.setForeground(new Color(192, 192, 192));
-		descriptionSeparator.setBackground(new Color(192, 192, 192));
+		descriptionSeparator.setForeground(deactivated);
+		descriptionSeparator.setBackground(deactivated);
 				
-		lblSalePrice.setForeground(new Color(192, 192, 192));
+		lblSalePrice.setForeground(deactivated);
 		txtSalePrice.setText("");
 		txtSalePrice.setEnabled(false);
-		salePriceSeparator.setForeground(new Color(192, 192, 192));
-		salePriceSeparator.setBackground(new Color(192, 192, 192));
+		salePriceSeparator.setForeground(deactivated);
+		salePriceSeparator.setBackground(deactivated);
 		
-		lblSearchBarcode.setForeground(new Color(192, 192, 192));
+		lblSearchBarcode.setForeground(deactivated);
 		txtSearchBarcode.setText("");
 		txtSearchBarcode.setEnabled(false);
-		searchBarcodeSeparator.setForeground(new Color(192, 192, 192));
-		searchBarcodeSeparator.setBackground(new Color(192, 192, 192));
+		searchBarcodeSeparator.setForeground(deactivated);
+		searchBarcodeSeparator.setBackground(deactivated);
 		btnAdd.setEnabled(false);
 		btnDel.setEnabled(false);
 		
