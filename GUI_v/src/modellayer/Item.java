@@ -72,22 +72,14 @@ public class Item implements SaleLineItem {
         return discounts.floorKey(quantity);
     }
     
-    public String getAllKeys() {
-    	String keys = "";
+    /*
+    @Override
+    public void getAllDiscounts() {
     	for (Map.Entry<Integer, Double> entry : discounts.entrySet()) {
-    	     keys += "-"+entry.getKey();
+    	     System.out.println("Quantity: " + entry.getKey() + ". Discount: " + entry.getValue());
     	}
-    	return keys;
     }
-    
-    public String getAllValues() {
-    	String values = "";
-    	for (Map.Entry<Integer, Double> entry : discounts.entrySet()) {
-    		values += "-"+entry.getValue().intValue()+"%";
-    	}
-    	return values;
-    }
-
+	*/
     
     public boolean removeDiscount(int amount) {
         if (discounts.containsKey(amount)) {
@@ -118,14 +110,6 @@ public class Item implements SaleLineItem {
 //        if (discounts.floorKey(quantity) == null)
 //            return salePrice;
         return salePrice - salePrice * (discounts.floorKey(quantity) / 100);
-    }
-
-    public String getDescription() {
-    	return description;
-    }
-    
-    public double getCostPrice() {
-        return costPrice;
     }
 
 

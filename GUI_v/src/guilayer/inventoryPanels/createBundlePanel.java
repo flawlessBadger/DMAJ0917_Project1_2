@@ -28,14 +28,11 @@ import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 
 public class createBundlePanel extends JPanel {
 	
 	private InventoryController invCtrl = new InventoryController();
 	private NotificationWindow notification = new NotificationWindow();
-	private String errors = "";
 	//error label
 	private JLabel lblBarErr;
 	
@@ -107,7 +104,7 @@ public class createBundlePanel extends JPanel {
 			}
 		});
 		createBundle.setBackground(background);
-		createBundle.setBounds(0, 0, 800, 700);
+		createBundle.setBounds(0, 0, 800, 657);
 		add(createBundle);
 		createBundle.setLayout(null);
 		
@@ -384,7 +381,7 @@ public class createBundlePanel extends JPanel {
 					if(invCtrl.isValidItem(getSearchBarcode())) {
 						for(int i = 0 ; i < tableModel.getRowCount(); i++) {
 							if(((String)tableModel.getValueAt(i, 0)).equals(getSearchBarcode())) {
-								int increaseQuantity = (Integer.parseInt(""+tableModel.getValueAt(i, 2))) + 1; 
+								int increaseQuantity = ((int)tableModel.getValueAt(i, 2)) + 1; 
 								tableModel.setValueAt(increaseQuantity, i, 2);
 								newEntry = false;
 							}
@@ -417,20 +414,15 @@ public class createBundlePanel extends JPanel {
 		bndlTable.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent eventA) {
-				try {
-					if(eventA.getClickCount() == 2) {
-						tableModel.removeRow( ((JTable)eventA.getSource()).getSelectedRow() );
-					}
-	            } catch (Exception e1) {
-	                errors += "Something went wrong, please Cancel and try again!\n";
-	            }
+				if(eventA.getClickCount() == 2) {
+					tableModel.removeRow( ((JTable)eventA.getSource()).getSelectedRow() );
+				}
 			}
 		});
 		
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				bndlTable.getCellEditor().stopCellEditing();
+				String errors = "";
 				
 				if(txtName.getText().isEmpty() || txtSalePrice.getText().length() >= 0) {
 					if(txtName.getText().isEmpty())
@@ -447,13 +439,6 @@ public class createBundlePanel extends JPanel {
 					
 					if(tableModel.getRowCount() <= 0) {
 						errors += "No Product's selected!";
-						
-					}else {
-						for(int i = tableModel.getRowCount() - 1; i >= 0 ; i--) {
-							if(Integer.parseInt(""+tableModel.getValueAt(i, 2)) == 0) {
-								errors += "Product quantity must be at least 1";
-							}
-						}
 					}
 					
 					if(errors.length() > 0) {

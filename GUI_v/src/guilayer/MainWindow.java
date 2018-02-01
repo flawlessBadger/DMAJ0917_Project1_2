@@ -93,7 +93,7 @@ public class MainWindow {
 
 		mainFrame.getContentPane().add(loginPane, "login");
 		mainFrame.getContentPane().add(mainMenu, "main");
-		menuStateChange("login");
+		menuStateChange("main");
 
 		JPanel logLeftPanel = new JPanel();
 		logLeftPanel.setBackground(new Color(255, 235, 205));
