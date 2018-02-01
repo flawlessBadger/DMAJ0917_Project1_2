@@ -60,11 +60,11 @@ public class listCustomer extends JPanel {
 		JPanel createCustomer = new JPanel();
 		createCustomer.addAncestorListener(new AncestorListener() {
 			public void ancestorAdded(AncestorEvent arg0) {
+				refreshAll();
 			}
 			public void ancestorMoved(AncestorEvent arg0) {
 			}
 			public void ancestorRemoved(AncestorEvent arg0) {
-
 			}
 		});
 		
@@ -81,15 +81,7 @@ public class listCustomer extends JPanel {
 		JButton btnRefresh = new JButton("Refresh");
 		btnRefresh.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Clear table
-				model.setRowCount(0);
-				
-				//Fill table with all customers
-				CustomerController customer = new CustomerController();
-				ArrayList<Object> customerList = customer.getAllCustomers();
-				for(int i = 0; i < customerList.size(); i++) {
-					model.addRow((Object[])customerList.get(i));
-				}
+				refreshAll();
 			}
 		});
 		
@@ -113,6 +105,18 @@ public class listCustomer extends JPanel {
 		btnRefresh.setBounds(674, 11, 116, 23);
 		createCustomer.add(btnRefresh);
 		
+		refreshAll();
+	}
+	
+	private void refreshAll() {
+		//Clear table
+		model.setRowCount(0);
 		
+		//Fill table with all customers
+		CustomerController customer = new CustomerController();
+		ArrayList<Object> customerList = customer.getAllCustomers();
+		for(int i = 0; i < customerList.size(); i++) {
+			model.addRow((Object[])customerList.get(i));
+		}
 	}
 }

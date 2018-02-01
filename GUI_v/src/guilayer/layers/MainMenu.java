@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import guilayer.inventoryPanels.manageInvPanel;
+import guilayer.customerPanels.manageCusPanel;
 import guilayer.employeePanels.EmployeeView;
 
 import javax.swing.JLabel;
@@ -29,8 +30,9 @@ public class MainMenu extends JPanel {
 	private CardLayout cardLayout;
 	private JPanel cardPanel;
 	
-	private manageInvPanel inventoryManage = new manageInvPanel();
+	private manageInvPanel inventoryManager = new manageInvPanel();
 	private EmployeeView employeeView = new EmployeeView();
+	private manageCusPanel customerManager = new manageCusPanel();
 	
 	/**
 	 * Create the panel.
@@ -66,9 +68,12 @@ public class MainMenu extends JPanel {
 		cardPanel = new JPanel(cardLayout);
 		cardPanel.setBounds(200, 0, 800, 771);
 		mainPane.add(cardPanel);
-		cardPanel.add(inventoryManage, "inventoryManage");
-		employeeView.setBackground(new Color(255, 235, 205));
+		cardPanel.add(inventoryManager, "inventoryManager");
 		cardPanel.add(employeeView, "employeeView");
+		cardPanel.add(customerManager,"customerManager");
+		employeeView.setBackground(new Color(255, 235, 205));
+		
+		
 		
 		//left Panel
 		leftPanel.setBackground(Color.DARK_GRAY);
@@ -81,7 +86,7 @@ public class MainMenu extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				changeMenuState(manageInv);
-				cardLayout.show(cardPanel,"inventoryManage");
+				cardLayout.show(cardPanel,"inventoryManager");
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -145,6 +150,7 @@ public class MainMenu extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeMenuState(manageCus);
+				cardLayout.show(cardPanel,"customerManager");
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -200,9 +206,9 @@ public class MainMenu extends JPanel {
 		
 
 		
-		inventoryManage.setAlignmentY(Component.TOP_ALIGNMENT);
-		inventoryManage.setAlignmentX(Component.LEFT_ALIGNMENT);
-		inventoryManage.setBackground(new Color(255, 235, 205));
+		inventoryManager.setAlignmentY(Component.TOP_ALIGNMENT);
+		inventoryManager.setAlignmentX(Component.LEFT_ALIGNMENT);
+		inventoryManager.setBackground(new Color(255, 235, 205));
 		
 		JPanel midPanel = new JPanel();
 		midPanel.setBounds(0, 0, 795, 738);
