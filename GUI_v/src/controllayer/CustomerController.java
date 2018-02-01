@@ -4,6 +4,7 @@ import modellayer.Customer;
 import modellayer.containers.CustomerCont;
 
 import java.util.Map;
+import java.util.ArrayList;
 
 public class CustomerController {
 
@@ -18,6 +19,20 @@ public class CustomerController {
         }
         s.append("\n###################################");
         return s.toString();
+    }
+    
+    public ArrayList<Object> getAllCustomers() {
+    	ArrayList<Object> customerList = new ArrayList<Object>();
+    	for (Map.Entry<Integer, Customer> entry : customerCont.entrySet()) {
+            customerList.add(new Object[]{entry.getKey(), 
+            		entry.getValue().getName(), 
+            		entry.getValue().getAddress(), 
+            		entry.getValue().getPhoneNumber(), 
+            		entry.getValue().getMail(), 
+            		entry.getValue().getDiscount()});
+            
+        }
+		return customerList;
     }
 
     public void createEmployee(String name, String address, String phoneNumber, String email, double discount) {

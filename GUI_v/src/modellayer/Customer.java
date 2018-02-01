@@ -18,6 +18,23 @@ public class Customer {
     public double getDiscount() {
         return discount;
     }
+    
+    public String getName() {
+    	return name;
+    }
+    
+    public String getAddress() {
+    	return address;
+    }
+    
+    public String getPhoneNumber() {
+    	return phoneNumber;
+    }
+    
+    public String getMail() {
+    	return email;
+    }
+    
 
     public void setName(String name) {
         this.name = name;

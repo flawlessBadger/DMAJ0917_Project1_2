@@ -32,6 +32,26 @@ public class CustomerEditor {
     public void setDiscount(double discount) {
         customer.setDiscount( discount);
     }
+    
+    public String getName() {
+    	return customer.getName();
+    }
+    
+    public String getAddress() {
+    	return customer.getAddress();
+    }
+    
+    public String getMail() {
+    	return customer.getMail();
+    }
+    
+    public String getPhoneNumber() {
+    	return customer.getPhoneNumber();
+    }
+    
+    public double getDiscount() {
+    	return customer.getDiscount();
+    }
 
     public String toString() {
         return "ID:           " + id + "\n" + customer.toString();
