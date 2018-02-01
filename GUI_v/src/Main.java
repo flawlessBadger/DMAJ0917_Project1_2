@@ -2,6 +2,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import controllayer.InventoryController;
+import controllayer.ItemEditor;
 import guilayer.MainWindow;
 import modellayer.Customer;
 import modellayer.Employee;
@@ -39,6 +40,11 @@ public class Main {
         inventoryController.createItem("4", "Shelf", "+", 123.4, 99.9);
         inventoryController.createItem("5", "Test Item", "+", 123.4, 99.9);
 
+        
+        ItemEditor editItem = new ItemEditor ("1");
+        editItem.setDiscount(5, 15);
+        editItem.setDiscount(66, 10);
+        
         SaleLineItem saleLineItem = inventoryController.getSaleLineItem("1");
         saleLineItem.addStock(1, Location.DIY);
 

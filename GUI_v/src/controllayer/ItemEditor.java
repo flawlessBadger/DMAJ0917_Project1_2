@@ -51,5 +51,30 @@ public class ItemEditor {
     public String toString() {
         return "Barcode:     " + barcode + "\n" + item.toString();
     }
+    
+    
+    public String getName() {
+    	return item.getName();
+    }
+    
+    public String getDescription() {
+    	return item.getDescription();
+    }
+    
+    public double getSalePrice() {
+        return item.getSalePrice();
+    }
+
+    public double  getCostPrice() {
+        return item.getCostPrice();
+    }
+    
+    public String getAllKeys() {
+    	return item.getAllKeys();
+    }
+    
+    public String getAllValues() {
+    	return item.getAllValues();
+    }
 
 }
