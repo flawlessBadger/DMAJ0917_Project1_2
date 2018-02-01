@@ -16,6 +16,7 @@ import controllayer.EmployeeEditor;
 import java.awt.Color;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -23,12 +24,17 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
+import javax.swing.AbstractAction;
+import javax.swing.ActionMap;
 import javax.swing.BorderFactory;
+import javax.swing.InputMap;
 import javax.swing.JButton;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JFormattedTextField;
 
 public class EmployeeView extends JPanel implements ActionListener, KeyListener {
@@ -55,7 +61,8 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 
 		panel_1 = new JPanel();
 		panel_1.setVisible(false);
-		panel_1.setBounds(0, 0, 800, 721);
+		panel_1.setBounds(0, 0, 800, 800);
+		panel_1.setBackground(new Color(255, 235, 205));
 		add(panel_1);
 		panel_1.setLayout(null);
 
@@ -69,68 +76,70 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 		loginField.setColumns(10);
 
 		lblName = new JLabel("Name:");
-		lblName.setBounds(50, 180, 123, 30);
+		lblName.setBounds(50, 170, 123, 30);
 		panel_1.add(lblName);
 
 		nameField = new JTextField();
-		nameField.setBounds(50, 210, 250, 35);
+		nameField.setBounds(50, 200, 250, 35);
 		panel_1.add(nameField);
 		nameField.setColumns(10);
+		
+				lblNewLabel = new JLabel("Address:");
+				lblNewLabel.setBounds(50, 270, 123, 26);
+				panel_1.add(lblNewLabel);
 
 		addressField = new JTextField();
-		addressField.setBounds(50, 320, 350, 70);
+		addressField.setBounds(50, 300, 350, 70);
 		panel_1.add(addressField);
 		addressField.setColumns(10);
 
-		lblNewLabel = new JLabel("Address:");
-		lblNewLabel.setBounds(50, 290, 123, 26);
-		panel_1.add(lblNewLabel);
-
 		JLabel lblAccessLevel = new JLabel("Access level:");
-		lblAccessLevel.setBounds(50, 435, 136, 26);
+		lblAccessLevel.setBounds(50, 405, 136, 26);
 		panel_1.add(lblAccessLevel);
 
 		SpinnerModel model = new SpinnerNumberModel(3, 0, 3, 1);
 		spinnerAL = new JSpinner(model);
-		spinnerAL.setBounds(50, 460, 41, 32);
+		spinnerAL.setBounds(50, 430, 41, 32);
 		panel_1.add(spinnerAL);
 
 		lblPassword = new JLabel("Password:");
-		lblPassword.setBounds(50, 545, 136, 26);
+		lblPassword.setBounds(50, 495, 136, 26);
 		panel_1.add(lblPassword);
 
 		passwordField = new JPasswordField();
-		passwordField.setBounds(50, 575, 250, 35);
+		passwordField.setBounds(50, 525, 250, 35);
 		panel_1.add(passwordField);
 		passwordField.setColumns(10);
-
-		lblRepeatPass = new JLabel("Repeat password:");
-		lblRepeatPass.setBounds(400, 545, 186, 26);
-		panel_1.add(lblRepeatPass);
+		
+				lblRepeatPass = new JLabel("Repeat password:");
+				lblRepeatPass.setBounds(400, 495, 186, 26);
+				panel_1.add(lblRepeatPass);
 
 		repeatPasswordField = new JPasswordField();
-		repeatPasswordField.setBounds(400, 575, 250, 32);
+		repeatPasswordField.setBounds(400, 525, 250, 32);
 		panel_1.add(repeatPasswordField);
 		repeatPasswordField.setColumns(10);
 
 		JButton registerButton = new JButton("Confirm");
-		registerButton.setBounds(50, 670, 140, 35);
+		registerButton.setBounds(50, 610, 140, 35);
 		registerButton.setActionCommand("register");
 		panel_1.add(registerButton);
 
 		btnCancel = new JButton("Cancel");
-		btnCancel.setBounds(551, 670, 141, 35);
+		btnCancel.setBounds(510, 610, 140, 35);
 		btnCancel.setActionCommand("cancel");
 		panel_1.add(btnCancel);
 		// header.setOpaque(true);
 		// header.setBackground(new Color(255, 235, 205));
 
 		panel = new JPanel();
-		panel.setBounds(0, 0, 800, 721);
+		panel.setBounds(0, 0, 800, 800);
+		panel.setBackground(new Color(255, 235, 205));
 		add(panel);
 		panel.setLayout(null);
 
 		table = new JTable(new EmployeeModel());
+		table.setRowSelectionAllowed(false);
 		table.setPreferredSize(new Dimension(800, 721));
 		table.setPreferredScrollableViewportSize(new Dimension(800, 721));
 		table.setBackground(new Color(255, 235, 205));
@@ -139,6 +148,22 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(30, 70, 740, 671);
 		panel.add(scrollPane);
+		int condition = JComponent.WHEN_IN_FOCUSED_WINDOW;
+		InputMap inputMap = table.getInputMap(condition);
+		ActionMap actionMap = table.getActionMap();
+
+		// DELETE is a String constant that for me was defined as "Delete"
+		inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0), "DELETE");
+		actionMap.put("DELETE", new AbstractAction() {
+			public void actionPerformed(ActionEvent e) {
+				// ((EmployeeModel)
+				// table.getModel()).fireTableRowsDeleted(table.getSelectedRow(),
+				// table.getSelectedRow());
+				// table.removeRowSelectionInterval(table.getSelectedRow(),
+				// table.getSelectedRow());
+				((EmployeeModel) table.getModel()).removeUser(table.getSelectedRow());
+			}
+		});
 
 		txtName = new JTextField();
 		txtName.setBounds(30, 30, 186, 35);
@@ -148,7 +173,7 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 		txtName.setActionCommand("search");
 
 		JButton searchButton = new JButton("Search");
-		searchButton.setBounds(215, 30, 110, 35);
+		searchButton.setBounds(215, 29, 110, 37);
 		panel.add(searchButton);
 		searchButton.setActionCommand("search");
 		searchButton.setMnemonic(KeyEvent.VK_M);
@@ -166,11 +191,9 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		System.out.println(e.getActionCommand());
 		if ("search".equals(e.getActionCommand())) {
 			((EmployeeModel) table.getModel()).search(txtName.getText());
 		} else if ("add".equals(e.getActionCommand())) {
-			System.out.println("add");
 			panel.setVisible(false);
 			panel_1.setVisible(true);
 		} else if ("cancel".equals(e.getActionCommand())) {
@@ -233,7 +256,7 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 	}
 
 	class EmployeeModel extends AbstractTableModel {
-		private String[] columnNames = { "Login", "Name", "Address", "Access level", "password" };
+		private String[] columnNames = { "Login", "Name", "Address", "Access level", "Password" };
 
 		private Object[][] data = ec.getData();
 
@@ -297,7 +320,18 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			} else if (col == 4) {
+				editor.setPassword(String.valueOf(value));
+				//fireTableCellUpdated(row, col);
+				data[row][col] = "updated";
 			}
+		}
+
+		public void removeUser(int row) {
+			ec.removeEmployee(String.valueOf(data[row][0]));
+			data = ec.getData();
+			fireTableDataChanged();
+
 		}
 	}
 
