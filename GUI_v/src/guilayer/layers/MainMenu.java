@@ -183,7 +183,7 @@ public class MainMenu extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeMenuState(createSal);
-				cardLayout.show(manageSale,"manageSale");
+				cardLayout.show(cardPanel,"manageSale");
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
