@@ -1,34 +1,31 @@
 package modellayer;
 
 import java.util.*;
+import modellayer.containers.CustomerCont;
 
 public class Sale {
-
-    private static final double MAX_DISCOUNT = 0.2;
+	
+    public static final double MAX_DISCOUNT = 20;
     private static int nextId = 0;
     private int id;
-    //private SaleAssistant saleAssistant;
+    //private int saleAssistantId;
     //private Delivery deliveryOption;
-    private Customer customer;
+    private int customerId;
     private double discount;
     private Payment paymentMethod;
     private Date timestamp;
-    private HashMap<SaleLineItem, Integer> saleLineItems;
+    private HashMap<String, Integer> saleLineItems;
 
-    public Sale(/*SaleAssistant saleAssistant, Delivery deliveryOption,*/ Customer customer) {
+    public Sale() {
         this.id = ++nextId;
-        //this.saleAssistant = saleAssistant;
-        //this.deliveryOption = deliveryOption;
-        this.customer = customer;
+        this.customerId = -1;
+        this.discount = 0.0;
         this.saleLineItems = new HashMap<>();
-    }
-    public Sale(/*SaleAssistant saleAssistant*/) {
-        this(/*saleAssistant, Delivery.PICKUP, */ null);
     }
 
     /*
-    public SaleAssistant getSaleAssistant() {
-        return saleAssistant;
+    public int getSaleAssistantId() {
+        return saleAssistantId;
     }
     public Delivery getDeliveryOption() {
         return deliveryOption;
@@ -37,8 +34,8 @@ public class Sale {
     public int getId() {
         return id;
     }
-    public Customer getCustomer() {
-        return customer;
+    public int getCustomerId() {
+        return customerId;
     }
     public double getDiscount() {
         return discount;
@@ -49,59 +46,57 @@ public class Sale {
     public Date getTimestamp() {
         return timestamp;
     }
-    public HashSet<SaleLineItem> getSaleLineItems() {
-        return new HashSet<SaleLineItem>(saleLineItems.keySet());
+    /*
+    public void setSaleAssistantId(int saleAssistantId) {
+	    this.saleAssistantId = saleAssistantId;
+	}
+	public void setDeliveryOption(Delivery deliveryOption) {
+	    this.deliveryOption = deliveryOption;
+	}
+	*/
+	public void setCustomerId(int customerId) {
+	    this.customerId = customerId;
+	}
+	public void setDiscount(double discount) {
+	    this.discount = discount;
+	}
+	public void setPaymentMethod(Payment paymentMethod) {
+	    this.paymentMethod = paymentMethod;
+	}
+    
+    public HashSet<String> getSaleLineItems() {
+        return new HashSet<String>(saleLineItems.keySet());
     }
     public boolean hasSaleLineItems() {
         return !saleLineItems.isEmpty();
     }
-    public boolean hasSaleLineItem(SaleLineItem saleLineItem) {
-        return saleLineItems.containsKey(saleLineItem);
+    public boolean hasSaleLineItem(String barcode) {
+        return saleLineItems.containsKey(barcode);
     }
-
-    public void addStock(SaleLineItem saleLineItem) {
-        saleLineItems.put(saleLineItem, 1 + (saleLineItems.getOrDefault(saleLineItem, 0)));
+    public int getStock(String barcode) {
+    	return saleLineItems.getOrDefault(barcode, 0);
     }
-    public void removeStock(SaleLineItem saleLineItem) {
-        saleLineItems.put(saleLineItem, -1 + saleLineItems.get(saleLineItem));
-        if (saleLineItems.get(saleLineItem) < 1)
-            saleLineItems.remove(saleLineItem);
+    public void addStock(String barcode) {
+        saleLineItems.put(barcode, 1 + (saleLineItems.getOrDefault(barcode, 0)));
     }
-    public boolean finishSale(Payment paymentMethod, double discount) {
+    public void removeStock(String barcode) {
+        saleLineItems.put(barcode, -1 + saleLineItems.get(barcode));
+        if (saleLineItems.get(barcode) < 1)
+            saleLineItems.remove(barcode);
+    }
+    public boolean finishSale() {
         if (isFinished()) return true;
-        this.paymentMethod = paymentMethod;
-        this.timestamp = new Date();
-        this.discount = calculateDiscount();
-        //Discount can only be obtained if it's under the MAX_DISCOUNT
-        //and greater than the calculated discount
-        if (discount <= MAX_DISCOUNT && discount > this.discount)
-            this.discount = discount;
+        
+        /*
+        if (saleAssistantId < 0) return false;
+        if (deliveryOption == null) return false;
+        */
+        if (paymentMethod == null) return false;
 
+        this.timestamp = new Date();
         return true;
     }
     public boolean isFinished() {
         return timestamp == null;
-    }
-    private double calculateDiscount() {
-        double totalSalePrice = 0, totalDiscountPrice = 0;
-        for (SaleLineItem saleLineItem : saleLineItems.keySet()) {
-            totalDiscountPrice += saleLineItem.getSalePrice() - saleLineItem.getPrice(saleLineItems.get(saleLineItem));
-            totalSalePrice += saleLineItem.getSalePrice();
-        }
-
-        //Item discounts
-        double discount = totalDiscountPrice / totalSalePrice;
-        if (discount > MAX_DISCOUNT)
-            return discount;
-        //Customer discount
-        discount *= (1 - customer.getDiscount());
-        if (discount > MAX_DISCOUNT)
-            return MAX_DISCOUNT;
-        //Sale discount
-        discount *= (1 - this.discount);
-        if (discount > MAX_DISCOUNT)
-            return MAX_DISCOUNT;
-
-        return discount;
     }
 }

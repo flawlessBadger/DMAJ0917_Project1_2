@@ -38,6 +38,9 @@ public class Bundle implements SaleLineItem {
     public HashSet<Item> getItems() {
         return new HashSet<Item>(items.keySet());
     }
+    public int getItemQuantity(Item item) {
+    	return items.getOrDefault(item, 0);
+    }
 
     
     @Override

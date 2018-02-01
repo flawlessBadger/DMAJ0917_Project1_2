@@ -41,6 +41,9 @@ public class CustomerController {
     public boolean hasCustomer() {
         return !customerCont.isEmpty();
     }
+    public Integer[] getCustomerIds() {
+    	return customerCont.keySet().toArray(new Integer[0]);
+    }
 
     public boolean isIDTaken(int id) {
         return !customerCont.containsKey(id);

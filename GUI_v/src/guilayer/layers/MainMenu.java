@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import guilayer.inventoryPanels.manageInvPanel;
+import guilayer.salePanels.ManageSalePanel;
 import guilayer.customerPanels.manageCusPanel;
 import guilayer.employeePanels.EmployeeView;
 
@@ -33,6 +34,7 @@ public class MainMenu extends JPanel {
 	private manageInvPanel inventoryManager = new manageInvPanel();
 	private EmployeeView employeeView = new EmployeeView();
 	private manageCusPanel customerManager = new manageCusPanel();
+	private ManageSalePanel manageSale = new ManageSalePanel();
 	
 	/**
 	 * Create the panel.
@@ -71,6 +73,7 @@ public class MainMenu extends JPanel {
 		cardPanel.add(inventoryManager, "inventoryManager");
 		cardPanel.add(employeeView, "employeeView");
 		cardPanel.add(customerManager,"customerManager");
+		cardPanel.add(manageSale,"manageSale");
 		employeeView.setBackground(new Color(255, 235, 205));
 		
 		
@@ -180,6 +183,7 @@ public class MainMenu extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				changeMenuState(createSal);
+				cardLayout.show(manageSale,"manageSale");
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {

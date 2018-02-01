@@ -33,6 +33,9 @@ public class CustomerEditor {
         customer.setDiscount( discount);
     }
     
+    public int getId() {
+    	return id;
+    }
     public String getName() {
     	return customer.getName();
     }

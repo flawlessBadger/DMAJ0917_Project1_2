@@ -1,9 +1,6 @@
 package controllayer;
 
-import java.awt.List;
-import java.util.ArrayList;
 import java.util.Map;
-
 import modellayer.*;
 import modellayer.containers.BundleCont;
 import modellayer.containers.ItemCont;
@@ -66,6 +63,16 @@ public class InventoryController {
 
         return saleLineItem.checkStock(location);
     }
+    public int getTotalStock(String barcode) {
+    	SaleLineItem saleLineItem = getSaleLineItem(barcode);
+    	
+    	int quantity = 0;
+    	for (Location location : Location.values()) {
+    		quantity += saleLineItem.checkStock(location);
+    	}
+    	
+    	return quantity;
+    }
 
     public boolean checkStock(String barcode, Location location) {
         SaleLineItem saleLineItem = getSaleLineItem(barcode);
@@ -120,6 +127,14 @@ public class InventoryController {
             }
         }
         return s.toString();
+    }
+    
+    public double getPrice(String barcode, int quantity) {
+    	SaleLineItem saleLineItem = getSaleLineItem(barcode);
+    	if (saleLineItem == null)
+    		return 0.0;
+    	
+    	return saleLineItem.getPrice(quantity);
     }
     
 //    public boolean isItem(barcode){
