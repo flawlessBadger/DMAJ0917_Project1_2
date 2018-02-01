@@ -115,9 +115,9 @@ public class Item implements SaleLineItem {
     }
     @Override
     public double getPrice(int quantity) {
-//        if (discounts.floorKey(quantity) == null)
-//            return salePrice;
-        return salePrice - salePrice * (discounts.floorKey(quantity) / 100);
+        if (discounts.floorKey(quantity) == null)
+            return salePrice;
+        return salePrice * (1 - (discounts.get(discounts.floorKey(quantity)) / 100));
     }
 
     public String getDescription() {

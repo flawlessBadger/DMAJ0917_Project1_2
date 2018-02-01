@@ -58,7 +58,7 @@ public class Bundle implements SaleLineItem {
         if (discounts.floorKey(quantity) == null)
             return salePrice;
 
-        return salePrice * (1 - (discounts.floorKey(quantity) / 100));
+        return salePrice * (1 - (discounts.get(discounts.floorKey(quantity)) / 100));
     }
 
     @Override
