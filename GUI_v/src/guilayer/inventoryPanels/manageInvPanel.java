@@ -13,6 +13,8 @@ import javax.swing.event.ChangeListener;
 
 import controllayer.InventoryController;
 
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
@@ -37,7 +39,7 @@ public class manageInvPanel extends JPanel {
 	private InventoryController invCtrl = new InventoryController();
 	private NotificationWindow notification = new NotificationWindow();
 	private JTabbedPane tabbedPane;
-	private JPanel editPanel;
+	private static JPanel editPanel;
 	private JTextField txtBarcode;
 	
 	private final static Color background = new Color(255, 235, 205);
@@ -67,6 +69,15 @@ public class manageInvPanel extends JPanel {
 		 * START EDIT PANE
 		 */
 		editPanel = new JPanel();
+		editPanel.addAncestorListener(new AncestorListener() {
+			public void ancestorAdded(AncestorEvent arg0) {
+			}
+			public void ancestorMoved(AncestorEvent arg0) {
+			}
+			public void ancestorRemoved(AncestorEvent arg0) {
+				changeEditMenu("searchBarcode");
+			}
+		});
 		editPanel.setBackground(background);
 		tabbedPane.addTab("Edit", null, editPanel, null);
 		editPanel.setLayout(new CardLayout(0, 0));
@@ -142,7 +153,7 @@ public class manageInvPanel extends JPanel {
 		return this.txtBarcode.getText().replaceAll("\\s","");
 	}
 
-	private void changeEditMenu(String menuName) {
+	public static void changeEditMenu(String menuName) {
 	    CardLayout cl = (CardLayout) editPanel.getLayout();
 	    cl.show(editPanel, menuName);
 	}
