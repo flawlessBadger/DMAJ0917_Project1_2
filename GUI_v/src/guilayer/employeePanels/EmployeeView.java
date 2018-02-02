@@ -7,6 +7,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingConstants;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.JTableHeader;
 
@@ -56,37 +57,46 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 	EmployeeController ec = new EmployeeController();
 	private JButton btnCancel;
 
+	private final static Color background = new Color(255, 235, 205);
+	private final static Color activated = Color.DARK_GRAY;
+
 	public EmployeeView() {
 		setLayout(null);
 
 		panel_1 = new JPanel();
 		panel_1.setVisible(false);
 		panel_1.setBounds(0, 0, 800, 800);
-		panel_1.setBackground(new Color(255, 235, 205));
+		panel_1.setBackground(background);
 		add(panel_1);
 		panel_1.setLayout(null);
 
 		lblNewLabel_1 = new JLabel("Login:");
 		lblNewLabel_1.setBounds(50, 70, 100, 30);
+		lblNewLabel_1.setForeground(activated);
+		lblNewLabel_1.setFont(new Font("Dubai", Font.BOLD, 14));
 		panel_1.add(lblNewLabel_1);
 
 		loginField = new JTextField();
 		loginField.setBounds(50, 100, 250, 35);
 		panel_1.add(loginField);
-		loginField.setColumns(10);
+		// loginField.setColumns(10);
 
 		lblName = new JLabel("Name:");
 		lblName.setBounds(50, 170, 123, 30);
+		lblName.setForeground(activated);
+		lblName.setFont(new Font("Dubai", Font.BOLD, 14));
 		panel_1.add(lblName);
 
 		nameField = new JTextField();
 		nameField.setBounds(50, 200, 250, 35);
 		panel_1.add(nameField);
 		nameField.setColumns(10);
-		
-				lblNewLabel = new JLabel("Address:");
-				lblNewLabel.setBounds(50, 270, 123, 26);
-				panel_1.add(lblNewLabel);
+
+		lblNewLabel = new JLabel("Address:");
+		lblNewLabel.setBounds(50, 270, 123, 26);
+		lblNewLabel.setForeground(activated);
+		lblNewLabel.setFont(new Font("Dubai", Font.BOLD, 14));
+		panel_1.add(lblNewLabel);
 
 		addressField = new JTextField();
 		addressField.setBounds(50, 300, 350, 70);
@@ -94,7 +104,9 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 		addressField.setColumns(10);
 
 		JLabel lblAccessLevel = new JLabel("Access level:");
-		lblAccessLevel.setBounds(50, 405, 136, 26);
+		lblAccessLevel.setBounds(50, 400, 136, 26);
+		lblAccessLevel.setForeground(activated);
+		lblAccessLevel.setFont(new Font("Dubai", Font.BOLD, 14));
 		panel_1.add(lblAccessLevel);
 
 		SpinnerModel model = new SpinnerNumberModel(3, 0, 3, 1);
@@ -104,16 +116,20 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 
 		lblPassword = new JLabel("Password:");
 		lblPassword.setBounds(50, 495, 136, 26);
+		lblPassword.setForeground(activated);
+		lblPassword.setFont(new Font("Dubai", Font.BOLD, 14));
 		panel_1.add(lblPassword);
 
 		passwordField = new JPasswordField();
 		passwordField.setBounds(50, 525, 250, 35);
 		panel_1.add(passwordField);
 		passwordField.setColumns(10);
-		
-				lblRepeatPass = new JLabel("Repeat password:");
-				lblRepeatPass.setBounds(400, 495, 186, 26);
-				panel_1.add(lblRepeatPass);
+
+		lblRepeatPass = new JLabel("Repeat password:");
+		lblRepeatPass.setBounds(400, 495, 186, 26);
+		lblRepeatPass.setForeground(activated);
+		lblRepeatPass.setFont(new Font("Dubai", Font.BOLD, 14));
+		panel_1.add(lblRepeatPass);
 
 		repeatPasswordField = new JPasswordField();
 		repeatPasswordField.setBounds(400, 525, 250, 32);
@@ -123,18 +139,22 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 		JButton registerButton = new JButton("Confirm");
 		registerButton.setBounds(50, 610, 140, 35);
 		registerButton.setActionCommand("register");
+		registerButton.setForeground(activated);
+		registerButton.setFont(new Font("Dubai", Font.BOLD, 14));
 		panel_1.add(registerButton);
 
 		btnCancel = new JButton("Cancel");
 		btnCancel.setBounds(510, 610, 140, 35);
 		btnCancel.setActionCommand("cancel");
+		btnCancel.setForeground(activated);
+		btnCancel.setFont(new Font("Dubai", Font.BOLD, 14));
 		panel_1.add(btnCancel);
 		// header.setOpaque(true);
-		// header.setBackground(new Color(255, 235, 205));
+		// header.setBackground(background);
 
 		panel = new JPanel();
 		panel.setBounds(0, 0, 800, 800);
-		panel.setBackground(new Color(255, 235, 205));
+		panel.setBackground(background);
 		add(panel);
 		panel.setLayout(null);
 
@@ -142,7 +162,7 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 		table.setRowSelectionAllowed(false);
 		table.setPreferredSize(new Dimension(800, 721));
 		table.setPreferredScrollableViewportSize(new Dimension(800, 721));
-		table.setBackground(new Color(255, 235, 205));
+		table.setBackground(background);
 		table.setRowHeight(35);
 		JTableHeader header = table.getTableHeader();
 		JScrollPane scrollPane = new JScrollPane(table);
@@ -251,6 +271,14 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 			if (valid) {
 				ec.createEmployee(loginField.getText(), nameField.getText(), addressField.getText(),
 						(int) spinnerAL.getValue(), passwordField.getText());
+				panel_1.setVisible(false);
+				panel.setVisible(true);
+				loginField.setText("");
+				nameField.setText("");
+				addressField.setText("");
+				passwordField.setText("");
+				repeatPasswordField.setText("");
+				((EmployeeModel)table.getModel()).update();
 			}
 		}
 	}
@@ -322,7 +350,7 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 				}
 			} else if (col == 4) {
 				editor.setPassword(String.valueOf(value));
-				//fireTableCellUpdated(row, col);
+				// fireTableCellUpdated(row, col);
 				data[row][col] = "updated";
 			}
 		}
@@ -331,8 +359,13 @@ public class EmployeeView extends JPanel implements ActionListener, KeyListener 
 			ec.removeEmployee(String.valueOf(data[row][0]));
 			data = ec.getData();
 			fireTableDataChanged();
-
 		}
+
+		public void update() {
+			data = ec.getData();
+			fireTableDataChanged();
+		}
+
 	}
 
 	@Override
