@@ -65,7 +65,11 @@ public class Sale {
 	}
     
     public HashSet<String> getSaleLineItems() {
-        return new HashSet<String>(saleLineItems.keySet());
+    	HashSet<String> result = new HashSet<>();
+    	for (String barcode : saleLineItems.keySet()) {
+    		result.add(barcode);
+    	}
+        return result;
     }
     public boolean hasSaleLineItems() {
         return !saleLineItems.isEmpty();

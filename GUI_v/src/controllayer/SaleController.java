@@ -93,7 +93,6 @@ public class SaleController {
         return true;
     }
     public boolean cancelSale() {
-    	
     	for (String barcode : tempSale.getSaleLineItems()) {
     		for (int i = tempSale.getStock(barcode); i > 0; i--)
     			if (!removeSaleLineItem(barcode))
