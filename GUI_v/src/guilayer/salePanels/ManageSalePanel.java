@@ -7,6 +7,10 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import guilayer.NotificationWindow;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.AncestorEvent;
 
 public class ManageSalePanel extends JPanel {
 

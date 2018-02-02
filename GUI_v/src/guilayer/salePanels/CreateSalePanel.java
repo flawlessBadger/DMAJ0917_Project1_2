@@ -37,6 +37,8 @@ import javax.swing.JRadioButton;
 import java.awt.Rectangle;
 import java.awt.Dimension;
 import javax.swing.border.CompoundBorder;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.AncestorEvent;
 
 public class CreateSalePanel extends JPanel {
 	
@@ -73,6 +75,19 @@ public class CreateSalePanel extends JPanel {
 	
 	@SuppressWarnings("serial")
 	public CreateSalePanel() {
+		addAncestorListener(new AncestorListener() {
+			public void ancestorAdded(AncestorEvent event) {
+				resetPanel();
+				saleCtrl.createSale();
+				active = true;
+			}
+			public void ancestorMoved(AncestorEvent event) {
+			}
+			public void ancestorRemoved(AncestorEvent event) {
+				saleCtrl.cancelSale();
+				active = false;
+			}
+		});
 		setForeground(Color.DARK_GRAY);
 		
 		setLayout(null);
@@ -484,10 +499,6 @@ public class CreateSalePanel extends JPanel {
 				active = true;
 			}
 		});
-		
-		saleCtrl.createSale();
-		active = true;
-		resetPanel();
 	}
 	private void updatePrices() {
 		DecimalFormat df = new DecimalFormat("#.##");
@@ -504,10 +515,13 @@ public class CreateSalePanel extends JPanel {
 	private void resetPanel() {
 		chckbxCustomer.setSelected(false);
 		cmbbxCustomer.setEnabled(false);
+		cmbbxCustomer.removeAllItems();
 		for (Integer customerId : customerCtrl.getCustomerIds()) {
 			CustomerEditor customer = new CustomerEditor(customerId);
 			cmbbxCustomer.addItem(customer.getName() + " (" + customer.getId() + ")");
 		}
+		if (customerCtrl.getCustomerIds().length > 0)
+			cmbbxCustomer.setSelectedIndex(0);
 		
 		txtfldSearchInventory.setText("");
 		sprQuantity.setValue(1);
