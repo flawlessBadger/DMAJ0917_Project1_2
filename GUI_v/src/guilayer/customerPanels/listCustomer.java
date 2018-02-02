@@ -74,21 +74,12 @@ public class listCustomer extends JPanel {
 		createCustomer.setBackground(background);
 		createCustomer.setFont(new Font("Dubai", Font.BOLD, 11));
 		createCustomer.setLayout(null);
-			
-		
-			
-		
-		JButton btnRefresh = new JButton("Refresh");
-		btnRefresh.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				refreshAll();
-			}
-		});
 		
 		table = new JTable();
+		table.setFont(new Font("Dialog", Font.PLAIN, 12));
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setSize(780, 624);
-		scrollPane.setLocation(10, 45);
+		scrollPane.setSize(780, 658);
+		scrollPane.setLocation(10, 11);
 		createCustomer.add(scrollPane);
 		
 		
@@ -96,14 +87,6 @@ public class listCustomer extends JPanel {
 		model = new DefaultTableModel();
 		model.setColumnIdentifiers(columnNames);
 		table.setModel(model);
-		
-		btnRefresh.setForeground(new Color(0, 128, 0));
-		btnRefresh.setFont(new Font("Dialog", Font.BOLD, 13));
-		btnRefresh.setBorderPainted(false);
-		btnRefresh.setBorder(null);
-		btnRefresh.setBackground(Color.DARK_GRAY);
-		btnRefresh.setBounds(674, 11, 116, 23);
-		createCustomer.add(btnRefresh);
 		
 		refreshAll();
 	}

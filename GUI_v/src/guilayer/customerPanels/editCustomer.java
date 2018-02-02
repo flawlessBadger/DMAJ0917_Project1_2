@@ -71,15 +71,6 @@ public class editCustomer extends JPanel {
 		setLayout(null);
 		//------Create Item tab------\\
 		JPanel createLoan = new JPanel();
-		createLoan.addAncestorListener(new AncestorListener() {
-			public void ancestorAdded(AncestorEvent arg0) {
-			}
-			public void ancestorMoved(AncestorEvent arg0) {
-			}
-			public void ancestorRemoved(AncestorEvent arg0) {
-
-			}
-		});
 		
 		createLoan.setBounds(0, 0, 800, 680);
 		add(createLoan);
@@ -151,6 +142,7 @@ public class editCustomer extends JPanel {
 		createLoan.add(lblPercent);
 		
 		percentSlider = new JSlider();
+		percentSlider.setMaximum(20);
 		percentSlider.setEnabled(false);
 		percentSlider.setBackground(background);
 		percentSlider.setValue(0);
@@ -313,8 +305,7 @@ public class editCustomer extends JPanel {
 					txtCustomerId.setEnabled(false);
 					btnContinue.setEnabled(false);
 		        }else{
-		        	//TODO pop up window
-		        	System.out.println("Customer not found");
+		        	notification.errorWindow("Customer not found!", "Error");
 		        }
 			}
 		});
@@ -328,7 +319,8 @@ public class editCustomer extends JPanel {
 				oCustomer.setEmail(txtMail.getText());
 				oCustomer.setPhoneNumber(txtPhoneNumber.getText());
 				
-				System.out.println("Customer saved!");
+				notification.informationWindow("Customer saved!", "Success");
+				
 				resetForm();
 			}
 		});

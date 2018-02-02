@@ -42,14 +42,13 @@ public class createCustomer extends JPanel {
 	private NotificationWindow notification = new NotificationWindow();
 	CustomerController customer = new CustomerController();
 	
-	String[] selectLocation = {"Do It Yourself", "Timber"};
-	
 	private final static Color background = new Color(255, 235, 205);
 	private final static Color activated = Color.DARK_GRAY;
 	private final static Color deactivated = Color.LIGHT_GRAY;
 	private JTextField txtAddr;
 	private JTextField txtTelephone;
 	private JTextField txtMail;
+
 	
 	/**
 	 * Create the panel.
@@ -62,15 +61,6 @@ public class createCustomer extends JPanel {
 		setLayout(null);
 		//------Create Item tab------\\
 		JPanel createCustomer = new JPanel();
-		createCustomer.addAncestorListener(new AncestorListener() {
-			public void ancestorAdded(AncestorEvent arg0) {
-			}
-			public void ancestorMoved(AncestorEvent arg0) {
-			}
-			public void ancestorRemoved(AncestorEvent arg0) {
-
-			}
-		});
 		
 		createCustomer.setBounds(0, 0, 800, 680);
 		add(createCustomer);
@@ -129,6 +119,7 @@ public class createCustomer extends JPanel {
 		createCustomer.add(lblPercent);
 		
 		percentSlider = new JSlider();
+		percentSlider.setMaximum(20);
 		percentSlider.setBackground(background);
 		percentSlider.setValue(0);
 		percentSlider.setForeground(background);
@@ -232,8 +223,14 @@ public class createCustomer extends JPanel {
 		btnCreateCustomer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//Get users input and create the customer
-				customer.createEmployee(txtName.getText(), txtAddr.getText(), txtTelephone.getText(), txtMail.getText() ,percentSlider.getValue());
-		        System.out.println("Customer created!");
+				if(txtName.getText().equals("") ||  txtAddr.getText().equals("") || txtMail.getText().equals("") || txtTelephone.getText().equals("")) {
+					notification.errorWindow("Input invalid, please make sure that all fields are filled!", "Error");
+				}
+				else {
+					customer.createEmployee(txtName.getText(), txtAddr.getText(), txtTelephone.getText(), txtMail.getText() ,percentSlider.getValue());
+		        	notification.informationWindow("Customer created!", "Success");
+				}
+					
 			}
 		});
 		

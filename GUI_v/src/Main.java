@@ -30,7 +30,19 @@ public class Main {
 //        System.out.println(
 //                new EmployeeController().toStringAll());
 
-        Customer customer = new Customer("Asd", "Asd", "Asd", "Asd", 20);
+        Customer customer = new Customer("Ignas Kavaliauskas", "Nibevej 12", "017652345345", "1067655@ucn.dk", 12);
+        CustomerCont.getInstance().put(CustomerCont.getInstance().getID(), customer);
+        
+        customer = new Customer("Denny Kosticz", "Hunson st. 11", "+4916284956848", "denny.k@gmail.com", 20);
+        CustomerCont.getInstance().put(CustomerCont.getInstance().getID(), customer);
+        
+        customer = new Customer("Huan Son", "Indein Oasch allee 1", "03048798560", "Son.Huan@nutter.de", 2.2);
+        CustomerCont.getInstance().put(CustomerCont.getInstance().getID(), customer);
+        
+        customer = new Customer("Jozef Ferko", "Ibims en oasch 5", "015548965325", "jozef.ferko@gmail.com", 5.7);
+        CustomerCont.getInstance().put(CustomerCont.getInstance().getID(), customer);
+        
+        customer = new Customer("Marton Juhaz", "Ibims en tost 1", "013222564587", "Marton.J@gmail.com", 10);
         CustomerCont.getInstance().put(CustomerCont.getInstance().getID(), customer);
 
         InventoryController inventoryController = new InventoryController();
